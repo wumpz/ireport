@@ -1,0 +1,6 @@
+id=pagexofy
+name=Page_X_Of_Y
+tooltip=Page_X_Of_Y_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/tools/pagexofy-16.png
+icon32=com/jaspersoft/ireport/designer/resources/tools/pagexofy-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.tools.CreatePageXOfYAction

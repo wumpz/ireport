@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE library PUBLIC "-//NetBeans//DTD Library Declaration 1.0//EN" "http://www.netbeans.org/dtds/library-declaration-1_0.dtd">
+<library version="1.0">
+    <name>JasperReports</name>
+    <type>j2se</type>
+    <localizing-bundle>com.jaspersoft.ireport.Bundle</localizing-bundle>
+    <volume>
+        <type>classpath</type>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/commons-beanutils-1.8.0.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/commons-collections-3.2.1.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/commons-digester-1.7.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/commons-logging-1.1.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/groovy-all-1.5.5.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jakarta-bcel-20050813.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jaxen-1.1.1.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jcommon-1.0.15.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jfreechart-1.0.12.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jpa.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jxl-2.6.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/png-encoder-1.5.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/poi-3.2-FINAL-20081019.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jasperreports-3.7.0.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/libs/xalan.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/xercesImpl-2.7.0.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/xml-apis.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-anim.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-awt-util.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-bridge.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-css.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-dom.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-ext.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-gvt.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-parser.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-script.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-svg-dom.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-svggen.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-util.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/batik-xml.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/iText-2.1.0.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/rhino-1.7R1.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/xml-apis-ext.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jasperreports-chart-themes-3.6.2.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/castor-1.2.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/jasperreports-fonts-3.6.1.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/barbecue-1.5-beta1.jar!/</resource>
+        <resource>jar:nbinst://com.jaspersoft.ireport/modules/ext/barcode4j-2.0.jar!/</resource>
+    </volume>
+    <volume>
+        <type>src</type>
+        
+    </volume>
+    <volume>
+        <type>javadoc</type>
+        
+    </volume>
+</library>

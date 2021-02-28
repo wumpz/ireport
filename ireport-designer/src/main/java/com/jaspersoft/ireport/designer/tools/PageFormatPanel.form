@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+  </NonVisualComponents>
+  <SyntheticProperties>
+    <SyntheticProperty name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,-121,0,0,1,-34"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelMarginBottom" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelLeft" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMarginTop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelMarginRight" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="multiUnitNumberEditorMarginRight" alignment="0" min="-2" pref="165" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="multiUnitNumberEditorMarginaTop" alignment="0" pref="165" max="32767" attributes="1"/>
+                              <Component id="multiUnitNumberEditorMarginBottom" alignment="0" max="32767" attributes="1"/>
+                              <Component id="multiUnitNumberEditorMarginLeft" alignment="0" max="32767" attributes="1"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelColumnWidth" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelColumns" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelSpace" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jSpinnerColumns" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="multiUnitNumberEditorColumnWidth" alignment="0" pref="167" max="32767" attributes="1"/>
+                          <Component id="multiUnitNumberEditorcolumnSpace" alignment="0" max="32767" attributes="1"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelMargins" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator1" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelColumnstitle" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator4" alignment="0" min="-2" pref="235" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jRadioLandscape" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jRadioPortrait" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSeparator3" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabelFormat" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelWidth" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelHeight" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="multiUnitNumberEditorWidth" max="32767" attributes="1"/>
+                                  <Component id="multiUnitNumberEditorHeight" alignment="0" max="32767" attributes="1"/>
+                                  <Component id="jComboBoxFormat" alignment="0" min="-2" pref="167" max="-2" attributes="1"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabelOrientation" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="pageFormatPreviewPanel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelFormat" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBoxFormat" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="multiUnitNumberEditorWidth" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelWidth" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabelHeight" min="-2" max="-2" attributes="0"/>
+                          <Component id="multiUnitNumberEditorHeight" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="jLabelOrientation" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                      <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jRadioPortrait" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jRadioLandscape" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="pageFormatPreviewPanel1" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabelMargins" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelColumnstitle" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabelMarginTop" min="-2" max="-2" attributes="0"/>
+                          <Component id="multiUnitNumberEditorMarginaTop" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabelColumns" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jSpinnerColumns" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabelMarginBottom" min="-2" max="-2" attributes="0"/>
+                  <Component id="multiUnitNumberEditorMarginBottom" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelColumnWidth" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="multiUnitNumberEditorColumnWidth" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabelLeft" min="-2" max="-2" attributes="0"/>
+                  <Component id="multiUnitNumberEditorMarginLeft" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelSpace" alignment="1" min="-2" max="-2" attributes="0"/>
+                  <Component id="multiUnitNumberEditorcolumnSpace" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jLabelMarginRight" min="-2" max="-2" attributes="0"/>
+                  <Component id="multiUnitNumberEditorMarginRight" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jLabelFormat">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Format"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBoxFormat">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBoxFormatActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelWidth">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Width"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelHeight">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Height"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMarginTop">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Top"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMarginBottom">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Bottom"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelLeft">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Left"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMarginRight">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Right"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMargins">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Margins"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioPortrait">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Portrait"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioPortraitActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="jRadioLandscape">
+      <Properties>
+        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+          <ComponentRef name="buttonGroup1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Landscape"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioLandscapeActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelOrientation">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Page orientation"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator3">
+    </Component>
+    <Container class="javax.swing.JPanel" name="jPanel2">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Component id="jLabelUnit" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="263" max="32767" attributes="0"/>
+                  <Component id="jButtonOk" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButtonCancel" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Component id="jSeparator2" alignment="1" pref="458" max="32767" attributes="1"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <Component id="jSeparator2" pref="10" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jButtonCancel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButtonOk" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabelUnit" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JSeparator" name="jSeparator2">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonOk">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ok"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOkActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonCancel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cancel"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelUnit">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Unit"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorWidth">
+    </Component>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorHeight">
+    </Component>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorMarginaTop">
+    </Component>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorMarginBottom">
+    </Component>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorMarginLeft">
+    </Component>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorMarginRight">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelColumnstitle">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Columns"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator4">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelColumns">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Columns"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinnerColumns">
+      <Events>
+        <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSpinnerColumnsStateChanged"/>
+      </Events>
+    </Component>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorColumnWidth">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelColumnWidth">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Column width"/>
+      </Properties>
+    </Component>
+    <Component class="com.jaspersoft.ireport.designer.tools.MultiUnitNumberEditor" name="multiUnitNumberEditorcolumnSpace">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelSpace">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Space"/>
+      </Properties>
+    </Component>
+    <Container class="com.jaspersoft.ireport.designer.tools.PageFormatPreviewPanel" name="pageFormatPreviewPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="235" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="186" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+    </Container>
+  </SubComponents>
+</Form>

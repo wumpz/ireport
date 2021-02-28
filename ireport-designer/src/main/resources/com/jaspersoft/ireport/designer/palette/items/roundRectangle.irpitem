@@ -1,0 +1,6 @@
+id=roundRectangle
+name=Round_Rectangle_Name
+tooltip=Round_Rectangle_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/roundrectangle-16.png
+icon32=com/jaspersoft/ireport/designer/resources/roundrectangle-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.CreateRoundRectangleAction

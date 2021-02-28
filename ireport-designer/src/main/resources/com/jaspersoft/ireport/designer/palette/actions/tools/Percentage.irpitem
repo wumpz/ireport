@@ -1,0 +1,6 @@
+id=percentage
+name=Percentage
+tooltip=Percentage_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/tools/percentage-16.png
+icon32=com/jaspersoft/ireport/designer/resources/tools/percentage-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.tools.CreatePercentageTextfieldAction

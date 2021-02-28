@@ -1,0 +1,6 @@
+id=chart
+name=Chart_Name
+tooltip=Chart_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/chart-16.png
+icon32=com/jaspersoft/ireport/designer/resources/chart-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.CreateChartAction

@@ -1,0 +1,6 @@
+id=break
+name=Break_Name
+tooltip=Break_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/break-16.png
+icon32=com/jaspersoft/ireport/designer/resources/break-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.CreateBreakAction

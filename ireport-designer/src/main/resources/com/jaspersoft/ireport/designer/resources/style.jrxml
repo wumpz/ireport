@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="400" pageHeight="842" columnWidth="400" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<style name="style1" isDefault="false"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="444">
+			<rectangle>
+				<reportElement key="rectangle" x="26" y="22" width="132" height="50"/>
+			</rectangle>
+			<staticText>
+				<reportElement key="textfield" x="26" y="325" width="303" height="89"/>
+				<textElement/>
+				<text><![CDATA[This is the first line
+This is the second line]]></text>
+			</staticText>
+			<image hyperlinkType="None">
+				<reportElement key="image" x="26" y="105" width="132" height="81"/>
+				<imageExpression class="java.lang.String"><![CDATA["com/jaspersoft/ireport/designer/resources/samplepic.png"]]></imageExpression>
+			</image>
+			<ellipse>
+				<reportElement key="ellipse" x="197" y="22" width="132" height="50"/>
+			</ellipse>
+			<line direction="BottomUp">
+				<reportElement key="line" x="197" y="105" width="132" height="50"/>
+			</line>
+			<staticText>
+				<reportElement key="statictext" x="26" y="214" width="303" height="89"/>
+				<textElement/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,6 @@
+id=statictext
+name=StaticText_Name
+tooltip=StaticText_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/statictext-16.png
+icon32=com/jaspersoft/ireport/designer/resources/statictext-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.CreateStaticTextAction

@@ -1,0 +1,6 @@
+id=textfield
+name=TextField_Name
+tooltip=TextField_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/textfield-16.png
+icon32=com/jaspersoft/ireport/designer/resources/textfield-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.CreateTextFieldAction

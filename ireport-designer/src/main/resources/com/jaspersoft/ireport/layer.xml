@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <attr name="Menu\File\Separator2.instance\position" intvalue="1250"/>
+    <attr name="Menu\File\com-jaspersoft-ireport-designer-standalone-menu-OpenFileAction.shadow\position" intvalue="1300"/>
+    <attr name="Menu\Tools\PaletteManager\position" intvalue="100"/>
+    <attr name="Menu\Tools\Separator1.instance\position" intvalue="400"/>
+    <attr name="Menu\Tools\Separator2.instance\position" intvalue="600"/>
+    <attr name="Menu\Tools\Separator3.instance\position" intvalue="800"/>
+    <attr name="Menu\Tools\org-netbeans-modules-autoupdate-ui-actions-PluginManagerAction.shadow\position" intvalue="700"/>
+    <attr name="Menu\Tools\org-netbeans-modules-favorites-templates-TemplatesAction.instance\position" intvalue="500"/>
+    <attr name="Menu\Tools\org-netbeans-modules-options-OptionsWindowAction.shadow\position" intvalue="900"/>
+    <attr name="Menu\Tools\org-openide-actions-ToolsAction.instance\position" intvalue="201"/>
+    <attr name="Menu\Window\CloneDocumentAction.shadow\position" intvalue="2400"/>
+    <attr name="Menu\Window\CloseAllButThisAction.shadow\position" intvalue="2600"/>
+    <attr name="Menu\Window\CloseAllDocumentsAction.shadow\position" intvalue="2500"/>
+    <attr name="Menu\Window\CloseWindowAction.shadow\position" intvalue="2000"/>
+    <attr name="Menu\Window\DocumentsAction.shadow\position" intvalue="2700"/>
+    <attr name="Menu\Window\ErrorHandlerAction.shadow\position" intvalue="500"/>
+    <attr name="Menu\Window\FormattingToolsAction.shadow\position" intvalue="101"/>
+    <attr name="Menu\Window\IRConsoleAction.shadow\position" intvalue="600"/>
+    <attr name="Menu\Window\JRViewerAction.shadow\position" intvalue="200"/>
+    <attr name="Menu\Window\MaximizeWindowAction.shadow\position" intvalue="2100"/>
+    <attr name="Menu\Window\OutlineAction.shadow\position" intvalue="400"/>
+    <attr name="Menu\Window\ProgressListAction.shadow\position" intvalue="1700"/>
+    <attr name="Menu\Window\RepositoryAction.shadow\position" intvalue="700"/>
+    <attr name="Menu\Window\Separator3.instance\position" intvalue="1900"/>
+    <attr name="Menu\Window\Separator4.instance\position" intvalue="2300"/>
+    <attr name="Menu\Window\Separator5.instance\position" intvalue="2800"/>
+    <attr name="Menu\Window\ShowPaletteAction.shadow\position" intvalue="1000"/>
+    <attr name="Menu\Window\SwitchToRecentDocumentAction.shadow\position" intvalue="1600"/>
+    <attr name="Menu\Window\ViewFavoritesTabAction.shadow\position" intvalue="900"/>
+    <attr name="Menu\Window\ViewRuntimeTabAction.shadow\position" intvalue="1800"/>
+    <attr name="Menu\Window\org-netbeans-core-actions-GlobalPropertiesAction.shadow\position" intvalue="1200"/>
+    <attr name="Menu\Window\org-netbeans-core-windows-actions-ResetWindowsAction.instance\position" intvalue="2200"/>
+    <attr name="Menu\Window\org-netbeans-core-windows-actions-ResetWindowsAction.shadow\position" intvalue="2900"/>
+    <attr name="Menu\Window\org-netbeans-core-windows-actions-UndockAction.shadow\position" intvalue="2200"/>
+    <attr name="Services\MIMEResolver\Languagesresolver.xml\position" intvalue="500"/>
+    <attr name="Services\MIMEResolver\org-netbeans-modules-editor-settings-storage-mime-resolver.xml\position" intvalue="600"/>
+    <attr name="Services\MIMEResolver\plain-text-resolver.xml\position" intvalue="300"/>
+    <attr name="Toolbars\Edit\position" intvalue="100"/>
+    <attr name="Toolbars\File\position" intvalue="200"/>
+    <attr name="Toolbars\Memory\position" intvalue="600"/>
+    <attr name="Toolbars\Standard.xml\position" intvalue="500"/>
+
+    <attr name="Templates\Report\Report.jrxml\position" intvalue="100"/>
+    <attr name="Templates\Report\Report2.jrxml\position" intvalue="110"/>
+    <attr name="Templates\Report\Report\position" intvalue="200"/>
+    <attr name="Templates\Report\StyleTemplate.jrtx\position" intvalue="300"/>
+    <attr name="Templates\Report\ChartThemeTemplate.jrctx\position" intvalue="400"/>
+
+    <attr name="Windows2\Modes\commonpalette\CommonPalette.wstcref\position" intvalue="0"/>
+    <attr name="Windows2\Modes\explorer\ASTBrowserTopComponent.wstcref\position" intvalue="600"/>
+    <attr name="Windows2\Modes\explorer\RepositoryTopComponent.wstcref\position" intvalue="100"/>
+    <attr name="Windows2\Modes\explorer\TokensBrowserTopComponent.wstcref\position" intvalue="500"/>
+    <attr name="Windows2\Modes\explorer\favorites.wstcref\position" intvalue="250"/>
+    <attr name="Windows2\Modes\explorer\runtime.wstcref\position" intvalue="400"/>
+    <attr name="Windows2\Modes\output\find-usages.wstcref\position" intvalue="500"/>
+    <attr name="Windows2\Modes\output\output.wstcref\position" intvalue="600"/>
+    <attr name="Windows2\Modes\output\refactoring-preview.wstcref\position" intvalue="400"/>
+    <attr name="Windows2\Modes\output\search-results.wstcref\position" intvalue="300"/>
+    <folder name="Actions">
+        <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.Bundle"/>
+        <folder name="Designer">
+            <file name="com-jaspersoft-ireport-designer-actions-AddBandAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-OpenQueryDialogAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-RunReportAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-SelectDatasourceAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-ShowGridAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-SnapToGridAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-pdf508-ShowPdf508TagsAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-EditWithExternalEditorAction.instance"/>
+            <folder name="Format">
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AdaptToParentAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AdaptToParentHAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AdaptToParentVAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignBottomAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignHAxisAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignLeftAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignMarginBottomAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignMarginLeftAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignMarginRightAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignMarginTopAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignRightAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignTopAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-AlignVAxisAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-CenterHorizontallyAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-CenterInParentAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-CenterVerticallyAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-DecreaseHSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-DecreaseVSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-EqualsHSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-EqualsVSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-IncreaseHSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-IncreaseVSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-JoinLeftAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-JoinRightAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-OrganizeAsTableAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-RemoveHSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-RemoveVSpaceAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-SameHeightAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-SameHeightMaxAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-SameHeightMinAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-SameSizeAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-SameWidthAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-SameWidthMaxAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-formatting-actions-SameWidthMinAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-actions-RemoveMarginsAction.instance"/>
+                <file name="com-jaspersoft-ireport-designer-menu-EditPageFormatAction.instance"/>
+            </folder>
+        </folder>
+        <folder name="Data">
+            <file name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.instance"/>
+        </folder>
+        <folder name="Report_preview">
+            <file name="com-jaspersoft-ireport-designer-menu-preview-PDFPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-ODFPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-ODSPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLSPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLS2PreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLSXPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLS3PreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-TXTPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-RTFPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-CSVPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-InternalPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-HTMLPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XHTMLPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-LayeredHTMLPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-DOCXPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-PPTXPreviewAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XMLPreviewAction.instance"/>
+        </folder>
+        <folder name="Tools">
+            <file name="com-jaspersoft-ireport-designer-menu-ClasspathAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-FontpathAction.instance"/>
+        </folder>
+        <folder name="Window">
+            <file name="com-jaspersoft-ireport-designer-crosstab-CrosstabDebugConsoleAction.instance">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
+                <attr name="component" methodvalue="com.jaspersoft.ireport.designer.crosstab.CrosstabDebugConsoleTopComponent.findInstance"/>
+                <attr name="displayName" bundlevalue="com.jaspersoft.ireport.designer.crosstab.Bundle#CTL_CrosstabDebugConsoleAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.windows.TopComponent.openAction"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-errorhandler-ErrorHandlerAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-formatting-FormattingToolsAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-menu-GenericInspectorAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-outline-OutlineAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-logpane-IRConsoleAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-styles-StylesLibraryAction.instance"/>
+            <file name="com-jaspersoft-ireport-designer-welcome-WelcomeAction.instance"/>
+            <!-- <file name="org-netbeans-core-actions-ViewRuntimeTabAction.instance">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/org/netbeans/core/resources/environment.gif"/>
+            </file>-->
+            <file name="com-jaspersoft-ireport-designer-resourcebundle-ResourceBundleAction.instance"/>
+        </folder>
+        <folder name="Menu">
+            <file name="com-jaspersoft-ireport-designer-menu-SaveAsAction.instance"/>
+        </folder>
+    </folder>
+
+
+    <folder name="Loaders">
+        <folder name="application">
+            <folder name="x-jasper">
+                <folder name="Actions">
+                    <file name="org-openide-actions-CopyAction.instance">
+                        <attr name="position" intvalue="300"/>
+                    </file>
+                    <file name="org-openide-actions-CutAction.instance">
+                        <attr name="position" intvalue="200"/>
+                    </file>
+                    <file name="org-openide-actions-DeleteAction.instance">
+                        <attr name="position" intvalue="500"/>
+                    </file>
+                    <file name="org-openide-actions-FileSystemAction.instance">
+                        <attr name="position" intvalue="1000"/>
+                    </file>
+                    <file name="org-openide-actions-PropertiesAction.instance">
+                        <attr name="position" intvalue="1300"/>
+                    </file>
+                    <file name="org-openide-actions-RenameAction.instance">
+                        <attr name="position" intvalue="600"/>
+                    </file>
+                    <file name="org-openide-actions-ToolsAction.instance">
+                        <attr name="position" intvalue="1200"/>
+                    </file>
+                    <file name="sep-1.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="100"/>
+                    </file>
+                    <file name="sep-2.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="400"/>
+                    </file>
+                    <file name="sep-3.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="700"/>
+                    </file>
+                    <file name="sep-4.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="900"/>
+                    </file>
+                    <file name="sep-5.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="1100"/>
+                    </file>
+                </folder>
+            </folder>
+        </folder>
+        <folder name="text">
+            <folder name="x-irpitem">
+                <folder name="Actions">
+                    <file name="org-openide-actions-CopyAction.instance">
+                        <attr name="position" intvalue="500"/>
+                    </file>
+                    <file name="org-openide-actions-CutAction.instance">
+                        <attr name="position" intvalue="400"/>
+                    </file>
+                    <file name="org-openide-actions-DeleteAction.instance">
+                        <attr name="position" intvalue="700"/>
+                    </file>
+                    <file name="org-openide-actions-FileSystemAction.instance">
+                        <attr name="position" intvalue="200"/>
+                    </file>
+                    <file name="org-openide-actions-OpenAction.instance">
+                        <attr name="position" intvalue="100"/>
+                    </file>
+                    <file name="org-openide-actions-PropertiesAction.instance">
+                        <attr name="position" intvalue="1300"/>
+                    </file>
+                    <file name="org-openide-actions-RenameAction.instance">
+                        <attr name="position" intvalue="800"/>
+                    </file>
+                    <file name="org-openide-actions-SaveAsTemplateAction.instance">
+                        <attr name="position" intvalue="1000"/>
+                    </file>
+                    <file name="org-openide-actions-ToolsAction.instance">
+                        <attr name="position" intvalue="1200"/>
+                    </file>
+                    <file name="sep-1.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="300"/>
+                    </file>
+                    <file name="sep-2.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="600"/>
+                    </file>
+                    <file name="sep-3.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="900"/>
+                    </file>
+                    <file name="sep-4.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="1100"/>
+                    </file>
+                </folder>
+            </folder>
+            <folder name="x-jrctx+xml">
+                <folder name="Actions">
+                    <file name="org-openide-actions-CopyAction.instance">
+                        <attr name="position" intvalue="500"/>
+                    </file>
+                    <file name="org-openide-actions-CutAction.instance">
+                        <attr name="position" intvalue="400"/>
+                    </file>
+                    <file name="org-openide-actions-DeleteAction.instance">
+                        <attr name="position" intvalue="700"/>
+                    </file>
+                    <file name="org-openide-actions-FileSystemAction.instance">
+                        <attr name="position" intvalue="200"/>
+                    </file>
+                    <file name="org-openide-actions-OpenAction.instance">
+                        <attr name="position" intvalue="100"/>
+                    </file>
+                    <file name="org-openide-actions-PropertiesAction.instance">
+                        <attr name="position" intvalue="1300"/>
+                    </file>
+                    <file name="org-openide-actions-RenameAction.instance">
+                        <attr name="position" intvalue="800"/>
+                    </file>
+                    <file name="org-openide-actions-SaveAsTemplateAction.instance">
+                        <attr name="position" intvalue="1000"/>
+                    </file>
+                    <file name="org-openide-actions-ToolsAction.instance">
+                        <attr name="position" intvalue="1200"/>
+                    </file>
+                    <file name="sep-1.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="300"/>
+                    </file>
+                    <file name="sep-2.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="600"/>
+                    </file>
+                    <file name="sep-3.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="900"/>
+                    </file>
+                    <file name="sep-4.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="1100"/>
+                    </file>
+                </folder>
+            </folder>
+            <folder name="x-jrtx+xml">
+                <folder name="Actions">
+                    <file name="org-openide-actions-CopyAction.instance">
+                        <attr name="position" intvalue="500"/>
+                    </file>
+                    <file name="org-openide-actions-CutAction.instance">
+                        <attr name="position" intvalue="400"/>
+                    </file>
+                    <file name="org-openide-actions-DeleteAction.instance">
+                        <attr name="position" intvalue="700"/>
+                    </file>
+                    <file name="org-openide-actions-FileSystemAction.instance">
+                        <attr name="position" intvalue="200"/>
+                    </file>
+                    <file name="org-openide-actions-OpenAction.instance">
+                        <attr name="position" intvalue="100"/>
+                    </file>
+                    <file name="org-openide-actions-PropertiesAction.instance">
+                        <attr name="position" intvalue="1300"/>
+                    </file>
+                    <file name="org-openide-actions-RenameAction.instance">
+                        <attr name="position" intvalue="800"/>
+                    </file>
+                    <file name="org-openide-actions-SaveAsTemplateAction.instance">
+                        <attr name="position" intvalue="1000"/>
+                    </file>
+                    <file name="org-openide-actions-ToolsAction.instance">
+                        <attr name="position" intvalue="1200"/>
+                    </file>
+                    <file name="sep-1.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="300"/>
+                    </file>
+                    <file name="sep-2.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="600"/>
+                    </file>
+                    <file name="sep-3.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="900"/>
+                    </file>
+                    <file name="sep-4.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="1100"/>
+                    </file>
+                </folder>
+            </folder>
+            <folder name="x-jrxml+xml">
+                <attr name="position" intvalue="-250"/>
+                <folder name="Actions">
+                    <file name="org-openide-actions-CopyAction.instance">
+                        <attr name="position" intvalue="500"/>
+                    </file>
+                    <file name="org-openide-actions-CutAction.instance">
+                        <attr name="position" intvalue="400"/>
+                    </file>
+                    <file name="org-openide-actions-DeleteAction.instance">
+                        <attr name="position" intvalue="700"/>
+                    </file>
+                    <file name="org-openide-actions-FileSystemAction.instance">
+                        <attr name="position" intvalue="200"/>
+                    </file>
+                    <file name="org-openide-actions-OpenAction.instance">
+                        <attr name="position" intvalue="100"/>
+                    </file>
+                    <file name="org-openide-actions-PropertiesAction.instance">
+                        <attr name="position" intvalue="1300"/>
+                    </file>
+                    <file name="org-openide-actions-RenameAction.instance">
+                        <attr name="position" intvalue="800"/>
+                    </file>
+                    <file name="org-openide-actions-SaveAsTemplateAction.instance">
+                        <attr name="position" intvalue="1000"/>
+                    </file>
+                    <file name="org-openide-actions-ToolsAction.instance">
+                        <attr name="position" intvalue="1200"/>
+                    </file>
+                    <file name="sep-1.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="300"/>
+                    </file>
+                    <file name="sep-2.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="600"/>
+                    </file>
+                    <file name="sep-3.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="900"/>
+                    </file>
+                    <file name="sep-4.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="1100"/>
+                    </file>
+                </folder>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <file name="Designer_hidden"/>
+
+        <folder name="Format">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+            <folder name="Align">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="position" intvalue="10"/>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignLeftAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignLeftAction.instance"/>
+                    <attr name="position" intvalue="10"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignTopAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignTopAction.instance"/>
+                    <attr name="position" intvalue="20"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignRightAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignRightAction.instance"/>
+                    <attr name="position" intvalue="30"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignBottomAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignBottomAction.instance"/>
+                    <attr name="position" intvalue="40"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="50"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignVAxisAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignVAxisAction.instance"/>
+                    <attr name="position" intvalue="60"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignHAxisAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignHAxisAction.instance"/>
+                    <attr name="position" intvalue="70"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="80"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignMarginLeftAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignMarginLeftAction.instance"/>
+                    <attr name="position" intvalue="90"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignMarginRightAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignMarginRightAction.instance"/>
+                    <attr name="position" intvalue="100"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignMarginTopAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignMarginTopAction.instance"/>
+                    <attr name="position" intvalue="110"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignMarginBottomAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignMarginBottomAction.instance"/>
+                    <attr name="position" intvalue="120"/>
+                </file>
+            </folder>
+            <folder name="Size">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="position" intvalue="20"/>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-SameWidthAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameWidthAction.instance"/>
+                    <attr name="position" intvalue="10"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-SameWidthMaxAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameWidthMaxAction.instance"/>
+                    <attr name="position" intvalue="20"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-SameWidthMinAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameWidthMinAction.instance"/>
+                    <attr name="position" intvalue="30"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="40"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-SameHeightAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameHeightAction.instance"/>
+                    <attr name="position" intvalue="50"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-SameHeightMaxAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameHeightMaxAction.instance"/>
+                    <attr name="position" intvalue="60"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-SameHeightMinAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameHeightMinAction.instance"/>
+                    <attr name="position" intvalue="70"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="80"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="90"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-SameSizeAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameSizeAction.instance"/>
+                    <attr name="position" intvalue="100"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="110"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AdaptToParentAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AdaptToParentAction.instance"/>
+                    <attr name="position" intvalue="120"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AdaptToParentHAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AdaptToParentHAction.instance"/>
+                    <attr name="position" intvalue="130"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AdaptToParentVAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AdaptToParentVAction.instance"/>
+                    <attr name="position" intvalue="140"/>
+                </file>
+
+            </folder>
+            <folder name="Position">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="position" intvalue="30"/>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-CenterHorizontallyAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-CenterHorizontallyAction.instance"/>
+                    <attr name="position" intvalue="10"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-CenterVerticallyAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-CenterVerticallyAction.instance"/>
+                    <attr name="position" intvalue="20"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-CenterInParentAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-CenterInParentAction.instance"/>
+                    <attr name="position" intvalue="30"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-JoinLeftAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-JoinLeftAction.instance"/>
+                    <attr name="position" intvalue="40"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-JoinRightAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-JoinRightAction.instance"/>
+                    <attr name="position" intvalue="50"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignMarginLeftAction_1.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignMarginLeftAction.instance"/>
+                    <attr name="position" intvalue="90"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-AlignMarginRightAction_1.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignMarginRightAction.instance"/>
+                    <attr name="position" intvalue="100"/>
+                </file>
+            </folder>
+            <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                <attr name="position" intvalue="40"/>
+            </file>
+            <folder name="Horizontal Spacing">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="position" intvalue="50"/>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-DecreaseHSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-DecreaseHSpaceAction.instance"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-EqualsHSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-EqualsHSpaceAction.instance"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-IncreaseHSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-IncreaseHSpaceAction.instance"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-RemoveHSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-RemoveHSpaceAction.instance"/>
+                </file>
+            </folder>
+            <folder name="Vertical Spacing">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="position" intvalue="60"/>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-DecreaseVSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-DecreaseVSpaceAction.instance"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-EqualsVSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-EqualsVSpaceAction.instance"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-IncreaseVSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-IncreaseVSpaceAction.instance"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-standalone-menu-RemoveVSpaceAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-RemoveVSpaceAction.instance"/>
+                </file>
+            </folder>
+            <file name="com-jaspersoft-ireport-designer-standalone-menu-OrganizeAsTableAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-OrganizeAsTableAction.instance"/>
+                <attr name="position" intvalue="70"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="80"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-designer-standalone-menu-EditPageFormatAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-menu-EditPageFormatAction.instance"/>
+                <attr name="position" intvalue="90"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-designer-standalone-menu-RemoveMarginsAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-actions-RemoveMarginsAction.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+            
+        </folder>
+        <folder name="Preview">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-PDFPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-PDFPreviewAction.instance"/>
+                <attr name="position" intvalue="500"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-HTMLPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-HTMLPreviewAction.instance"/>
+                <attr name="position" intvalue="510"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XHTMLPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XHTMLPreviewAction.instance"/>
+                <attr name="position" intvalue="511"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-LayeredHTMLPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-LayeredHTMLPreviewAction.instance"/>
+                <attr name="position" intvalue="515"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLSPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XLSPreviewAction.instance"/>
+                <attr name="position" intvalue="520"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLS2PreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XLS2PreviewAction.instance"/>
+                <attr name="position" intvalue="522"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLSXPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XLSXPreviewAction.instance"/>
+                <attr name="position" intvalue="523"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XLS3PreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XLS3PreviewAction.instance"/>
+                <attr name="position" intvalue="524"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-RTFPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-RTFPreviewAction.instance"/>
+                <attr name="position" intvalue="530"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-DOCXPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-DOCXPreviewAction.instance"/>
+                <attr name="position" intvalue="535"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-PPTXPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-PPTXPreviewAction.instance"/>
+                <attr name="position" intvalue="537"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-TXTPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-TXTPreviewAction.instance"/>
+                <attr name="position" intvalue="540"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-CSVPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-CSVPreviewAction.instance"/>
+                <attr name="position" intvalue="550"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-ODFPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-ODFPreviewAction.instance"/>
+                <attr name="position" intvalue="552"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-ODSPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-ODSPreviewAction.instance"/>
+                <attr name="position" intvalue="555"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-XMLPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XMLPreviewAction.instance"/>
+                <attr name="position" intvalue="565"/>
+            </file>
+            <file name="com-jaspersoft-ireport-designer-menu-preview-InternalPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-InternalPreviewAction.instance"/>
+                <attr name="position" intvalue="570"/>
+            </file>
+
+        </folder>
+
+        <folder name="BuildProject">
+            <file name="SeparatorCompileSingle.instance">
+                <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                <attr name="position" intvalue="4900"/>
+            </file>
+            <folder name="Report preview">
+                <attr name="position" intvalue="5000"/>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-PDFPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-PDFPreviewAction.instance"/>
+                    <attr name="position" intvalue="500"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-HTMLPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-HTMLPreviewAction.instance"/>
+                    <attr name="position" intvalue="510"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-XHTMLPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XHTMLPreviewAction.instance"/>
+                    <attr name="position" intvalue="510"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-XLSPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XLSPreviewAction.instance"/>
+                    <attr name="position" intvalue="520"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-XLS2PreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XLS2PreviewAction.instance"/>
+                    <attr name="position" intvalue="522"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-XLSXPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XLSXPreviewAction.instance"/>
+                    <attr name="position" intvalue="523"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-RTFPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-RTFPreviewAction.instance"/>
+                    <attr name="position" intvalue="530"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-TXTPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-TXTPreviewAction.instance"/>
+                    <attr name="position" intvalue="540"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-CSVPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-CSVPreviewAction.instance"/>
+                    <attr name="position" intvalue="550"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-ODFPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-ODFPreviewAction.instance"/>
+                    <attr name="position" intvalue="560"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-ODSPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-ODSPreviewAction.instance"/>
+                    <attr name="position" intvalue="560"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-XMLPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-XMLPreviewAction.instance"/>
+                    <attr name="position" intvalue="565"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-preview-InternalPreviewAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-ireport-designer-menu-preview-InternalPreviewAction.instance"/>
+                    <attr name="position" intvalue="570"/>
+                </file>
+            </folder>
+        </folder>
+        <folder name="Edit">
+            <file name="EditWithExternalEditorAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/com-jaspersoft-ireport-designer-menu-EditWithExternalEditorAction.instance"/>
+                    <attr name="position" intvalue="3100"/>
+            </file>
+        </folder>
+        <folder name="View">
+            <folder name="Report Designer">
+                <!-- <attr name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow/Separator2.instance" boolvalue="true"/>
+                <attr name="com-jaspersoft-ireport-designer-menu-OpenQueryDialogAction.shadow/com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow" boolvalue="true"/>
+                -->
+                <attr name="position" intvalue="950"/>
+                <file name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Tools/com-jaspersoft-ireport-designer-menu-DatasourcesAction.instance"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-ShowGridAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/com-jaspersoft-ireport-designer-menu-ShowGridAction.instance"/>
+                </file>
+                <file name="com-jaspersoft-ireport-designer-menu-SnapToGridAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/com-jaspersoft-ireport-designer-menu-SnapToGridAction.instance"/>
+                </file>
+                <file name="ShowPdf508TagsAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/com-jaspersoft-ireport-designer-pdf508-ShowPdf508TagsAction.instance"/>
+                </file>
+                
+            </folder>
+        </folder>
+        <folder name="Tools">
+            <file name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow" url="com-jaspersoft-ireport-designer-menu-DatasourcesAction_1.shadow">
+                <attr name="originalFile" stringvalue="Actions/Data/com-jaspersoft-ireport-designer-menu-DatasourcesAction.instance"/>
+                <attr name="position" intvalue="150"/>
+            </file>
+        </folder>
+        <folder name="Window">
+
+            <file name="GenericInspectorAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-menu-GenericInspectorAction.instance"/>
+                <attr name="position" intvalue="150"/>
+            </file>
+            <folder name="Navigator">
+                <attr name="position" intvalue="1400"/>
+                </folder>
+
+            <folder name="Output">
+                <attr name="position" intvalue="1300"/>
+                </folder>
+            <folder name="Report designer">
+                <file name="ErrorHandlerAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-errorhandler-ErrorHandlerAction.instance"/>
+                </file>
+                <attr name="position" intvalue="1500"/>
+                <file name="FormattingToolsAction.shadow" url="FormattingToolsAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-formatting-FormattingToolsAction.instance"/>
+                    <attr name="position" intvalue="200"/>
+                </file>
+                <file name="IRConsoleAction.shadow" url="IRConsoleAction_1.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-logpane-IRConsoleAction.instance"/>
+                </file>
+                <file name="OutlineAction.shadow" url="OutlineAction_1.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-outline-OutlineAction.instance"/>
+                    <attr name="position" intvalue="100"/>
+                </file>
+                <file name="StylesLibraryAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-styles-StylesLibraryAction.instance"/>
+                    <attr name="position" intvalue="110"/>
+                </file>
+
+
+            </folder>
+
+            <!-- <file name="ResourceBundleAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-resourcebundle-ResourceBundleAction.instance"/>
+            </file> -->
+            <file name="StylesLibraryAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-styles-StylesLibraryAction.instance"/>
+                <attr name="position" intvalue="800"/>
+            </file>
+            <!--file name="ViewRuntimeTabAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/org-netbeans-core-actions-ViewRuntimeTabAction.instance"/>
+                <attr name="position" intvalue="300"/>
+            </file>-->
+
+            <file name="WelcomeAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-welcome-WelcomeAction.instance"/>
+                <attr name="position" intvalue="1100"/>
+            </file>
+        </folder>
+        </folder>
+    <folder name="OptionsDialog">
+        <file name="com-jaspersoft-ireport-designer-options-IReportOptionsCategory.instance"/>
+    </folder>
+    <folder name="Services">
+        <folder name="MIMEResolver">
+            <file name="JRCTXResolver.xml" url="JRCTXResolver.xml">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
+                <attr name="position" intvalue="1"/>
+            </file>
+            <file name="JRTXResolver.xml" url="JRTXResolver.xml">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
+                <attr name="position" intvalue="2"/>
+            </file>
+            <file name="JasperResolver.xml" url="JasperResolver.xml">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
+                <attr name="position" intvalue="3"/>
+            </file>
+            <file name="JrxmlResolver.xml" url="JrxmlResolver.xml">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
+                <attr name="position" intvalue="-100"/>
+            </file>
+            <file name="PaletteItemResolver.xml" url="PaletteItemResolver.xml">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
+                <attr name="position" intvalue="-200"/>
+            </file>
+            <file name="jrxml-expression.xml" url="designer/editor/jrxml-expression.xml">
+                <attr name="position" intvalue="-250"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="Templates">
+        <!-- <file name="JrxmlTemplate.jrxml" url="JrxmlTemplate.jrxml">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+        </file>
+        -->
+        <folder name="Report">
+            <file name="Bundle.properties" url="Bundle_1.properties">
+                <attr name="position" intvalue="500"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+            </file>
+            <file name="Report.jrxml" url="JrxmlTemplate.jrxml">
+               <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/com/jaspersoft/ireport/designer/resources/jasperreports.png"/>
+               <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+               <attr name="instantiatingIterator" newvalue="com.jaspersoft.ireport.designer.wizards.EmptyReportWizardIterator"/>
+                <attr name="template" boolvalue="true"/>
+            </file>
+            <file name="Report2.jrxml" url="JrxmlTemplate_groovy.jrxml">
+               <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/com/jaspersoft/ireport/designer/resources/jasperreports.png"/>
+               <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+               <attr name="instantiatingIterator" newvalue="com.jaspersoft.ireport.designer.wizards.EmptyReportWizardIterator"/>
+                <attr name="template" boolvalue="true"/>
+            </file>
+            <file name="Report">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/com/jaspersoft/ireport/designer/resources/jasperreports.png"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="instantiatingIterator" newvalue="com.jaspersoft.ireport.designer.wizards.NewJrxmlWizardIterator"/>
+                <attr name="template" boolvalue="true"/>
+                <attr name="extension" stringvalue="jrxml"/>
+                <attr name="templateWizardURL" urlvalue="nbresloc:/com/jaspersoft/ireport/designer/wizards/newJrxml.html"/>
+            </file>
+            <file name="StyleTemplate.jrtx" url="JRTXTemplate.jrtx">
+                <attr name="SystemFileSystem.icon" urlvalue="nbresloc:/com/jaspersoft/ireport/designer/resources/jasperreports_jrtx.png"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+            </file>
+            <file name="ChartThemeTemplate.jrctx" url="JRCTXTemplate.jrctx">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <attr name="template" boolvalue="true"/>
+            </file>
+        </folder>
+
+    </folder>
+    <folder name="Toolbars">
+        <folder name="Designer">
+            <!-- <attr name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow/com-jaspersoft-ireport-designer-menu-RunReportAction.shadow" boolvalue="true"/> -->
+            <attr name="position" intvalue="400"/>
+            <file name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Data/com-jaspersoft-ireport-designer-menu-DatasourcesAction.instance"/>
+                <attr name="position" intvalue="0"/>
+            </file>
+            <!-- <file name="com-jaspersoft-ireport-designer-menu-RunReportAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Designer/com-jaspersoft-ireport-designer-menu-RunReportAction.instance"/>
+            </file>
+            -->
+            <file name="com-jaspersoft-ireport-designer-menu-SelectDatasourceAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Designer/com-jaspersoft-ireport-designer-menu-SelectDatasourceAction.instance"/>
+                <attr name="position" intvalue="100"/>
+            </file>
+        </folder>
+
+    </folder>
+    <!-- Panel moved as top component....
+    <folder name="Navigator">
+        <folder name="Panels">
+            <folder name="my-jasper-designer-mimetype">
+                <file name="com-jaspersoft-ireport-designer-outline-OutlineNavigatorPanel.instance"/>
+            </folder>
+        </folder>
+    </folder>
+    -->
+
+    <folder name="Editors">
+        <folder name="text">
+            <folder name="jrxml-expression">
+                <file name="language.nbs" url="designer/editor/jrxml-expression.nbs"/>
+            </folder>
+            <folder name="x-jrxml+xml">
+                <file name="PaletteFactory.instance">
+                    <attr name="instanceClass" stringvalue="org.netbeans.spi.palette.PaletteController"/>
+                    <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.designer.palette.PaletteUtils.createPalette"/>
+                </file>
+            </folder>
+        </folder>
+    </folder>
+
+     <folder name="UI">
+        <folder name="Services">
+            <folder name="IDEConfiguration">
+                <folder name="ServerAndExternalToolSettings"/>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="ireport">
+        <folder name="palette">
+            <folder name="ReportElements">
+                <attr name="isExpanded" boolvalue="true"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <file name="line.irpitem" url="designer/palette/items/line.irpitem"/>
+                <file name="ellipse.irpitem" url="designer/palette/items/ellipse.irpitem"/>
+                <file name="rectangle.irpitem" url="designer/palette/items/rectangle.irpitem"/>
+                <file name="image.irpitem" url="designer/palette/items/image.irpitem"/>
+                <file name="statictext.irpitem" url="designer/palette/items/statictext.irpitem"/>
+                <file name="textfield.irpitem" url="designer/palette/items/textfield.irpitem"/>
+                <file name="chart.irpitem" url="designer/palette/items/chart.irpitem"/>
+                <file name="subreport.irpitem" url="designer/palette/items/subreport.irpitem"/>
+                <file name="frame.irpitem" url="designer/palette/items/frame.irpitem"/>
+                <file name="crosstab.irpitem" url="designer/palette/items/crosstab.irpitem"/>
+                <file name="break.irpitem" url="designer/palette/items/break.irpitem"/>
+                <file name="roundRectangle.irpitem" url="designer/palette/items/roundRectangle.irpitem"/>
+            </folder>
+            <folder name="Tools">
+                <attr name="isExpanded" boolvalue="true"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                <file name="PageNumber.irpitem" url="designer/palette/actions/tools/PageNumber.irpitem"/>
+                <file name="TotalPageNumber.irpitem" url="designer/palette/actions/tools/TotalPageNumber.irpitem"/>
+                <file name="PageXOfY.irpitem" url="designer/palette/actions/tools/PageXOfY.irpitem"/>
+                <file name="Date.irpitem" url="designer/palette/actions/tools/Date.irpitem"/>
+                <file name="Percentage.irpitem" url="designer/palette/actions/tools/Percentage.irpitem"/>
+            </folder>
+       </folder>
+       <file name="style_library.jrtx" url="style_library.jrtx"/>
+        <folder name="templates">
+           <folder name="columnar">
+               <file name="Classic" url="designer/templates/classicC.jrxml"/>
+               <file name="Classic.preview" url="designer/templates/classicC.gif"/>
+           </folder>
+           <folder name="tabular">
+               <file name="Classic" url="designer/templates/classicT.jrxml"/>
+               <file name="Classic.preview" url="designer/templates/classicT.gif"/>
+           </folder>
+       </folder>
+       <folder name="decorators">
+            <folder name="elements">
+               <file name="com-jaspersoft-ireport-designer-pdf508-Pdf508TagDecorator"/>
+               <file name="com-jaspersoft-ireport-designer-utils-PositionErrorDecorator"/>
+
+
+            </folder>
+       </folder>
+       <folder name="export_options">
+            <file name="com-jaspersoft-ireport-designer-options-export-CommonExportParametersPanel.instance"><attr name="position" intvalue="10"/></file>
+            <file name="com-jaspersoft-ireport-designer-options-export-PdfExportParametersPanel.instance"><attr name="position" intvalue="20"/></file>
+            <file name="com-jaspersoft-ireport-designer-options-export-HtmlExportParametersPanel.instance"><attr name="position" intvalue="30"/></file>
+            <file name="com-jaspersoft-ireport-designer-options-export-XlsExportParametersPanel.instance"><attr name="position" intvalue="40"/></file>
+            <file name="com-jaspersoft-ireport-designer-options-export-CSVExportParametersPanel.instance"><attr name="position" intvalue="50"/></file>
+            <file name="com-jaspersoft-ireport-designer-options-export-TextExportParametersPanel.instance"><attr name="position" intvalue="60"/></file>
+       </folder>
+       <folder name="components">
+            <!-- <folder name="nodes">
+               <file name="jcharts-AxisChartComponent">
+                   <attr name="elementFactory" stringvalue="com.jaspersoft.ireport.examples.customcomponent.VirtualComponentElementFactory"/>
+               </file>
+            </folder>-->
+            <folder name="designers">
+               <file name="CrosstabDesigner.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.designer.crosstab.CrosstabDesignerPanelFactory"/>
+               </file>
+            </folder>
+       </folder>
+     </folder>
+
+    <folder name="Windows2">
+        <folder name="Components">
+            <file name="CrosstabDebugConsoleTopComponent.settings" url="CrosstabDebugConsoleTopComponentSettings.xml"/>
+            <file name="ErrorHandlerTopComponent.settings" url="ErrorHandlerTopComponentSettings.xml"/>
+            <file name="FormattingToolsTopComponent.settings" url="FormattingToolsTopComponentSettings.xml"/>
+            <file name="IRConsoleTopComponent.settings" url="IRConsoleTopComponentSettings.xml"/>
+            <file name="GenericInspectorTopComponent.settings" url="GenericInspectorTopComponentSettings.xml"/>
+            <file name="OutlineTopComponent.settings" url="OutlineTopComponentSettings.xml"/>
+            <file name="ResourceBundleTopComponent.settings" url="ResourceBundleTopComponentSettings.xml"/>
+            <file name="StylesLibraryTopComponent.settings" url="StylesLibraryTopComponentSettings.xml"/>
+            <file name="WelcomeTopComponent.settings" url="WelcomeTopComponentSettings.xml"/>
+        </folder>
+        <folder name="Groups">
+            <file name="ireport.wsgrp" url="ireport.wsgrp"/>
+            <folder name="ireport">
+                <file name="CommonPalette.wstcgrp" url="group/CommonPalette.wstcgrp"/>
+                <file name="properties.wstcgrp" url="group/properties.wstcgrp"/>
+                <file name="OutlineTopComponent.wstcgrp" url="group/OutlineTopComponent.wstcgrp"/>
+            </folder>
+            <file name="ireport_jrctx.wsgrp" url="ireport_jrctx.wsgrp"/>
+            <folder name="ireport_jrctx">
+                <file name="properties.wstcgrp" url="group/properties.wstcgrp"/>
+                <file name="GenericInspectorTopComponent.wstcgrp" url="group/GenericInspectorTopComponent.wstcgrp"/>
+            </folder>
+        </folder>
+        <folder name="Modes">
+            <folder name="editor">
+                <file name="WelcomeTopComponent.wstcref" url="WelcomeTopComponentWstcref.xml"/>
+            </folder>
+            <folder name="commonpalette">
+                <file name="CrosstabDebugConsoleTopComponent.wstcref" url="CrosstabDebugConsoleTopComponentWstcref.xml">
+                    <attr name="position" intvalue="703"/>
+                </file>
+                <file name="FormattingToolsTopComponent.wstcref" url="FormattingToolsTopComponentWstcref.xml">
+                    <attr name="position" intvalue="300"/>
+                </file>
+            </folder>
+            <folder name="explorer">
+                <file name="GenericInspectorTopComponent.wstcref" url="GenericInspectorTopComponentWstcref.xml">
+                    <attr name="position" intvalue="1"/>
+                </file>
+                <file name="OutlineTopComponent.wstcref" url="OutlineTopComponentWstcref.xml">
+                    <attr name="position" intvalue="2"/>
+                </file>
+            </folder>
+            <folder name="leftSlidingSide">
+                <file name="ResourceBundleTopComponent.wstcref" url="ResourceBundleTopComponentWstcref.xml"/>
+            </folder>
+            <folder name="output">
+                <file name="ErrorHandlerTopComponent.wstcref" url="ErrorHandlerTopComponentWstcref.xml">
+                    <attr name="position" intvalue="0"/>
+                </file>
+                <file name="IRConsoleTopComponent.wstcref" url="IRConsoleTopComponentWstcref.xml">
+                    <attr name="position" intvalue="100"/>
+                </file>
+            </folder>
+            <folder name="properties">
+                <file name="StylesLibraryTopComponent.wstcref" url="StylesLibraryTopComponentWstcref.xml"/>
+            </folder>
+        </folder>
+    </folder>
+    <folder name="org-netbeans-api-project-libraries">
+        <folder name="Libraries">
+            <file name="JasperReports.xml" url="JasperReports.xml"/>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,6 @@
+id=line
+name=Line_Name
+tooltip=Line_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/line-16.png
+icon32=com/jaspersoft/ireport/designer/resources/line-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.CreateLineAction

@@ -1,0 +1,6 @@
+id=rectangle
+name=Rectangle_Name
+tooltip=Rectangle_Tooltip
+icon16=com/jaspersoft/ireport/designer/resources/rectangle-16.png
+icon32=com/jaspersoft/ireport/designer/resources/rectangle-32.png
+action=com.jaspersoft.ireport.designer.palette.actions.CreateRectangleAction
