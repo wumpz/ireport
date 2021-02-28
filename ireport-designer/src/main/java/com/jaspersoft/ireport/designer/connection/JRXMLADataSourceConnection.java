@@ -38,7 +38,7 @@ import javax.swing.JOptionPane;
 import javax.xml.soap.MessageFactory;
 import javax.xml.soap.SOAPConnectionFactory;
 import javax.xml.soap.SOAPException;
-import net.sf.jasperreports.engine.query.JRXmlaQueryExecuterFactory;
+import net.sf.jasperreports.olap.xmla.JRXmlaQueryExecuterFactory;
 
 /**   
  * @authors MPenningroth, HMays.

@@ -28,6 +28,7 @@ import com.jaspersoft.ireport.designer.IReportManager;
 import com.jaspersoft.ireport.designer.ReportClassLoader;
 import com.jaspersoft.ireport.designer.utils.Misc;
 import com.jaspersoft.ireport.locale.I18n;
+import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -45,7 +46,6 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import net.sf.jasperreports.engine.util.JRFontUtil;
-import org.apache.xerces.parsers.DOMParser;
 import org.openide.filesystems.FileUtil;
 import org.w3c.dom.*;
 

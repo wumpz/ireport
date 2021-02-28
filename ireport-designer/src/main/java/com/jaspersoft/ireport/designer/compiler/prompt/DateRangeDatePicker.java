@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
@@ -38,11 +37,10 @@ import javax.swing.border.LineBorder;
 import javax.swing.text.DefaultFormatterFactory;
 import net.sf.jasperreports.types.date.DateRangeBuilder;
 import org.jdesktop.swingx.JXDatePicker;
-import org.jdesktop.swingx.JXDatePickerFormatter;
+import org.jdesktop.swingx.JXMonthView;
 import org.jdesktop.swingx.JXHyperlink;
 import org.jdesktop.swingx.JXPanel;
 import org.jdesktop.swingx.calendar.DateSpan;
-import org.jdesktop.swingx.calendar.JXMonthView;
 
 /**
  *
@@ -139,7 +137,7 @@ public class DateRangeDatePicker extends JComponent {
         _monthView = new JXMonthView();
         _monthView.setTraversable(true);
 
-        _dateField = new JFormattedTextField(new JXDatePickerFormatter());
+        //_dateField = new JFormattedTextField(new JXDatePickerFormatter());
         _dateField.setName("dateField");
         _dateField.setBorder(null);
         
@@ -269,9 +267,9 @@ public class DateRangeDatePicker extends JComponent {
         AbstractFormatterFactory factory = _dateField.getFormatterFactory();
         if (factory != null) {
             AbstractFormatter formatter = factory.getFormatter(_dateField);
-            if (formatter instanceof JXDatePickerFormatter) {
-                return ((JXDatePickerFormatter)formatter).getFormats();
-            }
+            //if (formatter instanceof JXDatePickerFormatter) {
+//                return ((JXDatePickerFormatter)formatter).getFormats();
+//            }
         }
         return null;
     }
@@ -623,9 +621,10 @@ public class DateRangeDatePicker extends JComponent {
                     DateSpan span =
                             new DateSpan((java.util.Date)getFieldDate(),
                                     (java.util.Date)getFieldDate());
-                    _monthView.setSelectedDateSpan(span);
+                    //_monthView.setSelectedDateSpan(span);
+                    _monthView.setSelectionInterval(span.getStartAsDate(), span.getEndAsDate());
                     _monthView.ensureDateVisible(
-                            ((Date)getFieldDate()).getTime());
+                            ((Date)getFieldDate()));
                     _popup.show(DateRangeDatePicker.this,
                             0, DateRangeDatePicker.this.getHeight());
                 
@@ -681,7 +680,7 @@ public class DateRangeDatePicker extends JComponent {
         public void actionPerformed(ActionEvent ev) {
             String command = ev.getActionCommand();
             if (_monthView.COMMIT_KEY.equals(command)) {
-                _dateField.setValue(_monthView.getSelectedDate());
+                _dateField.setValue(_monthView.getSelectionDate());
                 _popup.setVisible(false);
                 fireActionPerformed();
             }
@@ -716,7 +715,7 @@ public class DateRangeDatePicker extends JComponent {
             
             public void actionPerformed(ActionEvent ae) {
                 DateSpan span = new DateSpan(_linkDate, _linkDate);
-                _monthView.ensureDateVisible(span.getStart());
+                _monthView.ensureDateVisible(span.getStartAsDate());
             }
         }
     }        

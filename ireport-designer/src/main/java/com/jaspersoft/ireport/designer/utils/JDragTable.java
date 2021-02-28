@@ -24,9 +24,9 @@
 package com.jaspersoft.ireport.designer.utils;
 import com.jaspersoft.ireport.designer.dnd.TransferableObject;
 import java.awt.dnd.*;
-import java.awt.datatransfer.*;
-import org.jdesktop.swingx.decorator.SortController;
-import org.jdesktop.swingx.decorator.SortOrder;
+import javax.swing.SortOrder;
+import org.jdesktop.swingx.sort.SortController;
+
 import org.jdesktop.swingx.table.TableColumnExt;
 
 /**

@@ -31,13 +31,14 @@ import javax.swing.table.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import com.jaspersoft.ireport.designer.utils.Misc;
+import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import java.awt.Dialog;
 import java.awt.Frame;
 import java.awt.Window;
 
 import java.util.*;
 
-import org.apache.xerces.parsers.DOMParser;
+
 import org.w3c.dom.*;
 
 /**

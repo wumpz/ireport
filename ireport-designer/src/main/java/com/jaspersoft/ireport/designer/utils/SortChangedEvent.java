@@ -23,7 +23,8 @@
  */
 package com.jaspersoft.ireport.designer.utils;
 
-import org.jdesktop.swingx.decorator.SortOrder;
+import javax.swing.SortOrder;
+
 
 /**
  *
