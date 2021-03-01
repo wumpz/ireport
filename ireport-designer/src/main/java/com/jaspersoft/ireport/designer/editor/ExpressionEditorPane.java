@@ -42,44 +42,50 @@ public class ExpressionEditorPane extends javax.swing.JEditorPane {
 
     private ExpressionContext expressionContext = null;
 
-    public ExpressionEditorPane()
-    {
+    public ExpressionEditorPane() {
         this(null);
     }
 
-    public void removeHyperlinkEditorKitListeners()
-    {
+    public void removeHyperlinkEditorKitListeners() {
         KeyListener[] hls = this.getListeners(KeyListener.class);
-        for (int i=0; i<hls.length; ++i)
-        {
-            if (hls[i].getClass().getName().equals("org.netbeans.modules.languages.features.HyperlinkListener"))
-            {
+        for (int i = 0; i < hls.length; ++i) {
+            if (hls[i].getClass().getName().equals(NETBEANS_HYPERLINKLISTENER_CLASS)) {
 
                 this.removeKeyListener(hls[i]);
             }
         }
 
         MouseMotionListener[] hls1 = this.getListeners(MouseMotionListener.class);
-        for (int i=0; i<hls1.length; ++i)
-        {
-            if (hls1[i].getClass().getName().equals("org.netbeans.modules.languages.features.HyperlinkListener")) this.removeMouseMotionListener(hls1[i]);
+        for (int i = 0; i < hls1.length; ++i) {
+            if (hls1[i].getClass().getName().equals(NETBEANS_HYPERLINKLISTENER_CLASS)) {
+                this.removeMouseMotionListener(hls1[i]);
+            }
         }
 
         MouseListener[] hls2 = this.getListeners(MouseListener.class);
-        for (int i=0; i<hls2.length; ++i)
-        {
-            if (hls2[i].getClass().getName().equals("org.netbeans.modules.languages.features.HyperlinkListener")) this.removeMouseListener(hls2[i]);
+        for (int i = 0; i < hls2.length; ++i) {
+            if (hls2[i].getClass().getName().equals(NETBEANS_HYPERLINKLISTENER_CLASS)) {
+                this.removeMouseListener(hls2[i]);
+            }
         }
 
     }
 
-    public ExpressionEditorPane(ExpressionContext context)
-    {
+    /**
+     * using this nbm plugin is not able to detect useage of private class names anymore.
+     */
+    private static String NETBEANS_HYPERLINKLISTENER_CLASS;
+
+    static {
+        NETBEANS_HYPERLINKLISTENER_CLASS = "org.netbeans.modules";
+        NETBEANS_HYPERLINKLISTENER_CLASS += ".languages.features.HyperlinkListener";
+    }
+
+    public ExpressionEditorPane(ExpressionContext context) {
         super();
         this.expressionContext = context;
 
-        if (IReportManager.getPreferences().getBoolean("useSyntaxHighlighting", true))
-        {
+        if (IReportManager.getPreferences().getBoolean("useSyntaxHighlighting", true)) {
             EditorKit kit = CloneableEditorSupport.getEditorKit("text/jrxml-expression");
             setEditorKit(kit);
         }
@@ -89,7 +95,6 @@ public class ExpressionEditorPane extends javax.swing.JEditorPane {
 
         // List all listeners...
         removeHyperlinkEditorKitListeners();
-
 
         addFocusListener(new FocusListener() {
 
@@ -102,7 +107,7 @@ public class ExpressionEditorPane extends javax.swing.JEditorPane {
             }
         });
     }
-    
+
     public ExpressionContext getExpressionContext() {
         return expressionContext;
     }

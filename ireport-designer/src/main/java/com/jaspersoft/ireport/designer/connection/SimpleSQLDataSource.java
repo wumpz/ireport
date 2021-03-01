@@ -27,6 +27,8 @@ import com.jaspersoft.ireport.designer.IReportConnection;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 /**
  *
@@ -90,4 +92,10 @@ public class SimpleSQLDataSource implements javax.sql.DataSource {
         this.iRConnection = iRConnection;
     }
 
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        return LOG;
+    }
+    
+    private static final Logger LOG = Logger.getLogger(SimpleSQLDataSource.class.getName());
 }

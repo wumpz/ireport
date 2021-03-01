@@ -238,9 +238,9 @@ public class JRXMLADataSourceConnection extends IReportConnection
 
         setAxisSOAPClientConfig();
 
-        map.put(JRXmlaQueryExecuterFactory.PARAM_XMLA_URL, getUrl());
-        map.put(JRXmlaQueryExecuterFactory.PARAM_XMLA_DS, getDatasource());
-        map.put(JRXmlaQueryExecuterFactory.PARAM_XMLA_CAT, getCatalog());
+//        map.put(JRXmlaQueryExecuterFactory.PARAM_XMLA_URL, getUrl());
+//        map.put(JRXmlaQueryExecuterFactory.PARAM_XMLA_DS, getDatasource());
+//        map.put(JRXmlaQueryExecuterFactory.PARAM_XMLA_CAT, getCatalog());
         
         
         
