@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+OpenIDE-Module-Install: com/jaspersoft/ireport/designer/standalone/Installer.class
+OpenIDE-Module-Layer: com/jaspersoft/ireport/designer/standalone/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/jaspersoft/ireport/designer/standalone/Bundle.properties
+

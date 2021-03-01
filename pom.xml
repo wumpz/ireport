@@ -46,6 +46,8 @@
         <module>branding</module>
         <module>application</module>
         <module>ireport-designer</module>
+        <module>ireport-standalone-specific</module>
+        <module>jasperserver-plugin</module>
     </modules>
 
     <properties>

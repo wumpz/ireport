@@ -28,7 +28,7 @@ import com.jaspersoft.ireport.designer.IReportManager;
 import com.jaspersoft.ireport.designer.ReportClassLoader;
 import com.jaspersoft.ireport.designer.utils.Misc;
 import com.jaspersoft.ireport.locale.I18n;
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
+import org.apache.xerces.parsers.DOMParser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
