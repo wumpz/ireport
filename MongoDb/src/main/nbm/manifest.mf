@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.jaspersoft.ireport.mongodb
+OpenIDE-Module-Localizing-Bundle: com/jaspersoft/ireport/mongodb/Bundle.properties
+OpenIDE-Module-Install: com/jaspersoft/ireport/mongodb/Installer.class
+OpenIDE-Module-Layer: com/jaspersoft/ireport/mongodb/layer.xml
+OpenIDE-Module-Specification-Version: 0.9.3

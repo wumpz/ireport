@@ -1,0 +1,6 @@
+id=callout
+name=callout_Name
+tooltip=callout_Tooltip
+icon16=com/jaspersoft/ireport/addons/callouts/callout-16.png
+icon32=com/jaspersoft/ireport/addons/callouts/callout-32.png
+action=com.jaspersoft.ireport.addons.callouts.CreateCalloutAction

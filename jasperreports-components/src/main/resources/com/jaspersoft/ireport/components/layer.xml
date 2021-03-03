@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+
+    <folder name="Actions">
+        <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.core.Bundle"/>
+        <folder name="Designer">
+            <folder name="Table">
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnAfterAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnBeforeAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnStartAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnEndAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnGroupAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-DeleteTableCellAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-DeleteTableColumnAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-TableCellDoVerticalLayoutAction.instance"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-TableCellDoHorizontalLayoutAction.instance"/>
+            </folder>
+        </folder>
+    </folder>
+
+
+
+    <folder name="ireport">
+        <folder name="tablecomponent">
+            <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.components.table.Bundle"/>
+                <attr name="position" intvalue="10"/>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnAfterAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-AddTableColumnAfterAction.instance"/>
+                    <attr name="position" intvalue="10"/>
+                </file>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnBeforeAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-AddTableColumnBeforeAction.instance"/>
+                    <attr name="position" intvalue="20"/>
+                </file>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnStartAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-AddTableColumnStartAction.instance"/>
+                    <attr name="position" intvalue="30"/>
+                </file>
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnEndAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-AddTableColumnEndAction.instance"/>
+                    <attr name="position" intvalue="40"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-components-table-actions-separatorAfter.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="50"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-components-table-actions-AddTableColumnBeforeAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-AddTableColumnGroupAction.instance"/>
+                    <attr name="position" intvalue="60"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-components-table-actions-separatorAfter2.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="70"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-components-table-actions-DeleteTableCellAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-DeleteTableCellAction.instance"/>
+                    <attr name="position" intvalue="80"/>
+                </file>
+                <file name="com-jaspersoft-ireport-components-table-actions-DeleteTableColumnAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-DeleteTableColumnAction.instance"/>
+                    <attr name="position" intvalue="90"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-components-table-actions-separatorAfter3.instance">
+                    <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                    <attr name="position" intvalue="100"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-components-table-actions-TableCellDoVerticalLayoutAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-TableCellDoVerticalLayoutAction.instance"/>
+                    <attr name="position" intvalue="110"/>
+                </file>
+                <file name="com-jaspersoft-ireport-components-table-actions-TableCellDoHorizontalLayoutAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Designer/Table/com-jaspersoft-ireport-components-table-actions-TableCellDoHorizontalLayoutAction.instance"/>
+                    <attr name="position" intvalue="120"/>
+                </file>
+
+
+        </folder>
+
+        <folder name="palette">
+            <folder name="ReportElements">
+                 <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.locale.Bundle"/>
+                 <file name="JRList.irpitem" url="list/jrlist.irpitem"/>
+                 <file name="JRBarcode.irpitem" url="barcode/jrbarcode.irpitem"/>
+                 <file name="JRTable.irpitem" url="table/jrtable.irpitem"/>
+                 <file name="JRGenericElement.irpitem" url="genericelement/jrgenericelement.irpitem"/>
+                 <file name="JRSpiderChart.irpitem" url="spiderchart/jrspiderchart.irpitem"/>
+                 <file name="JRMap.irpitem" url="map/jrmap.irpitem"/>
+                 <file name="JRHtml.irpitem" url="html/jrhtml.irpitem"/>
+                 <file name="JRSort.irpitem" url="sort/jrsort.irpitem"/>
+            </folder>
+            <folder name="Web Framework">
+                 <file name="JRSort.irpitem" url="sort/jrsort.irpitem"/>
+            </folder>
+        </folder>
+
+       <!--
+       <folder name="decorators">
+            <folder name="elements">
+               <file name="com-jaspersoft-ireport-designer-pdf508-Pdf508TagDecorator"/>
+            </folder>
+       </folder> -->
+       <folder name="components">
+            <folder name="nodes">
+               <file name="net-sf-jasperreports-components-list-StandardListComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.list.ListElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barbecue-StandardBarbecueComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barbecue.BarbecueElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-CodabarComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-Code128Component.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-EAN128Component.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-DataMatrixComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-RoyalMailCustomerComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-USPSIntelligentMailComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-Code39Component.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-Interleaved2Of5Component.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-UPCAComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-UPCEComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-EAN13Component.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-EAN8Component.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-POSTNETComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-barcode4j-PDF417Component.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.barcode.barcode4j.Barcode4JElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-table-StandardTable.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.table.TableElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-spiderchart-SpiderChartComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.spiderchart.SpiderChartElementNodeFactory"/>
+               </file>
+                <file name="net-sf-jasperreports-components-map-StandardMapComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.map.MapElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-html-HtmlComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.html.HtmlElementNodeFactory"/>
+               </file>
+               <file name="net-sf-jasperreports-components-sort-SortComponent.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.sort.SortElementNodeFactory"/>
+               </file>
+            </folder>
+            <folder name="designers">
+                <file name="TableDesigner.instance">
+                   <attr name="instanceClass" stringvalue="com.jaspersoft.ireport.components.table.TableComponentDesignerPanelFactory"/>
+               </file>
+            </folder>
+       </folder>
+     </folder>
+
+
+</filesystem>

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.jaspersoft.ireport.heartbeat
+OpenIDE-Module-Install: com/jaspersoft/ireport/heartbeat/Installer.class
+OpenIDE-Module-Layer: com/jaspersoft/ireport/heartbeat/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/jaspersoft/ireport/heartbeat/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

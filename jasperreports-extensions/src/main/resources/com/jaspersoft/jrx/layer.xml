@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.1//EN" "http://www.netbeans.org/dtds/filesystem-1_1.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Report_preview">
+            <file name="com-jaspersoft-jrx-IReportTextPreviewAction.instance"/>
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Preview">
+            <file name="com-jaspersoft-jrx-IReportTextPreviewAction.shadow">
+                <attr name="originalFile" stringvalue="Actions/Report_preview/com-jaspersoft-jrx-IReportTextPreviewAction.instance"/>
+                <attr name="position" intvalue="545"/>
+            </file>
+        </folder>
+    </folder>
+    <folder name="ireport">
+        <folder name="export_options">
+            <file name="com-jaspersoft-jrx-TextExportParametersPanel.instance">
+                <attr name="position" intvalue="70"/>
+            </file>
+        </folder>
+    </folder>
+</filesystem>

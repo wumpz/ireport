@@ -1,0 +1,6 @@
+id=jrtable
+name=Table
+tooltip=Table_component
+icon16=com/jaspersoft/ireport/components/table/table-16.png
+icon32=com/jaspersoft/ireport/components/table/table-32.png
+action=com.jaspersoft.ireport.components.table.CreateTableAction

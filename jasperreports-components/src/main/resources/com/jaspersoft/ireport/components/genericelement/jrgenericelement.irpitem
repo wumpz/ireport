@@ -1,0 +1,6 @@
+id=jrgenericelement
+name=GenericElement
+tooltip=GenericElement_component
+icon16=com/jaspersoft/ireport/components/genericelement/genericelement-16.png
+icon32=com/jaspersoft/ireport/components/genericelement/genericelement-32.png
+action=com.jaspersoft.ireport.components.genericelement.CreateGenericElementAction

@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.jaspersoft.jrx
+OpenIDE-Module-Install: com/jaspersoft/jrx/Installer.class
+OpenIDE-Module-Layer: com/jaspersoft/jrx/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/jaspersoft/jrx/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0
+

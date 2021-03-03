@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE filesystem PUBLIC "-//NetBeans//DTD Filesystem 1.2//EN" "http://www.netbeans.org/dtds/filesystem-1_2.dtd">
+<filesystem>
+    <folder name="Actions">
+        <folder name="Help">
+
+            <file name="com-jaspersoft-ireport-samples-db-RunSampleDatabaseAction.instance">
+                <attr name="delegate" newvalue="com.jaspersoft.ireport.samples.db.RunSampleDatabaseAction"/>
+                <attr name="displayName" bundlevalue="com.jaspersoft.ireport.samples.db.Bundle#CTL_RunSampleDatabaseAction"/>
+                <attr name="instanceCreate" methodvalue="org.openide.awt.Actions.alwaysEnabled"/>
+                <attr name="noIconInMenu" boolvalue="false"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-BasicReport.instance">
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Basic_report"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-Elements.instance">
+                <attr name="instanceClass" newvalue="com.jaspersoft.ireport.samples.OpenSampleAction"/>
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Elements"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-ParametersAndVariables.instance">
+                <attr name="instanceClass" newvalue="com.jaspersoft.ireport.samples.OpenSampleAction"/>
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Parameters_and_Variables"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-Groups.instance">
+                <attr name="instanceClass" newvalue="com.jaspersoft.ireport.samples.OpenSampleAction"/>
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Groups"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-Fonts.instance">
+                <attr name="instanceClass" newvalue="com.jaspersoft.ireport.samples.OpenSampleAction"/>
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Fonts"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-Charts.instance">
+                <attr name="instanceClass" newvalue="com.jaspersoft.ireport.samples.OpenSampleAction"/>
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Charts"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-Subreports.instance">
+                <attr name="instanceClass" newvalue="com.jaspersoft.ireport.samples.OpenSampleAction"/>
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Subreports"/>
+            </file>
+
+            <file name="com-jaspersoft-ireport-samples-Crosstabs.instance">
+                <attr name="instanceClass" newvalue="com.jaspersoft.ireport.samples.OpenSampleAction"/>
+                <attr name="instanceCreate" methodvalue="com.jaspersoft.ireport.samples.OpenSampleAction.createAction"/>
+                <attr name="key" stringvalue="Crosstabs"/>
+            </file>
+
+        </folder>
+    </folder>
+    <folder name="Menu">
+        <folder name="Help">
+            <folder name="Samples">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.samples.Bundle"/>
+                <attr name="position" intvalue="175"/>
+                <file name="com-jaspersoft-ireport-samples-db-RunSampleDatabaseAction.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-db-RunSampleDatabaseAction.instance"/>
+                    <attr name="position" intvalue="5"/>
+                </file>
+
+                <file name="sep-1.instance">
+                        <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
+                        <attr name="position" intvalue="10"/>
+                    </file>
+
+                <file name="com-jaspersoft-ireport-samples-BasicReport.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-BasicReport.instance"/>
+                    <attr name="position" intvalue="20"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-samples-Elements.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-Elements.instance"/>
+                    <attr name="position" intvalue="30"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-samples-ParametersAndVariables.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-ParametersAndVariables.instance"/>
+                    <attr name="position" intvalue="40"/>
+                </file>
+                
+                <file name="com-jaspersoft-ireport-samples-Groups.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-Groups.instance"/>
+                    <attr name="position" intvalue="50"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-samples-Fonts.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-Fonts.instance"/>
+                    <attr name="position" intvalue="60"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-samples-Charts.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-Charts.instance"/>
+                    <attr name="position" intvalue="70"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-samples-Subreports.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-Subreports.instance"/>
+                    <attr name="position" intvalue="80"/>
+                </file>
+
+                <file name="com-jaspersoft-ireport-samples-Crosstabs.shadow">
+                    <attr name="originalFile" stringvalue="Actions/Help/com-jaspersoft-ireport-samples-Crosstabs.instance"/>
+                    <attr name="position" intvalue="90"/>
+                </file>
+
+
+            </folder>
+        </folder>
+    </folder>
+</filesystem>

@@ -1,0 +1,6 @@
+id=jrlist
+name=List
+tooltip=List_component
+icon16=com/jaspersoft/ireport/components/list/list-16.png
+icon32=com/jaspersoft/ireport/components/list/list-32.png
+action=com.jaspersoft.ireport.components.list.CreateListAction

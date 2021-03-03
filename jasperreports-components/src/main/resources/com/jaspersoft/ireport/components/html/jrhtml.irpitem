@@ -1,0 +1,6 @@
+id=html
+name=html
+tooltip=html_component
+icon16=com/jaspersoft/ireport/components/html/html-16.png
+icon32=com/jaspersoft/ireport/components/html/html-32.png
+action=com.jaspersoft.ireport.components.html.CreateHtmlAction

@@ -49,6 +49,12 @@
         <module>ireport-standalone-specific</module>
         <module>jasperserver-plugin</module>
         <module>HadoopHive</module>
+        <module>heartbeat</module>
+        <module>ireport-addons</module>
+        <module>ireport-samples</module>
+        <module>jasperreports-components</module>
+        <module>jasperreports-extensions</module>
+        <module>MongoDb</module>
     </modules>
 
     <properties>

@@ -1,0 +1,6 @@
+id=jrspiderchart
+name=SpiderChart
+tooltip=SpiderChart_component
+icon16=com/jaspersoft/ireport/components/spiderchart/spiderchart-16.png
+icon32=com/jaspersoft/ireport/components/spiderchart/spiderchart-32.png
+action=com.jaspersoft.ireport.components.spiderchart.CreateSpiderChartAction
