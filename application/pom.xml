@@ -65,6 +65,11 @@
             <artifactId>org-netbeans-modules-editor-actions</artifactId>
             <version>RELEASE122</version>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ireport-branding</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
