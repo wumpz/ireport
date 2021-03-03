@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+OpenIDE-Module: com.jaspersoft.ireport.hadoop.hive
+OpenIDE-Module-Install: com/jaspersoft/ireport/hadoop/hive/Installer.class
+OpenIDE-Module-Layer: com/jaspersoft/ireport/hadoop/hive/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/jaspersoft/ireport/hadoop/hive/Bundle.properties
+OpenIDE-Module-Specification-Version: 1.0.4
+

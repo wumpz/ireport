@@ -61,8 +61,8 @@ import com.jaspersoft.jasperserver.api.metadata.xml.domain.impl.Request;
 import com.jaspersoft.jasperserver.api.metadata.xml.domain.impl.ResourceDescriptor;
 import com.jaspersoft.jasperserver.ws.xml.Marshaller;
 import com.jaspersoft.jasperserver.ws.xml.Unmarshaller;
-import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 import java.io.FileInputStream;
+import org.apache.xerces.parsers.DOMParser;
 
 
 

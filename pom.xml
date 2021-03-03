@@ -48,6 +48,7 @@
         <module>ireport-designer</module>
         <module>ireport-standalone-specific</module>
         <module>jasperserver-plugin</module>
+        <module>HadoopHive</module>
     </modules>
 
     <properties>
