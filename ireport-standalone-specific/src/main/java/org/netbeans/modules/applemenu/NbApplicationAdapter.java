@@ -41,7 +41,6 @@
  * Version 2 license, then the option applies only if the new code is
  * made subject to such option by the copyright holder.
  */
-
 package org.netbeans.modules.applemenu;
 
 import com.apple.eawt.*;
@@ -73,16 +72,16 @@ import org.openide.util.lookup.Lookups;
 //import org.openide.windows.WindowSystemEvent;
 //import org.openide.windows.WindowSystemListener;
 
-/** Adapter class which intercepts action events and passes them to the
- * correct action instance as defined in the system filesystem.
+/**
+ * Adapter class which intercepts action events and passes them to the correct
+ * action instance as defined in the system filesystem.
  *
- * @author  Tim Boudreau
+ * @author Tim Boudreau
  */
-
 class NbApplicationAdapter implements ApplicationListener {
-    
+
     private static ApplicationListener al = null;
-    
+
     private NbApplicationAdapter() {
     }
 
@@ -90,9 +89,9 @@ class NbApplicationAdapter implements ApplicationListener {
         //Thanks to Scott Kovatch from Apple for this fix - enabling the preferences menu
         //requires that Beans.isDesignTime() be false
         boolean wasDesignTime = Beans.isDesignTime();
-        
+
         try {
-            Beans.setDesignTime (false);
+            Beans.setDesignTime(false);
 
             al = new NbApplicationAdapter();
             Application.getApplication().addApplicationListener(al);
@@ -130,7 +129,7 @@ class NbApplicationAdapter implements ApplicationListener {
             public void afterSave(WindowSystemEvent event) {
             }
         });
-        */
+         */
     }
 
     static void uninstall() {
@@ -139,16 +138,16 @@ class NbApplicationAdapter implements ApplicationListener {
             al = null;
         }
     }
-    
+
     public void handleAbout(ApplicationEvent e) {
         //#221571 - check if About window is showing already
         Window[] windows = Dialog.getWindows();
-        if( null != windows ) {
-            for( Window w : windows ) {
-                if( w instanceof JDialog ) {
+        if (null != windows) {
+            for (Window w : windows) {
+                if (w instanceof JDialog) {
                     JDialog dlg = (JDialog) w;
-                    if( Boolean.TRUE.equals(dlg.getRootPane().getClientProperty("nb.about.dialog") ) ) { //NOI18N
-                        if( dlg.isVisible() ) {
+                    if (Boolean.TRUE.equals(dlg.getRootPane().getClientProperty("nb.about.dialog"))) { //NOI18N
+                        if (dlg.isVisible()) {
                             dlg.toFront();
                             e.setHandled(true);
                             return;
@@ -159,20 +158,20 @@ class NbApplicationAdapter implements ApplicationListener {
         }
         e.setHandled(performAction("Help", "org.netbeans.core.actions.AboutAction"));
     }
-    
-    public void handleOpenApplication (ApplicationEvent e) {
+
+    public void handleOpenApplication(ApplicationEvent e) {
     }
-    
-    public void handleOpenFile (ApplicationEvent e) {
+
+    public void handleOpenFile(ApplicationEvent e) {
         boolean result = false;
         String fname = e.getFilename();
-        File f = new File (fname);
+        File f = new File(fname);
         if (f.exists() && !f.isDirectory()) {
             FileObject obj = FileUtil.toFileObject(f);
             if (obj != null) {
                 try {
                     DataObject dob = DataObject.find(obj);
-                    OpenCookie oc = dob.getLookup().lookup (OpenCookie.class);
+                    OpenCookie oc = dob.getLookup().lookup(OpenCookie.class);
                     if (result = oc != null) {
                         oc.open();
                     } else {
@@ -193,43 +192,43 @@ class NbApplicationAdapter implements ApplicationListener {
         }
         e.setHandled(result);
     }
-    
-    public void handlePreferences (ApplicationEvent e) {
-        e.setHandled(performAction("Window", "org.netbeans.modules.options.OptionsWindowAction"));
+
+    public void handlePreferences(ApplicationEvent e) {
+        String id = "org.netbeans.modules";
+        id += ".options.OptionsWindowAction";
+        e.setHandled(performAction("Window", id));
     }
-    
-    public void handlePrintFile (ApplicationEvent e) {
+
+    public void handlePrintFile(ApplicationEvent e) {
         //do nothing - what invokes this?
     }
-    
-    public void handleQuit (ApplicationEvent e) {
+
+    public void handleQuit(ApplicationEvent e) {
         //Set it to false to abort the quit, our code will handle shutdown
         performAction("System", "org.netbeans.core.actions.SystemExit");
         e.setHandled(false);
     }
-    
-    public void handleReOpenApplication (ApplicationEvent e) {
+
+    public void handleReOpenApplication(ApplicationEvent e) {
     }
-    
+
     private boolean performAction(String category, String id) {
-        
+
         Lookup lkUp = Lookups.forPath("Actions/" + category);// lookupItem(); // NOI18N
         Collection<? extends Action> actions = lkUp.lookupAll(Action.class);
 
-        for (Action a : actions)
-        {
+        for (Action a : actions) {
             System.out.println(a.getClass().getName());
-            if (a.getClass().getName().equals(id))
-            {
+            if (a.getClass().getName().equals(id)) {
                 ActionEvent ae = new ActionEvent(this, ActionEvent.ACTION_PERFORMED, "whatever");
                 a.actionPerformed(ae);
                 return true;
             }
         }
-        
+
         System.out.println("Unable to find " + id + " in " + category);
-        
+
         return false;
     }
-    
+
 }
