@@ -11,3 +11,5 @@ in favourite of the now defacto standard JasperReports Studio. So it is a kind o
 * upgrade Netbeans Platform to Apache Netbeans V12.2 or higher.
 * upgrade JasperReports to a more recent version, since this fork starts with version 5.6.
 * refactor IReport to have a wrapper module. At the moment all third party jars are put directly into the main modules
+* refactor IReport and split it into multiple smaller modules, this one large module technique its like a smell
+* begin to add tests, strangely it is quite untested via automation
