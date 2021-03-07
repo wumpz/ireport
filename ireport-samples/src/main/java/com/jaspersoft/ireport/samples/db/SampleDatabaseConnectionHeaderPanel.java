@@ -24,7 +24,7 @@ public class SampleDatabaseConnectionHeaderPanel extends javax.swing.JPanel {
     public SampleDatabaseConnectionHeaderPanel() {
         initComponents();
         jXTaskPane1.setAnimated(true);
-        jXTaskPane1.setExpanded(false);
+        jXTaskPane1.setCollapsed(true);
     }
 
     public void setMainPanel(Component c)
@@ -51,7 +51,7 @@ public class SampleDatabaseConnectionHeaderPanel extends javax.swing.JPanel {
         jLabel1.setText(org.openide.util.NbBundle.getMessage(SampleDatabaseConnectionHeaderPanel.class, "SampleDatabaseConnectionHeaderPanel.jLabel1.text")); // NOI18N
         add(jLabel1, java.awt.BorderLayout.NORTH);
 
-        jXTaskPane1.setExpanded(false);
+        jXTaskPane1.setCollapsed(true);
         jXTaskPane1.setTitle(org.openide.util.NbBundle.getMessage(SampleDatabaseConnectionHeaderPanel.class, "SampleDatabaseConnectionHeaderPanel.jXTaskPane1.title")); // NOI18N
         jXTaskPaneContainer1.add(jXTaskPane1);
 
