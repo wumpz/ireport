@@ -22,3 +22,4 @@ in favourite of the now defacto standard JasperReports Studio. So it is a kind o
   * hsqldb
   * swing-layout (what is this for?)
   * jasperreports-htmlcomponent (https://stackoverflow.com/questions/42560528/how-to-add-the-htmlcomponent-to-jasperdesign) obsolete
+  * look into into local maven repository imported and needed libraries
