@@ -52,7 +52,7 @@ public class MongoDbFieldsProvider implements FieldsProvider {
 			throw new JRException("The active connection is not of type MongoDB. Activate a MongoDB connection first.");
 		}
 		MongoDbConnection connection = (MongoDbConnection) ireportConnection;
-		return com.jaspersoft.mongodb.MongoDbFieldsProvider.getInstance()
+		return (JRField[]) com.jaspersoft.mongodb.MongoDbFieldsProvider.getInstance()
 				.getFields(IRLocalJasperReportsContext.getInstance(),  dataset, parameters, (com.jaspersoft.mongodb.connection.MongoDbConnection) connection.getConnection())
 				.toArray(new JRField[0]);
 	}

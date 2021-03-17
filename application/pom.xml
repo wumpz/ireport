@@ -67,12 +67,12 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>ireport-branding</artifactId>
+            <artifactId>ireport-standalone-specific</artifactId>
             <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>ireport-standalone-specific</artifactId>
+            <artifactId>ireport-samples</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
