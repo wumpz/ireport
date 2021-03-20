@@ -1,4 +1,24 @@
 Manifest-Version: 1.0
 OpenIDE-Module-Layer: com/jaspersoft/ireport/layer.xml
 OpenIDE-Module-Localizing-Bundle: com/jaspersoft/ireport/Bundle.properties
+OpenIDE-Module-Install: com/jaspersoft/ireport/Installer.class
+OpenIDE-Module: com.jaspersoft.ireport
 
+Name: com/jaspersoft/ireport/JrxmlDataLoader.class
+Install-Before: org.openide.loaders.XMLDataObject, org.netbeans.modules.xml.core.XMLDataObject,org.netbeans.modules.xml.XMLDataObject
+OpenIDE-Module-Class: Loader
+
+Name: com/jaspersoft/ireport/designer/jrtx/JRTXDataLoader.class
+Install-Before: org.openide.loaders.XMLDataObject, org.netbeans.modules.xml.core.XMLDataObject,org.netbeans.modules.xml.XMLDataObject
+OpenIDE-Module-Class: Loader
+
+Name: com/jaspersoft/ireport/designer/jrctx/JRCTXDataLoader.class
+Install-Before: org.openide.loaders.XMLDataObject, org.netbeans.modules.xml.core.XMLDataObject,org.netbeans.modules.xml.XMLDataObject
+OpenIDE-Module-Class: Loader
+
+
+Name: com/jaspersoft/ireport/designer/palette/PaletteItemDataLoader.class
+OpenIDE-Module-Class: Loader
+
+Name: com/jaspersoft/ireport/jasper/JasperDataLoader.class
+OpenIDE-Module-Class: Loader
