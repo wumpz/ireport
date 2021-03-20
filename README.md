@@ -3,6 +3,9 @@
 This is a fork of my favourite jasperreports designer IReport. This fork started with the latest sources of IReport 5.6. Unfortunately since 2015 I think the work on it was stopped 
 in favourite of the now defacto standard JasperReports Studio. So it is a kind of taste which one you like. As I mentioned I prefer IReport. 
 
+If you want to participate, please contact me.
+
+
 ## News
 
 * https://github.com/wumpz/ireport/issues/3  It starts for the first time on Java 8 and Apache Netbeans 12.2 :)
