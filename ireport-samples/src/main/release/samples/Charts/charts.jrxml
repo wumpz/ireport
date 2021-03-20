@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="charts" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.callouts" value="##Thu Jan 21 16:45:07 CET 2010\ncallouts.4.text=This is a Timeseries Chart, showing the numbers of orders each day. The data is provided by the dataset 2.\ncallouts.4.bounds=501,494,150,88\ncallouts.1.text=Use the Sample Database (HSQLDB test) datasource to run this report.\nTo run the database, select Help &gt; Samples &gt; Run Sample Database.\ncallouts.3.pins=348,325;\ncallouts.3.bounds=451,259,150,75\ncallouts.2.text=The first chart is a Pie3D chart, it uses the main dataset. The chart is configured to show only the first 5 values, and group the rest in a single slice.\ncallouts.4.pins=444,637;\ncallouts.2.bounds=406,168,239,78\ncallouts.1.bounds=407,71,235,90\ncallouts.3.text=A Bar 3D chart. It uses the dataset &quot;dataset1&quot;.\ncallouts.2.pins=345,143;"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="82"/>
+	<subDataset name="dataset1">
+		<queryString>
+			<![CDATA[select count(freight) tot, YEAR(orderdate) year from orders group by YEAR(orderdate)]]>
+		</queryString>
+		<field name="TOT" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="YEAR" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2">
+		<queryString>
+			<![CDATA[select count(*) tot, orderdate from orders group by orderdate ]]>
+		</queryString>
+		<field name="TOT" class="java.lang.Integer">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="ORDERDATE" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[select count(*) c, shipcountry from  orders group by shipcountry order by c desc]]>
+	</queryString>
+	<field name="C" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPCOUNTRY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="76" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="32" width="555" height="41"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[JasperReports provides a large set of charts. A chart can be populated using the data coming from the main dataset or by using a sub-dataset.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Charts]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="599" splitType="Stretch">
+			<pie3DChart>
+				<chart isShowLegend="false">
+					<reportElement x="13" y="36" width="472" height="155"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset maxCount="5">
+					<keyExpression><![CDATA[$F{SHIPCOUNTRY}]]></keyExpression>
+					<valueExpression><![CDATA[$F{C}]]></valueExpression>
+					<labelExpression><![CDATA[$F{SHIPCOUNTRY}]]></labelExpression>
+					<otherLabelExpression><![CDATA["All the others"]]></otherLabelExpression>
+				</pieDataset>
+				<pie3DPlot>
+					<plot backgroundAlpha="0.5" foregroundAlpha="0.5"/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+				</pie3DPlot>
+			</pie3DChart>
+			<staticText>
+				<reportElement x="13" y="11" width="278" height="25"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Orders by country (first 5 countries)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="211" width="278" height="23"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Total freight by year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="420" width="278" height="23"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Orders per day]]></text>
+			</staticText>
+			<timeSeriesChart>
+				<chart isShowLegend="false">
+					<reportElement x="13" y="443" width="521" height="152"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<timeSeriesDataset timePeriod="Month">
+					<dataset>
+						<datasetRun subDataset="dataset2">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<timeSeries>
+						<seriesExpression><![CDATA[""]]></seriesExpression>
+						<timePeriodExpression><![CDATA[$F{ORDERDATE}]]></timePeriodExpression>
+						<valueExpression><![CDATA[$F{TOT}]]></valueExpression>
+					</timeSeries>
+				</timeSeriesDataset>
+				<timeSeriesPlot>
+					<plot/>
+					<timeAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</timeAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</timeSeriesPlot>
+			</timeSeriesChart>
+			<bar3DChart>
+				<chart isShowLegend="false">
+					<reportElement x="13" y="234" width="472" height="176"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset>
+						<datasetRun subDataset="dataset1">
+							<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						</datasetRun>
+					</dataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[""]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{YEAR}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{TOT}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+		</band>
+	</summary>
+</jasperReport>

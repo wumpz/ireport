@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="charts" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.callouts" value="##Thu Jan 21 19:42:42 CET 2010\ncallouts.4.text=The size (width and height of subreports) are not relevant.\ncallouts.4.bounds=271,431,182,54\ncallouts.6.pins=166,315;\ncallouts.1.text=Use the Sample Database (HSQLDB test) datasource to run this report.\nTo run the database, select Help &gt; Samples &gt; Run Sample Database.\ncallouts.3.pins=551,298;\ncallouts.5.text=We use a Frame to keep the subreport and the label with the total together.\ncallouts.3.bounds=638,227,178,202\ncallouts.2.text=This is a List component. It is a light version of a subreport and it is used to print data from a sub-dataset. It does not provide any support for variables, summary or title.\nThe data for the component is defined in dataset1. To edit the parameter values and the other connection details right-click the List element and select &quot;Edit list datasource&quot;.\ncallouts.4.pins=327,281;\ncallouts.2.bounds=467,437,287,130\ncallouts.6.text=The total \# of orders is a &quot;return value&quot; that comes from the subreport. That value (defined in the subreport element) is stored in the variable\: return_value_orders. In order to correctly print the value in the same band as the subreport, the textfield has evaluation time &quot;Band&quot;.\ncallouts.1.bounds=544,12,235,90\ncallouts.3.text=The alternating background color is obtained by using a Frame element for the content of the detail band. The Frame uses the style1 which defines a different background color based on the number of the record (the condition expression is\:\n$V{REPORT_COUNT} %2 \=\= 0\nwhich returns true for even records.\ncallouts.6.bounds=90,496,221,146\ncallouts.5.pins=100,272;\ncallouts.2.pins=423,297;\ncallouts.5.bounds=-9,421,150,75"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style_for_list" isDefault="false" mode="Opaque" backcolor="#F0ECC9">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 ==0]]></conditionExpression>
+			<style isDefault="false" style="style_for_list" backcolor="#CBCB91"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="dataset1">
+		<parameter name="Country" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[select distinct shipcity from orders where shipcountry=$P{Country}]]>
+		</queryString>
+		<field name="SHIPCITY" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\JasperSoft\\SVN\\ireport\\trunk\\iReport\\ireport-samples\\release\\samples\\Subreports\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select distinct shipcountry from  orders order by shipcountry]]>
+	</queryString>
+	<field name="SHIPCOUNTRY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="return_value_orders" class="java.lang.Integer" calculation="System"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="198" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="32" width="555" height="166"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[A sub-report is a report inside another report. The subreport element is placed in the master report and it works like a placeholder for the child report. It defines how to locate the subreport, the values for the parameters of the subreport and the datasource or database connection that must be used to fill it.
+In this sample the master report select from the database the countries, while a subreport displays the first 10 orders of this country, a second report presents the list of the cities of this country.
+The List is used to simulate the second subreport, it uses a subdataset and does not require any extra file.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Subreport and List sample]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="129" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="231" height="41"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{SHIPCOUNTRY}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="0" y="41" width="200" height="81"/>
+				<textField evaluationTime="Band">
+					<reportElement positionType="Float" x="0" y="60" width="200" height="20"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Total orders: " + $V{return_value_orders}]]></textFieldExpression>
+				</textField>
+				<subreport>
+					<reportElement x="0" y="0" width="200" height="60"/>
+					<subreportParameter name="shipcountry">
+						<subreportParameterExpression><![CDATA[$F{SHIPCOUNTRY}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<returnValue subreportVariable="REPORT_COUNT" toVariable="return_value_orders"/>
+					<subreportExpression class="java.lang.String"><![CDATA["subreport_orders.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<subreport>
+				<reportElement x="212" y="41" width="160" height="60"/>
+				<subreportParameter name="shipcountry">
+					<subreportParameterExpression><![CDATA[$F{SHIPCOUNTRY}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression class="java.lang.String"><![CDATA["subreport_cities.jasper"]]></subreportExpression>
+			</subreport>
+			<componentElement>
+				<reportElement x="396" y="82" width="159" height="19"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1">
+						<datasetParameter name="Country">
+							<datasetParameterExpression><![CDATA[$F{SHIPCOUNTRY}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:listContents height="19" width="159">
+						<frame>
+							<reportElement style="style_for_list" x="0" y="0" width="159" height="19"/>
+							<textField>
+								<reportElement x="0" y="0" width="159" height="19"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{SHIPCITY}]]></textFieldExpression>
+							</textField>
+						</frame>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement x="396" y="41" width="159" height="25"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cities in this country]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="66" width="159" height="16"/>
+				<textElement/>
+				<text><![CDATA[Using a List component]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement x="427" y="14" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="507" y="14" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="1" width="555" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

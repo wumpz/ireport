@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="elements" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.callouts" value="##Thu Jan 21 15:19:19 CET 2010\ncallouts.7.bounds=446,671,166,89\ncallouts.2.bounds=1,668,270,95\ncallouts.5.bounds=354,423,261,104\ncallouts.2.pins=127,609;\ncallouts.4.text=Text fields can grown vertically if the text provided does not fit the size set at design time (property Stretch with overflow).\ncallouts.3.pins=242,356;\ncallouts.5.text=A Frame element is a container for other elements and can have a border. The size of the frame can stretch according to the content (which can grown at run time)\ncallouts.4.pins=381,638;\ncallouts.6.text=Use an Empty datasource to run this report\ncallouts.5.pins=269,426;\ncallouts.7.text=A textfield has a type to identify the type of value to print (i.e. a text or a date or a number and so on...)\ncallouts.3.bounds=350,290,223,66\ncallouts.6.bounds=415,21,239,38\ncallouts.1.bounds=351,195,241,59\ncallouts.4.bounds=271,669,177,92\ncallouts.7.pins=527,575;556,606;\ncallouts.1.text=Rectangle, Round Rectangle, Ellipse and line elements.\ncallouts.2.text=Labels and text fields. A label displays static text, while a text field shows the text produced using an expression, useful to print the value of a field or a variable. The text can be formatted. Both these elements can have a border and specific padding.\ncallouts.1.pins=130,219;\ncallouts.3.text=Images can be loaded from a file, from an url or even produced dynamically using an expression"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="654" splitType="Stretch">
+			<rectangle>
+				<reportElement x="10" y="180" width="100" height="20" forecolor="#315B77" backcolor="#A3DFDF"/>
+				<graphicElement>
+					<pen lineWidth="3.0"/>
+				</graphicElement>
+			</rectangle>
+			<ellipse>
+				<reportElement x="10" y="227" width="100" height="39"/>
+			</ellipse>
+			<rectangle radius="10">
+				<reportElement x="138" y="180" width="100" height="20"/>
+			</rectangle>
+			<line>
+				<reportElement x="138" y="220" width="100" height="46"/>
+			</line>
+			<staticText>
+				<reportElement x="5" y="565" width="144" height="24"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="5" y="608" width="144" height="27"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["textfield"]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="5" y="410" width="258" height="83" forecolor="#FF3333"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+					<topPen lineWidth="1.0" lineStyle="Dashed"/>
+					<leftPen lineWidth="1.0" lineStyle="Dashed"/>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+					<rightPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<rectangle>
+					<reportElement x="144" y="14" width="100" height="53" backcolor="#E9E8E8"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="12" y="14" width="100" height="20" backcolor="#E9E8E8"/>
+				</rectangle>
+				<rectangle>
+					<reportElement x="12" y="47" width="100" height="20" backcolor="#E9E8E8"/>
+				</rectangle>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="169" y="569" width="209" height="66"/>
+				<box topPadding="10" leftPadding="10" bottomPadding="10" rightPadding="10"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["iReport is the free, open source report designer for JasperReports. Create very complex layouts containing charts, images, subreports, crosstabs and much more. Access your data through JDBC, TableModels, JavaBeans, XML, Hibernate, CSV, and custom sources. Then publish your reports as PDF, RTF, XML, XLS, CSV, HTML, XHTML, text, DOCX, or OpenOffice."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="19" width="555" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Elements in a report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="555" height="78"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[A report is composed by a set of bands which contain elements. Elements are presented in the iReport palette. They can be simple shapes like the rectangle and the line, or complex objects like a subreport or a crosstab. The most common ones are presented in this report.]]></text>
+			</staticText>
+			<line>
+				<reportElement x="73" y="147" width="482" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="128" width="73" height="32"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Shapes]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="296" width="270" height="65"/>
+				<imageExpression class="java.lang.String"><![CDATA["js_logo.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="50" y="528" width="505" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="509" width="50" height="32"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Text]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="411" y="557" width="144" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="411" y="589" width="144" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

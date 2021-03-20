@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fonts" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.callouts" value="##Thu Jan 21 15:15:38 CET 2010\ncallouts.2.pins=503,404;503,347;503,287;\ncallouts.2.text=Safe system independent characters\ncallouts.1.text=Use an Empty datasource to run this report\ncallouts.2.bounds=551,332,152,53\ncallouts.1.bounds=349,-1,262,40"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="193" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="555" height="31"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="20" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fonts]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="32" width="555" height="128"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[In iReport you can use all the system fonts you want, but to maximize the portability of the documents we suggest to use TTF Fonts installed using Tools > Options > iReport > Fonts. In this way fonts can be exported as font extensions for JasperReports and deployed as jar in any application.
+JasperReports provides a built-in font extension for the DejaVu fonts (Sans, Serif and Mono) which work well with all the character sets and are correctly displayed in PDF documents as well.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="241" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="62" width="555" height="44"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="26"/>
+				</textElement>
+				<text><![CDATA[DejaVu Sans]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="555" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="26"/>
+				</textElement>
+				<text><![CDATA[DejaVu Serif]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="179" width="555" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans Mono" size="20"/>
+				</textElement>
+				<text><![CDATA[DejaVu Sans Mono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="44"/>
+				<textElement textAlignment="Center">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[SansSerif (default font)]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

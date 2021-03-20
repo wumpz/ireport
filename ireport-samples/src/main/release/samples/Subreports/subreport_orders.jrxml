@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport_orders" language="groovy" pageWidth="200" pageHeight="802" columnWidth="200" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.callouts" value="##Thu Jan 21 19:35:57 CET 2010\ncallouts.3.pins=74,27;\ncallouts.3.text=The alternating background color is obtained by using a Frame element for the content of the detail band. The Frame uses the style1 which defines a different background color based on the number of the record (the condition expression is\:\n$V{REPORT_COUNT} %2 \=\= 0\nwhich returns true for even records.\ncallouts.2.text=The query of this report uses the parameter &quot;shipcountry&quot; to filter the records.\nThe page width is set to fit the required space in the master reports. The margins of the page for this report have been removed.\ncallouts.1.pins=174,22;\ncallouts.1.text=The report uses a &quot;print When Expression&quot; on the detail band to print only the first 10 records. Another solution to limit the number or records is to use the &quot;filter expression&quot; in the query dialog.\ncallouts.3.bounds=330,101,300,129\ncallouts.2.bounds=-1,82,283,88\ncallouts.1.bounds=330,6,291,88"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" isDefault="false" mode="Opaque" backcolor="#F4F5F5">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 ==0]]></conditionExpression>
+			<style isDefault="false" style="style1" backcolor="#D4DED9"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="shipcountry" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from orders where shipcountry = $P{shipcountry}]]>
+	</queryString>
+	<field name="ORDERID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="CUSTOMERID" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="EMPLOYEEID" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ORDERDATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="REQUIREDDATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPPEDDATE" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPVIA" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="FREIGHT" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPNAME" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPADDRESS" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPCITY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPREGION" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPPOSTALCODE" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="SHIPCOUNTRY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="25" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT} <= 10]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="0" width="159" height="25"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[First 10 orders]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT} <= 10]]></printWhenExpression>
+			<frame>
+				<reportElement style="style1" x="0" y="0" width="200" height="19"/>
+				<textField>
+					<reportElement x="100" y="0" width="100" height="18"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{SHIPNAME}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="30" y="0" width="70" height="18"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression class="java.sql.Timestamp"><![CDATA[$F{ORDERDATE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="0" width="30" height="18"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression class="java.lang.Integer"><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

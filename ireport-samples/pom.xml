@@ -14,6 +14,17 @@
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
                 <extensions>true</extensions>
+                <configuration>
+                    <nbmResources>
+                        <nbmResource>
+                              <directory>src/main/release</directory>
+                              <targetPath>./</targetPath>
+                              <includes>
+                                    <include>**/*.*</include>
+                            </includes>
+                        </nbmResource>
+                    </nbmResources>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

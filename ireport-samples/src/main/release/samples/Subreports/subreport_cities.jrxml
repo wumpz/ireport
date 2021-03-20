@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport_orders" language="groovy" pageWidth="160" pageHeight="802" columnWidth="160" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.callouts" value="##Thu Jan 21 19:26:38 CET 2010\ncallouts.3.pins=55,58;\ncallouts.3.text=A variable is used to count the cities\ncallouts.2.pins=144,35;\ncallouts.2.text=The alternating background color is obtained by using a Frame element for the content of the detail band. The Frame uses the style1 which defines a different background color based on the number of the record (the condition expression is\:\n$V{REPORT_COUNT} %2 \=\= 0\nwhich returns true for even records.\ncallouts.1.text=The query of this report uses the parameter &quot;shipcountry&quot; to filter the records.\nThe page width is set to fit the required space in the master reports. The margins of the page for this report have been removed.\ncallouts.3.bounds=26,162,152,54\ncallouts.2.bounds=261,106,300,129\ncallouts.1.bounds=348,2,283,88"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="style1" isDefault="false" mode="Opaque" backcolor="#F0ECC9">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 ==0]]></conditionExpression>
+			<style isDefault="false" style="style1" backcolor="#CBCB91"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="shipcountry" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select distinct shipcity from orders where shipcountry = $P{shipcountry}]]>
+	</queryString>
+	<field name="SHIPCITY" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="SHIPCITY_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{SHIPCITY}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="160" height="25"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cities in this country]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="25" width="159" height="16"/>
+				<textElement/>
+				<text><![CDATA[Using a subreport]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<frame>
+				<reportElement style="style1" x="0" y="0" width="160" height="19"/>
+				<textField>
+					<reportElement x="0" y="0" width="160" height="18"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{SHIPCITY}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="159" height="20"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Total: "+ $V{SHIPCITY_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
