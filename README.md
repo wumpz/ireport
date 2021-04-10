@@ -5,7 +5,6 @@ in favourite of the now defacto standard JasperReports Studio. So it is a kind o
 
 If you want to participate, please contact me.
 
-
 ## News
 
 * https://github.com/wumpz/ireport/issues/3  It starts for the first time on Java 8 and Apache Netbeans 12.2 :)
@@ -34,3 +33,27 @@ If you want to participate, please contact me.
   * swing-layout (what is this for?)
   * jasperreports-htmlcomponent (https://stackoverflow.com/questions/42560528/how-to-add-the-htmlcomponent-to-jasperdesign) obsolete
   * look into into local maven repository imported and needed libraries
+
+## Preparation
+
+Some of the used libraries are not available from maven central. Therefore in the **library.zip** are all missing libraries. You have to install those into your local maven repository. Use this maven plugin calls to achieve this. Extract this zip file and put the directory in the following maven plugin calls.
+
+```
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\jasperreports-chart-themes-5.6.0.jar
+
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\sqleonardo-2009.03.rc1.jar -DgroupId=nickyb -DartifactId=sqleonardo -Dversion=2009.03.rc1 -Dpackaging=jar
+
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\mondrian-3.2.0-13661-JS.jar -DgroupId=mondrian -DartifactId=mondrian -Dversion=3.2.0-13661-JS-3 -Dpackaging=jar
+
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\rex-0.8.1.jar -DgroupId=rex -DartifactId=rex -Dversion=0.8.1 -Dpackaging=jar
+
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\js_jasperserver-common-ws-4.7.1.jar
+
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\js-hive-datasource-1.0.4.jar
+
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\jasperreports-htmlcomponent-5.0.1.jar -DgroupId=net.sf.jasperreports -DartifactId=jasperreports-htmlcomponent -Dversion=5.0.1 -Dpackaging=jar
+
+org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=library\jasperreports-extensions-3.5.3.jar -DgroupId=net.sf.jasperreports -DartifactId=jasperreports-extensions -Dversion=3.5.3 -Dpackaging=jar
+```
+
+I downgraded beanshell bsh to version 2.0b5 since 2.1b5 is not at maven anymore.
