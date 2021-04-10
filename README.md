@@ -3,7 +3,9 @@
 This is a fork of my favourite jasperreports designer IReport. This fork started with the latest sources of IReport 5.6. Unfortunately since 2015 I think the work on it was stopped 
 in favourite of the now defacto standard JasperReports Studio. So it is a kind of taste which one you like. As I mentioned I prefer IReport. 
 
-If you want to participate, please contact me.
+If you want to participate, please contact me. 
+
+If I have time I will do more.
 
 ## News
 
@@ -14,8 +16,8 @@ If you want to participate, please contact me.
 
 **Reviving this designer is the main goal**
 
-* make IReport a maven multi module project
-* upgrade Netbeans Platform to Apache Netbeans V12.2 or higher.
+* (done) make IReport a maven multi module project
+* (done) upgrade Netbeans Platform to Apache Netbeans V12.2 or higher.
 * upgrade JasperReports to a more recent version, since this fork starts with version 5.6.
   * avoid to immediate implement all new features of new JasperReport versions
 * refactor IReport to have a wrapper module. At the moment all third party jars are put directly into the main modules
@@ -33,6 +35,7 @@ If you want to participate, please contact me.
   * swing-layout (what is this for?)
   * jasperreports-htmlcomponent (https://stackoverflow.com/questions/42560528/how-to-add-the-htmlcomponent-to-jasperdesign) obsolete
   * look into into local maven repository imported and needed libraries
+  * replace the jars below by something available at maven central
 
 ## Preparation
 
