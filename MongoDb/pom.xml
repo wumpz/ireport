@@ -50,12 +50,12 @@
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-util</artifactId>
-            <version>RELEASE122</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-openide-modules</artifactId>
-            <version>RELEASE122</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>org.netbeans.api</groupId>
             <artifactId>org-netbeans-libs-xerces</artifactId>
-            <version>RELEASE122</version>
+            <version>${netbeans.version}</version>
         </dependency>
         <dependency>
             <groupId>xml-apis</groupId>
