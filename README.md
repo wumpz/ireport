@@ -16,8 +16,9 @@ If I have time I will do more.
 
 **Reviving this designer is the main goal**
 
-* (done) make IReport a maven multi module project
-* (done) upgrade Netbeans Platform to Apache Netbeans V12.2 or higher.
+* **(done)** make IReport a maven multi module project
+* **(done)** make IReport Java 8 compilable and startable
+* **(done)** upgrade Netbeans Platform to Apache Netbeans V12.2 or higher.
 * upgrade JasperReports to a more recent version, since this fork starts with version 5.6.
   * avoid to immediate implement all new features of new JasperReport versions
 * refactor IReport to have a wrapper module. At the moment all third party jars are put directly into the main modules
