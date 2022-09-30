@@ -27,7 +27,7 @@ import com.jaspersoft.ireport.designer.IReportManager;
 import com.jaspersoft.ireport.designer.undo.ObjectPropertyUndoableEdit;
 import java.awt.Color;
 import java.lang.reflect.InvocationTargetException;
-import net.sf.jasperreports.engine.JRBox;
+import net.sf.jasperreports.engine.JRLineBox;
 import org.openide.nodes.PropertySupport;
 
     
@@ -36,13 +36,13 @@ import org.openide.nodes.PropertySupport;
  */
 public final class BoxBorderColorProperty extends PropertySupport.ReadWrite {
 
-    JRBox box = null;
+    JRLineBox box = null;
 
     /**
      * property can be border, topBorder, 
      **/
     @SuppressWarnings("unchecked")
-    public BoxBorderColorProperty(JRBox box, String propertyName, String propertyDisplayName, 
+    public BoxBorderColorProperty(JRLineBox box, String propertyName, String propertyDisplayName, 
                                   String propertyDesc)
     {
         super(propertyName, java.awt.Color.class,
