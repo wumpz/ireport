@@ -81,8 +81,8 @@ import net.sf.jasperreports.charts.ChartThemeBundle;
 import net.sf.jasperreports.engine.JRPropertiesUtil;
 import net.sf.jasperreports.engine.design.JRCompiler;
 import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.fonts.FontUtil;
 import net.sf.jasperreports.engine.fonts.SimpleFontFamily;
-import net.sf.jasperreports.engine.util.JRFontUtil;
 import net.sf.jasperreports.extensions.ExtensionsEnvironment;
 
 final class IReportPanel extends javax.swing.JPanel {
@@ -3245,7 +3245,7 @@ private void jSpinnerEditorFontSizeStateChanged(javax.swing.event.ChangeEvent ev
             ((DefaultListModel)jListFonts.getModel()).removeAllElements();
             Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader()));
 
-            Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+            Collection extensionFonts = FontUtil.getInstance(IRLocalJasperReportsContext.getInstance()).getFontFamilyNames();
             for(Iterator it = extensionFonts.iterator(); it.hasNext();)
             {
                 String fname = (String)it.next();

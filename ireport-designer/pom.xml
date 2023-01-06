@@ -610,6 +610,9 @@
                         <publicPackage>org.castor.util</publicPackage>
                         <publicPackage>org.castor.util.concurrent</publicPackage>
                         <publicPackage>org.castor.xml</publicPackage>
+                        <!-- groovy -->
+                        <publicPackage>groovy.lang.*</publicPackage>
+                        <!-- new groovy -->
                         <publicPackage>org.codehaus.groovy</publicPackage>
                         <publicPackage>org.codehaus.groovy.ant</publicPackage>
                         <publicPackage>org.codehaus.groovy.antlr</publicPackage>
