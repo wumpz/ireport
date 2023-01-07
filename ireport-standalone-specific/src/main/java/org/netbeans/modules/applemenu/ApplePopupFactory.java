@@ -356,6 +356,9 @@ public class ApplePopupFactory extends PopupFactory {
                     //Later we will use it to identify the right window in
                     //the array of windows owned by the application.
                     //This ain't pretty.
+                    
+                    //removed due to reflection 
+                    /*
                     @SuppressWarnings("deprecation")
                     Object o = getPeer();
                     if (o != null) {
@@ -365,6 +368,7 @@ public class ApplePopupFactory extends PopupFactory {
                         title = "hw popup" + (ct++);
                         m.invoke (o, new Object[] { title });
                     }
+                    */
                 } catch (Exception e) {
                     warn(e);
                 }
