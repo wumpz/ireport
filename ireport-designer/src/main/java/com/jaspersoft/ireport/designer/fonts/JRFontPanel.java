@@ -41,10 +41,11 @@ import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
 import javax.swing.JDialog;
 import javax.swing.SwingUtilities;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRFont;
 import net.sf.jasperreports.engine.base.JRBaseFont;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.fonts.FontUtil;
 
 
 /**
@@ -131,7 +132,7 @@ public class JRFontPanel extends javax.swing.JPanel implements PreferenceChangeL
         ClassLoader oldCL = Thread.currentThread().getContextClassLoader();
         Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader()));
 
-        Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+        Collection extensionFonts = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
         for(Iterator it = extensionFonts.iterator(); it.hasNext();)
         {
             String fname = (String)it.next();
@@ -516,7 +517,7 @@ public class JRFontPanel extends javax.swing.JPanel implements PreferenceChangeL
 
     private void jNumberComboBoxSizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jNumberComboBoxSizeActionPerformed
         if (init) return;
-        jRFont.setFontSize( (int)((JNumberComboBox)jNumberComboBoxSize).getValue());
+        jRFont.setFontSize( (float)((JNumberComboBox)jNumberComboBoxSize).getValue());
     }//GEN-LAST:event_jNumberComboBoxSizeActionPerformed
 
     private void jComboBoxPDFFontNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPDFFontNameActionPerformed
@@ -746,7 +747,7 @@ public class JRFontPanel extends javax.swing.JPanel implements PreferenceChangeL
 
         setComboBoxText(true, jRFont.getFontName() , jComboBoxFontName);
         this.setMixedTagComboBox(true, jRFont.getPdfFontName() , jComboBoxPDFFontName );
-        this.setElementComboNumber(true, (double)jRFont.getFontSize(), (JNumberComboBox)jNumberComboBoxSize);
+        this.setElementComboNumber(true, (double)jRFont.getFontsize(), (JNumberComboBox)jNumberComboBoxSize);
         this.setPdfEncodingComboBox(true, jRFont.getPdfEncoding() , jComboBoxPdfEncoding );
         
         init = false;

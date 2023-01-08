@@ -30,8 +30,8 @@ import com.jaspersoft.ireport.designer.sheet.properties.TextProperty;
 import com.jaspersoft.ireport.designer.sheet.properties.LineSpacingProperty;
 import com.jaspersoft.ireport.designer.sheet.properties.RotationProperty;
 import com.jaspersoft.ireport.designer.sheet.properties.TextFieldExpressionProperty;
-import com.jaspersoft.ireport.designer.sheet.properties.HorizontalAlignmentProperty;
-import com.jaspersoft.ireport.designer.sheet.properties.VerticalAlignmentProperty;
+import com.jaspersoft.ireport.designer.sheet.properties.HorizontalTextAlignmentProperty;
+import com.jaspersoft.ireport.designer.sheet.properties.VerticalTextAlignmentProperty;
 import com.jaspersoft.ireport.designer.ModelUtils;
 import com.jaspersoft.ireport.designer.sheet.properties.MarkupProperty;
 import com.jaspersoft.ireport.designer.sheet.properties.BoldProperty;
@@ -91,8 +91,8 @@ public class TextElementPropertiesFactory {
         propertySet.put(new UnderlineProperty( element ));
         propertySet.put(new StrikeThroughProperty( element ));
         
-        propertySet.put(new HorizontalAlignmentProperty( element ));
-        propertySet.put(new VerticalAlignmentProperty( element ));
+        propertySet.put(new HorizontalTextAlignmentProperty( element ));
+        propertySet.put(new VerticalTextAlignmentProperty( element ));
         propertySet.put(new RotationProperty( element ));
         propertySet.put(new LineSpacingProperty( element ));
         propertySet.put(new LineSpacingSizeProperty( element ));

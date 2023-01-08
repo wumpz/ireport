@@ -26,7 +26,7 @@ package com.jaspersoft.ireport.designer.outline.nodes.properties;
 import com.jaspersoft.ireport.designer.IReportManager;
 import com.jaspersoft.ireport.designer.undo.ObjectPropertyUndoableEdit;
 import java.lang.reflect.InvocationTargetException;
-import net.sf.jasperreports.engine.JRBox;
+import net.sf.jasperreports.engine.JRLineBox;
 import org.openide.nodes.PropertySupport;
 
     
@@ -35,13 +35,13 @@ import org.openide.nodes.PropertySupport;
  */
 public final class BoxPaddingProperty extends PropertySupport.ReadWrite {
 
-    JRBox box = null;
+    JRLineBox box = null;
 
     /**
      *
      **/
     @SuppressWarnings("unchecked")
-    public BoxPaddingProperty(JRBox box, String propertyName, String propertyDisplayName, 
+    public BoxPaddingProperty(JRLineBox box, String propertyName, String propertyDisplayName, 
                                   String propertyDesc)
     {
         super(propertyName, Integer.class,

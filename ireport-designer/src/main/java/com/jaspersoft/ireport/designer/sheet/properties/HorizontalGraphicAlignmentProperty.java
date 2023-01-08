@@ -26,22 +26,22 @@ package com.jaspersoft.ireport.designer.sheet.properties;
 import com.jaspersoft.ireport.designer.sheet.Tag;
 import com.jaspersoft.ireport.locale.I18n;
 import java.util.List;
-import net.sf.jasperreports.engine.JRAlignment;
+import net.sf.jasperreports.engine.JRImageAlignment;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
-import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
+import net.sf.jasperreports.engine.type.HorizontalImageAlignEnum;
 
     
 /**
  * @author Teodor Danciu (teodord@users.sourceforge.net)
  */
-public final class HorizontalAlignmentProperty extends EnumProperty
+public final class HorizontalGraphicAlignmentProperty extends EnumProperty
 {
-    private final JRAlignment element;
+    private final JRImageAlignment element;
 
     @SuppressWarnings("unchecked")
-    public HorizontalAlignmentProperty(JRAlignment element)
+    public HorizontalGraphicAlignmentProperty(JRImageAlignment element)
     {
-        super(HorizontalAlignEnum.class,  element);
+        super(HorizontalImageAlignEnum.class,  element);
         this.element = element;
     }
 
@@ -67,23 +67,22 @@ public final class HorizontalAlignmentProperty extends EnumProperty
     public List getTagList() 
     {
         List tags = new java.util.ArrayList();
-        tags.add(new Tag(HorizontalAlignEnum.LEFT, I18n.getString("Global.Property.Left")));
-        tags.add(new Tag(HorizontalAlignEnum.CENTER, I18n.getString("Global.Property.Center")));
-        tags.add(new Tag(HorizontalAlignEnum.RIGHT, I18n.getString("Global.Property.Right")));
-        tags.add(new Tag(HorizontalAlignEnum.JUSTIFIED, I18n.getString("Global.Property.Justified")));
+        tags.add(new Tag(HorizontalImageAlignEnum.LEFT, I18n.getString("Global.Property.Left")));
+        tags.add(new Tag(HorizontalImageAlignEnum.CENTER, I18n.getString("Global.Property.Center")));
+        tags.add(new Tag(HorizontalImageAlignEnum.RIGHT, I18n.getString("Global.Property.Right")));
         return tags;
     }
 
     @Override
     public Object getPropertyValue()
     {
-        return element.getHorizontalAlignmentValue();
+        return element.getHorizontalImageAlign();
     }
 
     @Override
     public Object getOwnPropertyValue()
     {
-        return element.getOwnHorizontalAlignmentValue();
+        return element.getOwnHorizontalImageAlign();
     }
 
     @Override
@@ -95,7 +94,7 @@ public final class HorizontalAlignmentProperty extends EnumProperty
     @Override
     public void setPropertyValue(Object alignment)
     {
-        element.setHorizontalAlignment((HorizontalAlignEnum)alignment);
+        element.setHorizontalImageAlign((HorizontalImageAlignEnum)alignment);
     }
 
 }

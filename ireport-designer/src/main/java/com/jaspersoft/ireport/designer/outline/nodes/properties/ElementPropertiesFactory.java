@@ -50,7 +50,7 @@ import com.jaspersoft.ireport.designer.sheet.properties.GenericElementTypeNamePr
 import com.jaspersoft.ireport.designer.sheet.properties.GenericElementTypeNameSpaceProperty;
 import java.util.ArrayList;
 import java.util.List;
-import net.sf.jasperreports.engine.JRBox;
+import net.sf.jasperreports.engine.JRLineBox;
 import net.sf.jasperreports.engine.design.JRDesignBreak;
 import net.sf.jasperreports.engine.design.JRDesignChart;
 import net.sf.jasperreports.engine.design.JRDesignDataset;
@@ -128,7 +128,7 @@ public class ElementPropertiesFactory {
     /**
      * Get the common properties...
      */
-    public static Sheet.Set getBoxPropertySet(JRBox box)
+    public static Sheet.Set getBoxPropertySet(JRLineBox box)
     {
         Sheet.Set propertySet = Sheet.createPropertiesSet();
         propertySet.setName("BOX_PROPERTIES");
@@ -193,9 +193,9 @@ public class ElementPropertiesFactory {
         
         
         
-        if (element instanceof  JRBox)
+        if (element instanceof  JRLineBox)
         {
-            sets.add( getBoxPropertySet((JRBox)element) );
+            sets.add( getBoxPropertySet((JRLineBox)element) );
         }
 
         if (element instanceof  JRDesignGenericElement)

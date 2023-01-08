@@ -26,22 +26,22 @@ package com.jaspersoft.ireport.designer.sheet.properties;
 import com.jaspersoft.ireport.designer.sheet.Tag;
 import com.jaspersoft.ireport.locale.I18n;
 import java.util.List;
-import net.sf.jasperreports.engine.JRAlignment;
+import net.sf.jasperreports.engine.JRImageAlignment;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
-import net.sf.jasperreports.engine.type.VerticalAlignEnum;
+import net.sf.jasperreports.engine.type.VerticalImageAlignEnum;
 
     
 /**
  *  Class to manage the JRDesignElement.PROPERTY_POSITION_TYPE property
  */
-public final class VerticalAlignmentProperty extends EnumProperty
+public final class VerticalGraphicAlignmentProperty extends EnumProperty
 {
-    private final JRAlignment element;
+    private final JRImageAlignment element;
 
     @SuppressWarnings("unchecked")
-    public VerticalAlignmentProperty(JRAlignment element)
+    public VerticalGraphicAlignmentProperty(JRImageAlignment element)
     {
-        super(VerticalAlignEnum.class, element);
+        super(VerticalImageAlignEnum.class, element);
         this.element = element;
     }
 
@@ -67,9 +67,9 @@ public final class VerticalAlignmentProperty extends EnumProperty
     public List getTagList() 
     {
         List tags = new java.util.ArrayList();
-        tags.add(new Tag(VerticalAlignEnum.TOP, I18n.getString("Global.Property.Top")));
-        tags.add(new Tag(VerticalAlignEnum.MIDDLE, I18n.getString("Global.Property.Middle")));
-        tags.add(new Tag(VerticalAlignEnum.BOTTOM, I18n.getString("Global.Property.Bottom")));
+        tags.add(new Tag(VerticalImageAlignEnum.TOP, I18n.getString("Global.Property.Top")));
+        tags.add(new Tag(VerticalImageAlignEnum.MIDDLE, I18n.getString("Global.Property.Middle")));
+        tags.add(new Tag(VerticalImageAlignEnum.BOTTOM, I18n.getString("Global.Property.Bottom")));
         //tags.add(new Tag(new Byte(JRAlignment.VERTICAL_ALIGN_JUSTIFIED), I18n.getString("Global.Property.Justified")));
         return tags;
     }
@@ -77,13 +77,13 @@ public final class VerticalAlignmentProperty extends EnumProperty
     @Override
     public Object getPropertyValue()
     {
-        return element.getVerticalAlignmentValue();
+        return element.getVerticalImageAlign();
     }
 
     @Override
     public Object getOwnPropertyValue()
     {
-        return element.getOwnVerticalAlignmentValue();
+        return element.getOwnVerticalImageAlign();
     }
 
     @Override
@@ -95,7 +95,7 @@ public final class VerticalAlignmentProperty extends EnumProperty
     @Override
     public void setPropertyValue(Object alignment)
     {
-        element.setVerticalAlignment((VerticalAlignEnum)alignment);
+        element.setVerticalImageAlign((VerticalImageAlignEnum)alignment);
     }
 
 }

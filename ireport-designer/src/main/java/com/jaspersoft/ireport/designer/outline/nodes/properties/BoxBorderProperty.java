@@ -27,7 +27,7 @@ import com.jaspersoft.ireport.designer.sheet.Tag;
 import com.jaspersoft.ireport.designer.sheet.editors.ComboBoxPropertyEditor;
 import java.beans.PropertyEditor;
 import java.lang.reflect.InvocationTargetException;
-import net.sf.jasperreports.engine.JRBox;
+import net.sf.jasperreports.engine.JRLineBox;
 import net.sf.jasperreports.engine.type.PenEnum;
 import org.openide.nodes.PropertySupport;
 
@@ -37,14 +37,14 @@ import org.openide.nodes.PropertySupport;
  */
 public final class BoxBorderProperty  extends PropertySupport {
 
-    JRBox box = null;
+    JRLineBox box = null;
     private ComboBoxPropertyEditor editor;
 
     /**
      * property can be border, topBorder, 
      **/
     @SuppressWarnings("unchecked")
-    public BoxBorderProperty(JRBox box, String propertyName, String propertyDisplayName, 
+    public BoxBorderProperty(JRLineBox box, String propertyName, String propertyDisplayName, 
                                   String propertyDesc)
     {
         super(propertyName, Byte.class,
@@ -96,7 +96,7 @@ public final class BoxBorderProperty  extends PropertySupport {
         if (val == null || val instanceof PenEnum)
         {
             PenEnum newValue = (PenEnum)val;
-            PenEnum oldValue = PenEnum.getByValue( box.getOwnBorder() );
+            PenEnum oldValue = PenEnum.getByValue( box.getPen().getLineStyleValue().getValue() );
 
 
             String methodName = "BorderValue";
