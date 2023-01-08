@@ -43,11 +43,12 @@ import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JToggleButton;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
 import net.sf.jasperreports.engine.design.JRDesignTextElement;
+import net.sf.jasperreports.engine.fonts.FontUtil;
 import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
 import net.sf.jasperreports.engine.type.VerticalAlignEnum;
-import net.sf.jasperreports.engine.util.JRFontUtil;
 import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
@@ -137,7 +138,7 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         ClassLoader oldCL = Thread.currentThread().getContextClassLoader();
         Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader()));
 
-        Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+        Collection extensionFonts = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
         for(Iterator it = extensionFonts.iterator(); it.hasNext();)
         {
             String fname = (String)it.next();
@@ -542,9 +543,9 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
             for (JRDesignTextElement element : getSelectedTextElements())
             {
                 // TODO: add undo operation...
-                int newFontSize = element.getFontSize() + 2;
-                Integer oldFontSize = element.getOwnFontSize();
-                element.setFontSize(newFontSize);
+                int newFontSize = (int)element.getFontsize() + 2;
+                Integer oldFontSize = element.getOwnFontsize().intValue();
+                element.setFontSize((float)newFontSize);
                 ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "FontSize",Integer.class, oldFontSize , new Integer(newFontSize));
                 IReportManager.getInstance().addUndoableEdit(opUndo, !isFirstUndo);
                 isFirstUndo = false;
@@ -559,7 +560,7 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
             for (JRDesignTextElement element : getSelectedTextElements())
             {
                 // TODO: add undo operation...
-                int newFontSize = element.getFontSize() -2;
+                int newFontSize = element.getFontsize() -2;
                 if (newFontSize >= 3)
                 {
                     Integer oldFontSize = element.getOwnFontSize();

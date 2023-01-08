@@ -40,7 +40,6 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.EnumSet;
 import javax.swing.border.LineBorder;
-import net.sf.jasperreports.engine.JRAlignment;
 import net.sf.jasperreports.engine.design.JRDesignElement;
 import net.sf.jasperreports.engine.design.JRDesignTextElement;
 
@@ -92,7 +91,7 @@ public class ReportTextElementInplaceEditorProvider implements InplaceEditorProv
            if (element.isBold()) style |= Font.BOLD;
            if (element.isItalic()) style |= Font.ITALIC;
            
-           float size = ((float) element.getFontSize() * (float) scene.getZoomFactor());
+           float size = ((float) element.getFontsize() * (float) scene.getZoomFactor());
            if (size < 5f) size = 5f;
            
            Font textFont = new Font(element.getFontName(), style, (int)size);
@@ -113,7 +112,7 @@ public class ReportTextElementInplaceEditorProvider implements InplaceEditorProv
         JRDesignTextElement element = getTextElement(widget);
         if (element != null)
         {
-            switch (element.getHorizontalAlignmentValue())
+            switch (element.getHorizontalTextAlign())
             {
                     case CENTER:
                         return JTextArea.CENTER_ALIGNMENT;
@@ -133,7 +132,7 @@ public class ReportTextElementInplaceEditorProvider implements InplaceEditorProv
         JRDesignTextElement element = getTextElement(widget);
         if (element != null)
         {
-            switch (element.getVerticalAlignmentValue())
+            switch (element.getVerticalTextAlign())
             {
                     case MIDDLE:
                         return JTextArea.CENTER_ALIGNMENT;

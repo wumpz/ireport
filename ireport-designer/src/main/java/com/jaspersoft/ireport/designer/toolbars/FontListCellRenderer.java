@@ -39,8 +39,8 @@ import javax.swing.JList;
 import javax.swing.JSeparator;
 import javax.swing.ListCellRenderer;
 import javax.swing.UIManager;
-import net.sf.jasperreports.engine.fonts.FontInfo;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
+import net.sf.jasperreports.engine.fonts.FontUtil;
 
 /**
  *
@@ -88,7 +88,8 @@ public class FontListCellRenderer extends javax.swing.JPanel implements ListCell
 
                 Thread.currentThread().setContextClassLoader(IReportManager.getJRExtensionsClassLoader());
 
-                Font f = JRFontUtil.getAwtFontFromBundles(""+value, Font.PLAIN, 12, null, true);
+                Font f = FontUtil.getInstance(DefaultJasperReportsContext.getInstance())
+                        .getAwtFontFromBundles(""+value, Font.PLAIN, 12, null, true);
                 if (f == null)
                 {
                     f = new Font("" + value, Font.PLAIN, 12);

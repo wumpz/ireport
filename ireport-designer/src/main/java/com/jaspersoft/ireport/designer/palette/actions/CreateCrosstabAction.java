@@ -24,7 +24,6 @@
 package com.jaspersoft.ireport.designer.palette.actions;
 
 import com.jaspersoft.ireport.designer.ModelUtils;
-import com.jaspersoft.ireport.designer.ReportObjectScene;
 import com.jaspersoft.ireport.designer.crosstab.wizard.CrosstabWizardPanel1;
 import com.jaspersoft.ireport.designer.crosstab.wizard.CrosstabWizardPanel2;
 import com.jaspersoft.ireport.designer.crosstab.wizard.CrosstabWizardPanel3;
@@ -36,11 +35,9 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dialog;
 import java.awt.Point;
-import java.awt.dnd.DropTargetDropEvent;
 import java.text.MessageFormat;
 import java.util.List;
 import javax.swing.JComponent;
-import javax.swing.SwingUtilities;
 import net.sf.jasperreports.crosstabs.JRCrosstabGroup;
 import net.sf.jasperreports.crosstabs.design.JRCrosstabOrigin;
 import net.sf.jasperreports.crosstabs.design.JRDesignCellContents;
@@ -50,14 +47,10 @@ import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabColumnGroup;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabDataset;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabMeasure;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabRowGroup;
-import net.sf.jasperreports.crosstabs.fill.calculation.BucketDefinition;
 import net.sf.jasperreports.crosstabs.type.CrosstabTotalPositionEnum;
-import net.sf.jasperreports.engine.JRAlignment;
 import net.sf.jasperreports.engine.JRBand;
 import net.sf.jasperreports.engine.JRElement;
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JRPen;
-import net.sf.jasperreports.engine.base.JRBaseTextElement;
 import net.sf.jasperreports.engine.design.JRDesignDataset;
 import net.sf.jasperreports.engine.design.JRDesignDatasetRun;
 import net.sf.jasperreports.engine.design.JRDesignElement;
@@ -67,14 +60,11 @@ import net.sf.jasperreports.engine.design.JRDesignStyle;
 import net.sf.jasperreports.engine.design.JRDesignTextElement;
 import net.sf.jasperreports.engine.design.JRDesignTextField;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
+import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 import net.sf.jasperreports.engine.type.LineStyleEnum;
 import net.sf.jasperreports.engine.type.ModeEnum;
-import net.sf.jasperreports.engine.type.PenEnum;
-import net.sf.jasperreports.engine.type.VerticalAlignEnum;
-import org.netbeans.api.visual.animator.SceneAnimator;
+import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 import org.netbeans.api.visual.widget.Scene;
-import org.netbeans.api.visual.widget.Widget;
 import org.openide.DialogDisplayer;
 import org.openide.WizardDescriptor;
 import org.openide.util.Exceptions;
@@ -431,8 +421,8 @@ public class CreateCrosstabAction extends CreateReportElementAction
         element.setWidth(w);
         element.setHeight(h);
         element.setText(text);
-        element.setHorizontalAlignment( HorizontalAlignEnum.CENTER );
-        element.setVerticalAlignment( VerticalAlignEnum.MIDDLE);
+        element.setHorizontalTextAlign( HorizontalTextAlignEnum.CENTER );
+        element.setVerticalTextAlign( VerticalTextAlignEnum.MIDDLE);
         return element;
     }
     
@@ -446,7 +436,7 @@ public class CreateCrosstabAction extends CreateReportElementAction
             try {
                 dataTextfieldStyle = new JRDesignStyle();
                 dataTextfieldStyle.setName(styleName);
-                dataTextfieldStyle.setHorizontalAlignment(HorizontalAlignEnum.CENTER);
+                dataTextfieldStyle.setHorizontalTextAlign(HorizontalTextAlignEnum.CENTER);
                 getJasperDesign().addStyle(dataTextfieldStyle);
             } catch (JRException ex) {
                 Exceptions.printStackTrace(ex);

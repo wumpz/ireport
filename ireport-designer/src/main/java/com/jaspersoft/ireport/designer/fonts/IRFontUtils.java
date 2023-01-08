@@ -45,7 +45,8 @@ import java.util.zip.ZipOutputStream;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
+import net.sf.jasperreports.engine.fonts.FontUtil;
 import org.openide.filesystems.FileUtil;
 import org.w3c.dom.*;
 
@@ -275,7 +276,7 @@ public class IRFontUtils {
 
                      Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader(true)));
 
-                     JRFontUtil.getFontFamilyNames();
+                     FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
                      //System.out.println("Reloading fonts: " + JRFontUtil.getFontFamilyNames());
 
                      Thread.currentThread().setContextClassLoader(oldCL);

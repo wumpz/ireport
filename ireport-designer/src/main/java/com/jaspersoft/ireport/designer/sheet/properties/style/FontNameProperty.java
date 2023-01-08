@@ -40,7 +40,6 @@ import java.util.prefs.PreferenceChangeListener;
 import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
 import net.sf.jasperreports.engine.fonts.FontUtil;
-import net.sf.jasperreports.engine.util.FontUtil;
 import org.openide.nodes.PropertySupport;
 
 /**

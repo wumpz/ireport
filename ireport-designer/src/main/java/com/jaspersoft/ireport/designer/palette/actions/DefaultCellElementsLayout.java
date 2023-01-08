@@ -35,12 +35,14 @@ import java.util.Locale;
 import java.util.Map;
 import javax.swing.SwingUtilities;
 import net.sf.jasperreports.crosstabs.design.JRDesignCellContents;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRCommonText;
 import net.sf.jasperreports.engine.JasperReportsContext;
 import net.sf.jasperreports.engine.design.JRDesignElement;
 import net.sf.jasperreports.engine.design.JRDesignTextElement;
 import net.sf.jasperreports.engine.fill.JRMeasuredText;
 import net.sf.jasperreports.engine.fill.JRTextMeasurer;
+import net.sf.jasperreports.engine.fonts.FontUtil;
 import net.sf.jasperreports.engine.util.JRFontUtil;
 import net.sf.jasperreports.engine.util.JRStyledText;
 import net.sf.jasperreports.engine.util.JRStyledTextParser;
@@ -160,13 +162,13 @@ public class DefaultCellElementsLayout {
                     {
                         JRStyledTextParser styledTextParser = JRStyledTextParser.getInstance();
                         JRDesignTextElement dte = (JRDesignTextElement)element;
-                        dte.setFontSize((Integer)null);
-                        for (int i=dte.getFontSize()-1; i>1 ; --i)
+                        dte.setFontSize((Float)null);
+                        for (int i=(int)dte.getFontsize()-1; i>1 ; --i)
                         {
                                 String text = "test";
                                 
                                 // Convert the element in a print element...
-                                Map<Attribute, Object> attributes = JRFontUtil.getAttributes(new HashMap(), dte, Locale.getDefault());
+                                Map<Attribute, Object> attributes = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getAttributes(new HashMap(), dte, Locale.getDefault());
                                 
                                 JRStyledText styledText = 
                                     styledTextParser.getStyledText(
