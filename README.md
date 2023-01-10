@@ -9,7 +9,7 @@ If I have time I will do more.
 
 ## News
 
-* first "release" of Netbeans 16 based iReports 
+* first "release" of Netbeans 16 based iReports (https://github.com/wumpz/ireport/releases/tag/nb-platform-16)
 * https://github.com/wumpz/ireport/issues/3  It starts for the first time on Java 8 and Apache Netbeans 12.2 :)
 
 
