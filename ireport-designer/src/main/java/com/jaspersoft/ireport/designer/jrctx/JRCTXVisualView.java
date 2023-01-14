@@ -44,6 +44,7 @@ import javax.swing.event.DocumentListener;
 import javax.swing.text.DefaultEditorKit;
 import net.sf.jasperreports.chartthemes.simple.ChartThemeSettings;
 import net.sf.jasperreports.chartthemes.simple.XmlChartTheme;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRRuntimeException;
 import net.sf.jasperreports.engine.JasperReport;
@@ -200,6 +201,7 @@ final class JRCTXVisualView extends TopComponent
                     {
                         viewerContext.loadReport(
                             new ReportConverter(
+                                DefaultJasperReportsContext.getInstance(), 
                                 chartTypeReports[reportIndex], 
                                 false).getJasperPrint()
                             );

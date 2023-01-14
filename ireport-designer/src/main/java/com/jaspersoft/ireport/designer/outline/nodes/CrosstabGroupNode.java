@@ -48,8 +48,10 @@ import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabColumnGroup;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabGroup;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabRowGroup;
 import net.sf.jasperreports.crosstabs.type.CrosstabTotalPositionEnum;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRExpressionChunk;
 import net.sf.jasperreports.engine.JRExpressionCollector;
+import net.sf.jasperreports.engine.analytics.dataset.BucketOrder;
 import net.sf.jasperreports.engine.design.JRDesignElement;
 import net.sf.jasperreports.engine.design.JRDesignExpression;
 import net.sf.jasperreports.engine.design.JRDesignTextField;
@@ -460,7 +462,7 @@ public abstract class CrosstabGroupNode extends IRAbstractNode implements Proper
             }
             ModelUtils.fixElementsExpressions(crosstab, oldName, newName, JRExpressionChunk.TYPE_VARIABLE, className);
             
-            List expressions = JRExpressionCollector.collectExpressions(jd, crosstab);
+            List expressions = JRExpressionCollector.collectExpressions(DefaultJasperReportsContext.getInstance(), jd, crosstab);
             for (int i=0; i<expressions.size(); ++i)
             {
                 JRDesignExpression exp = (JRDesignExpression)expressions.get(i);
@@ -934,7 +936,7 @@ public abstract class CrosstabGroupNode extends IRAbstractNode implements Proper
         @Override
         public Object getPropertyValue()
         {
-            return bucket.getOrderValue();
+            return bucket.getOrder();
         }
 
         @Override
@@ -952,7 +954,7 @@ public abstract class CrosstabGroupNode extends IRAbstractNode implements Proper
         @Override
         public void setPropertyValue(Object order)
         {
-            bucket.setOrder((SortOrderEnum)order);
+            bucket.setOrder((BucketOrder)order);
         }
 
     }

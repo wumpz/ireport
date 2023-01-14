@@ -58,7 +58,7 @@ public class FontSizeProperty extends PropertySupport.ReadWrite {
     }
 
     public Object getValue() throws IllegalAccessException, InvocationTargetException {
-        return font.getFontSize();
+        return font.getFontsize();
     }
 
     public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
@@ -77,9 +77,9 @@ public class FontSizeProperty extends PropertySupport.ReadWrite {
 
         if (val == null || val instanceof Integer)
         {
-            Integer oldValue = font.getOwnFontSize();
+            Integer oldValue = font.getOwnFontsize().intValue();
             Integer newValue =   (Integer)val;
-            font.setFontSize(newValue);
+            font.setFontSize(newValue.floatValue());
 
             ObjectPropertyUndoableEdit urob =
                     new ObjectPropertyUndoableEdit(
@@ -94,7 +94,7 @@ public class FontSizeProperty extends PropertySupport.ReadWrite {
 
     @Override
     public boolean isDefaultValue() {
-        return font.getOwnFontSize() == null;
+        return font.getOwnFontsize() == null;
     }
 
     @Override
