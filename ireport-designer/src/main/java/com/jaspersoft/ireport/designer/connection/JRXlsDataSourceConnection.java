@@ -34,7 +34,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import net.sf.jasperreports.engine.data.JRXlsDataSource;
+import net.sf.jasperreports.engine.data.XlsDataSource;
 import net.sf.jasperreports.engine.design.JRDesignField;
 
 /**
@@ -162,7 +162,7 @@ public class JRXlsDataSourceConnection extends IReportConnection  implements Wiz
     public net.sf.jasperreports.engine.JRDataSource getJRDataSource() { 
         
         try {
-            JRXlsDataSource ds = new JRXlsDataSource(new File(getFilename()));
+            XlsDataSource ds = new XlsDataSource(new File(getFilename()));
             if (this.getCustomDateFormat() != null && this.getCustomDateFormat().length() > 0)
             {
                 ds.setDateFormat(new SimpleDateFormat(this.getCustomDateFormat()));

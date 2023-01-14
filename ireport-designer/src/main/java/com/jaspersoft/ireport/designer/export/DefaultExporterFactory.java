@@ -31,13 +31,15 @@ import net.sf.jasperreports.engine.JRExporter;
 import net.sf.jasperreports.engine.JRPropertiesUtil;
 import net.sf.jasperreports.engine.JasperReportsContext;
 import net.sf.jasperreports.engine.SimpleJasperReportsContext;
-import net.sf.jasperreports.engine.export.JExcelApiExporterParameter;
 import net.sf.jasperreports.engine.export.JRCsvExporterParameter;
 import net.sf.jasperreports.engine.export.JRHtmlExporterParameter;
-import net.sf.jasperreports.engine.export.JRPdfExporterParameter;
 import net.sf.jasperreports.engine.export.JRTextExporterParameter;
 import net.sf.jasperreports.engine.export.JRXlsAbstractExporterParameter;
-import net.sf.jasperreports.engine.export.JRXlsExporter;
+import net.sf.jasperreports.export.PdfExporterConfiguration;
+import net.sf.jasperreports.export.PdfReportConfiguration;
+import net.sf.jasperreports.export.TextReportConfiguration;
+import net.sf.jasperreports.export.XlsExporterConfiguration;
+import net.sf.jasperreports.export.XlsReportConfiguration;
 
 /**
  * This is a generic exporter used internally by iReport for the default
@@ -98,7 +100,7 @@ public class DefaultExporterFactory implements ExporterFactory {
        }
        else if (format.equalsIgnoreCase("html"))
        {
-          exporter = new  net.sf.jasperreports.engine.export.JRHtmlExporter(context);
+          exporter = new  net.sf.jasperreports.engine.export.HtmlExporter(context);
           //exporter = new net.sf.jasperreports.engine.export.HtmlExporter(context);
           configureHtmlExporter(exporter, context);
        }
@@ -110,7 +112,7 @@ public class DefaultExporterFactory implements ExporterFactory {
        }
        else if (format.equalsIgnoreCase("xhtml"))
        {
-          exporter = new  net.sf.jasperreports.engine.export.JRXhtmlExporter(context);
+          exporter = new  net.sf.jasperreports.engine.export.HtmlExporter(context);
           configureXHtmlExporter(exporter, context);
        }
        else if (format.equalsIgnoreCase("xls"))
@@ -120,12 +122,12 @@ public class DefaultExporterFactory implements ExporterFactory {
        }
        else if (format.equalsIgnoreCase("xls2"))
        {
-          exporter = new  net.sf.jasperreports.engine.export.JExcelApiExporter(context);
+          exporter = new  net.sf.jasperreports.engine.export.JRXlsExporter(context);
           configureXlsExporter(exporter, context);
        }
        else if (format.equalsIgnoreCase("xls3"))
        {
-          exporter = new  net.sf.jasperreports.engine.export.JExcelApiMetadataExporter(context);
+          exporter = new  net.sf.jasperreports.engine.export.JRXlsMetadataExporter(context);
           configureXlsExporter(exporter, context);
        }
        else if (format.equalsIgnoreCase("xlsx"))
@@ -233,17 +235,17 @@ public class DefaultExporterFactory implements ExporterFactory {
         Preferences pref = IReportManager.getPreferences();
         JRPropertiesUtil jrPropUtils = JRPropertiesUtil.getInstance(context);
 
-        float floatVal = pref.getFloat(JRTextExporterParameter.PROPERTY_CHARACTER_HEIGHT, 0);
-        if (floatVal > 0) context.setValue( JRTextExporterParameter.PROPERTY_CHARACTER_HEIGHT, floatVal+"");
+        float floatVal = pref.getFloat(TextReportConfiguration.PROPERTY_CHARACTER_HEIGHT, 0);
+        if (floatVal > 0) context.setValue( TextReportConfiguration.PROPERTY_CHARACTER_HEIGHT, floatVal+"");
 
-        floatVal = pref.getFloat(JRTextExporterParameter.PROPERTY_CHARACTER_WIDTH, 0);
-        if (floatVal > 0) context.setValue( JRTextExporterParameter.PROPERTY_CHARACTER_WIDTH, floatVal+"");
+        floatVal = pref.getFloat(TextReportConfiguration.PROPERTY_CHARACTER_WIDTH, 0);
+        if (floatVal > 0) context.setValue( TextReportConfiguration.PROPERTY_CHARACTER_WIDTH, floatVal+"");
 
-        int val = pref.getInt(JRTextExporterParameter.PROPERTY_PAGE_HEIGHT, 0);
-        if (val > 0) context.setValue( JRTextExporterParameter.PROPERTY_PAGE_HEIGHT, ""+val);
+        int val = pref.getInt(TextReportConfiguration.PROPERTY_PAGE_HEIGHT, 0);
+        if (val > 0) context.setValue( TextReportConfiguration.PROPERTY_PAGE_HEIGHT, ""+val);
 
-        val = pref.getInt(JRTextExporterParameter.PROPERTY_PAGE_WIDTH, 0);
-        if (val > 0) context.setValue( JRTextExporterParameter.PROPERTY_PAGE_WIDTH, ""+val);
+        val = pref.getInt(TextReportConfiguration.PROPERTY_PAGE_WIDTH, 0);
+        if (val > 0) context.setValue( TextReportConfiguration.PROPERTY_PAGE_WIDTH, ""+val);
 
         String s = null;
         if (pref.getBoolean(JRPropertiesUtil.PROPERTY_PREFIX + "export.txt.nothingBetweenPages", false))
@@ -266,36 +268,36 @@ public class DefaultExporterFactory implements ExporterFactory {
         Preferences pref = IReportManager.getPreferences();
         JRPropertiesUtil jrPropUtils = JRPropertiesUtil.getInstance(context);
 
-        context.setValue( JExcelApiExporterParameter.PROPERTY_CREATE_CUSTOM_PALETTE , pref.getBoolean(JExcelApiExporterParameter.PROPERTY_CREATE_CUSTOM_PALETTE, jrPropUtils.getBooleanProperty(JExcelApiExporterParameter.PROPERTY_CREATE_CUSTOM_PALETTE)));
+        context.setValue( XlsExporterConfiguration.PROPERTY_CREATE_CUSTOM_PALETTE , pref.getBoolean(XlsExporterConfiguration.PROPERTY_CREATE_CUSTOM_PALETTE, jrPropUtils.getBooleanProperty(XlsExporterConfiguration.PROPERTY_CREATE_CUSTOM_PALETTE)));
 
-        String password = pref.get(JExcelApiExporterParameter.PROPERTY_PASSWORD, jrPropUtils.getProperty(JExcelApiExporterParameter.PROPERTY_PASSWORD));
+        String password = pref.get(XlsReportConfiguration.PROPERTY_PASSWORD, jrPropUtils.getProperty(XlsReportConfiguration.PROPERTY_PASSWORD));
         if (password != null && password.length() > 0)
         {
-            context.setValue( JExcelApiExporterParameter.PROPERTY_PASSWORD ,password);
+            context.setValue( XlsReportConfiguration.PROPERTY_PASSWORD ,password);
         }
 
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_COLLAPSE_ROW_SPAN , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_COLLAPSE_ROW_SPAN, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_COLLAPSE_ROW_SPAN)));
+        context.setValue( XlsReportConfiguration.PROPERTY_COLLAPSE_ROW_SPAN , pref.getBoolean(XlsReportConfiguration.PROPERTY_COLLAPSE_ROW_SPAN, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_COLLAPSE_ROW_SPAN)));
         
-        System.out.println("Setting detect cell type to:" + pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_DETECT_CELL_TYPE, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_DETECT_CELL_TYPE)));
+        System.out.println("Setting detect cell type to:" + pref.getBoolean(XlsReportConfiguration.PROPERTY_DETECT_CELL_TYPE, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_DETECT_CELL_TYPE)));
         
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_DETECT_CELL_TYPE , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_DETECT_CELL_TYPE, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_DETECT_CELL_TYPE)));
+        context.setValue( XlsReportConfiguration.PROPERTY_DETECT_CELL_TYPE , pref.getBoolean(XlsReportConfiguration.PROPERTY_DETECT_CELL_TYPE, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_DETECT_CELL_TYPE)));
         
-        System.out.println("Setting detect cell type to ("+JRXlsAbstractExporterParameter.PROPERTY_DETECT_CELL_TYPE+"):" + jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_DETECT_CELL_TYPE));
+        System.out.println("Setting detect cell type to ("+XlsReportConfiguration.PROPERTY_DETECT_CELL_TYPE+"):" + jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_DETECT_CELL_TYPE));
         
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_FONT_SIZE_FIX_ENABLED , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_FONT_SIZE_FIX_ENABLED, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_FONT_SIZE_FIX_ENABLED)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_IGNORE_CELL_BORDER , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_IGNORE_CELL_BORDER, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_IGNORE_CELL_BORDER)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_IGNORE_CELL_BACKGROUND , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_IGNORE_CELL_BACKGROUND, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_IGNORE_CELL_BACKGROUND)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_IGNORE_GRAPHICS , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_IGNORE_GRAPHICS, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_IGNORE_GRAPHICS)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_IMAGE_BORDER_FIX_ENABLED , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_IMAGE_BORDER_FIX_ENABLED, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_IMAGE_BORDER_FIX_ENABLED)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_ONE_PAGE_PER_SHEET , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_ONE_PAGE_PER_SHEET, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_ONE_PAGE_PER_SHEET)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS)));
-        context.setValue( JRXlsAbstractExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND , pref.getBoolean(JRXlsAbstractExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND, jrPropUtils.getBooleanProperty(JRXlsAbstractExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND)));
+        context.setValue( XlsReportConfiguration.PROPERTY_FONT_SIZE_FIX_ENABLED , pref.getBoolean(XlsReportConfiguration.PROPERTY_FONT_SIZE_FIX_ENABLED, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_FONT_SIZE_FIX_ENABLED)));
+        context.setValue( XlsReportConfiguration.PROPERTY_IGNORE_CELL_BORDER , pref.getBoolean(XlsReportConfiguration.PROPERTY_IGNORE_CELL_BORDER, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_IGNORE_CELL_BORDER)));
+        context.setValue( XlsReportConfiguration.PROPERTY_IGNORE_CELL_BACKGROUND , pref.getBoolean(XlsReportConfiguration.PROPERTY_IGNORE_CELL_BACKGROUND, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_IGNORE_CELL_BACKGROUND)));
+        context.setValue( XlsReportConfiguration.PROPERTY_IGNORE_GRAPHICS , pref.getBoolean(XlsReportConfiguration.PROPERTY_IGNORE_GRAPHICS, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_IGNORE_GRAPHICS)));
+        context.setValue( XlsReportConfiguration.PROPERTY_IMAGE_BORDER_FIX_ENABLED , pref.getBoolean(XlsReportConfiguration.PROPERTY_IMAGE_BORDER_FIX_ENABLED, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_IMAGE_BORDER_FIX_ENABLED)));
+        context.setValue( XlsReportConfiguration.PROPERTY_ONE_PAGE_PER_SHEET , pref.getBoolean(XlsReportConfiguration.PROPERTY_ONE_PAGE_PER_SHEET, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_ONE_PAGE_PER_SHEET)));
+        context.setValue( XlsReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS , pref.getBoolean(XlsReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_COLUMNS)));
+        context.setValue( XlsReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS , pref.getBoolean(XlsReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS)));
+        context.setValue( XlsReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND , pref.getBoolean(XlsReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND, jrPropUtils.getBooleanProperty(XlsReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND)));
 
-        int maxRowsPerSheet = pref.getInt(JRXlsAbstractExporterParameter.PROPERTY_MAXIMUM_ROWS_PER_SHEET, jrPropUtils.getIntegerProperty(JRXlsAbstractExporterParameter.PROPERTY_MAXIMUM_ROWS_PER_SHEET));
+        int maxRowsPerSheet = pref.getInt(XlsReportConfiguration.PROPERTY_MAXIMUM_ROWS_PER_SHEET, jrPropUtils.getIntegerProperty(XlsReportConfiguration.PROPERTY_MAXIMUM_ROWS_PER_SHEET));
         if (maxRowsPerSheet > 0)
         {
-            context.setValue( JRXlsAbstractExporterParameter.PROPERTY_MAXIMUM_ROWS_PER_SHEET, ""+ maxRowsPerSheet);
+            context.setValue( XlsReportConfiguration.PROPERTY_MAXIMUM_ROWS_PER_SHEET, ""+ maxRowsPerSheet);
         }
         if (pref.getBoolean(JRPropertiesUtil.PROPERTY_PREFIX + "export.xls.useSheetNames", false))
         {
@@ -304,10 +306,10 @@ public class DefaultExporterFactory implements ExporterFactory {
         }
 
         // Add freeze options...
-        String  col = pref.get(JRXlsExporter.PROPERTY_FREEZE_COLUMN, jrPropUtils.getProperty(JRXlsExporter.PROPERTY_FREEZE_COLUMN));
+        String  col = pref.get(XlsReportConfiguration.PROPERTY_FREEZE_COLUMN, jrPropUtils.getProperty(XlsReportConfiguration.PROPERTY_FREEZE_COLUMN));
         if (col != null && col.length() > 0)
         {
-            context.setValue( JRXlsExporter.PROPERTY_FREEZE_COLUMN, ""+col);
+            context.setValue( XlsReportConfiguration.PROPERTY_FREEZE_COLUMN, ""+col);
         }
 
 //        String columnEdge = pref.get(JRXlsExporter.PROPERTY_FREEZE_COLUMN_EDGE, null);
@@ -317,10 +319,10 @@ public class DefaultExporterFactory implements ExporterFactory {
 //        }
 
         // Add freeze options...
-        int row = pref.getInt(JRXlsExporter.PROPERTY_FREEZE_ROW, jrPropUtils.getIntegerProperty(JRXlsExporter.PROPERTY_FREEZE_ROW,0));
+        int row = pref.getInt(XlsReportConfiguration.PROPERTY_FREEZE_ROW, jrPropUtils.getIntegerProperty(XlsReportConfiguration.PROPERTY_FREEZE_ROW,0));
         if (row > 0)
         {
-            context.setValue( JRXlsExporter.PROPERTY_FREEZE_ROW, ""+row);
+            context.setValue( XlsReportConfiguration.PROPERTY_FREEZE_ROW, ""+row);
         }
 
 //        String rowEdge = pref.get( JRXlsExporter.PROPERTY_FREEZE_ROW_EDGE, null);
@@ -340,71 +342,71 @@ public class DefaultExporterFactory implements ExporterFactory {
         JRPropertiesUtil jrPropUtils = JRPropertiesUtil.getInstance(context);
         
 
-        String pdfVersion = pref.get(JRPdfExporterParameter.PROPERTY_PDF_VERSION, null);
-        if (pdfVersion != null && pdfVersion.length()==1) context.setValue( JRPdfExporterParameter.PROPERTY_PDF_VERSION  , ""+pdfVersion.charAt(0));
+        String pdfVersion = pref.get(PdfExporterConfiguration.PROPERTY_PDF_VERSION, null);
+        if (pdfVersion != null && pdfVersion.length()==1) context.setValue( PdfExporterConfiguration.PROPERTY_PDF_VERSION  , ""+pdfVersion.charAt(0));
 
-        boolean b = pref.getBoolean(JRPdfExporterParameter.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS));
-        context.setValue( JRPdfExporterParameter.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS , new Boolean(b));
+        boolean b = pref.getBoolean(PdfExporterConfiguration.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS, jrPropUtils.getBooleanProperty(PdfExporterConfiguration.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS));
+        context.setValue( PdfExporterConfiguration.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS , new Boolean(b));
 
-        context.setValue( JRPdfExporterParameter.PROPERTY_COMPRESSED , new Boolean(pref.getBoolean(JRPdfExporterParameter.PROPERTY_COMPRESSED, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_COMPRESSED))));
-        context.setValue( JRPdfExporterParameter.PROPERTY_FORCE_LINEBREAK_POLICY , new Boolean(pref.getBoolean(JRPdfExporterParameter.PROPERTY_FORCE_LINEBREAK_POLICY, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_FORCE_LINEBREAK_POLICY))));
-        context.setValue( JRPdfExporterParameter.PROPERTY_FORCE_SVG_SHAPES , new Boolean(pref.getBoolean(JRPdfExporterParameter.PROPERTY_FORCE_SVG_SHAPES, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_FORCE_SVG_SHAPES))));
-        context.setValue( JRPdfExporterParameter.PROPERTY_TAGGED , new Boolean(pref.getBoolean(JRPdfExporterParameter.PROPERTY_TAGGED, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_TAGGED))));
-        context.setValue( JRPdfExporterParameter.PROPERTY_ENCRYPTED , new Boolean(pref.getBoolean(JRPdfExporterParameter.PROPERTY_ENCRYPTED, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_ENCRYPTED))));
-        context.setValue( JRPdfExporterParameter.PROPERTY_128_BIT_KEY , new Boolean(pref.getBoolean(JRPdfExporterParameter.PROPERTY_128_BIT_KEY, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_128_BIT_KEY))));
+        context.setValue( PdfExporterConfiguration.PROPERTY_COMPRESSED , new Boolean(pref.getBoolean(PdfExporterConfiguration.PROPERTY_COMPRESSED, jrPropUtils.getBooleanProperty(PdfExporterConfiguration.PROPERTY_COMPRESSED))));
+        context.setValue( PdfReportConfiguration.PROPERTY_FORCE_LINEBREAK_POLICY , new Boolean(pref.getBoolean(PdfReportConfiguration.PROPERTY_FORCE_LINEBREAK_POLICY, jrPropUtils.getBooleanProperty(PdfReportConfiguration.PROPERTY_FORCE_LINEBREAK_POLICY))));
+        context.setValue( PdfReportConfiguration.PROPERTY_FORCE_SVG_SHAPES , new Boolean(pref.getBoolean(PdfReportConfiguration.PROPERTY_FORCE_SVG_SHAPES, jrPropUtils.getBooleanProperty(PdfReportConfiguration.PROPERTY_FORCE_SVG_SHAPES))));
+        context.setValue( PdfExporterConfiguration.PROPERTY_TAGGED , new Boolean(pref.getBoolean(PdfExporterConfiguration.PROPERTY_TAGGED, jrPropUtils.getBooleanProperty(PdfExporterConfiguration.PROPERTY_TAGGED))));
+        context.setValue( PdfExporterConfiguration.PROPERTY_ENCRYPTED , new Boolean(pref.getBoolean(PdfExporterConfiguration.PROPERTY_ENCRYPTED, jrPropUtils.getBooleanProperty(PdfExporterConfiguration.PROPERTY_ENCRYPTED))));
+        context.setValue( PdfExporterConfiguration.PROPERTY_128_BIT_KEY , new Boolean(pref.getBoolean(PdfExporterConfiguration.PROPERTY_128_BIT_KEY, jrPropUtils.getBooleanProperty(PdfExporterConfiguration.PROPERTY_128_BIT_KEY))));
 
         if (pref.get("export.pdf.METADATA_AUTHOR", "").length() > 0)
         {
-            exporter.setParameter( JRPdfExporterParameter.METADATA_AUTHOR , pref.get("export.pdf.METADATA_AUTHOR", ""));
+            exporter.setParameter( PdfExporterConfiguration.PROPERTY_METADATA_AUTHOR , pref.get("export.pdf.METADATA_AUTHOR", ""));
         }
         if (pref.get("export.pdf.METADATA_CREATOR", "").length() > 0)
         {
-            exporter.setParameter( JRPdfExporterParameter.METADATA_CREATOR , pref.get("export.pdf.METADATA_CREATOR", ""));
+            exporter.setParameter( PdfExporterConfiguration.METADATA_CREATOR , pref.get("export.pdf.METADATA_CREATOR", ""));
         }
         if (pref.get("export.pdf.METADATA_KEYWORDS", "").length() > 0)
         {
-            exporter.setParameter( JRPdfExporterParameter.METADATA_KEYWORDS , pref.get("export.pdf.METADATA_KEYWORDS", ""));
+            exporter.setParameter( PdfExporterConfiguration.METADATA_KEYWORDS , pref.get("export.pdf.METADATA_KEYWORDS", ""));
         }
         if (pref.get("export.pdf.METADATA_SUBJECT", "").length() > 0)
         {
-            exporter.setParameter( JRPdfExporterParameter.METADATA_SUBJECT , pref.get("export.pdf.METADATA_SUBJECT", ""));
+            exporter.setParameter( PdfExporterConfiguration.METADATA_SUBJECT , pref.get("export.pdf.METADATA_SUBJECT", ""));
         }
         if (pref.get("export.pdf.METADATA_TITLE", "").length() > 0)
         {
-            exporter.setParameter( JRPdfExporterParameter.METADATA_TITLE , pref.get("export.pdf.METADATA_TITLE", ""));
+            exporter.setParameter( PdfExporterConfiguration.METADATA_TITLE , pref.get("export.pdf.METADATA_TITLE", ""));
         }
         if (pref.get("export.pdf.OWNER_PASSWORD", "").length() > 0)
         {
-            context.setValue( JRPdfExporterParameter.PROPERTY_OWNER_PASSWORD , pref.get("export.pdf.OWNER_PASSWORD", ""));
+            context.setValue( PdfExporterConfiguration.PROPERTY_OWNER_PASSWORD , pref.get("export.pdf.OWNER_PASSWORD", ""));
         }
         if (pref.get("export.pdf.USER_PASSWORD", "").length() > 0)
         {
-            context.setValue( JRPdfExporterParameter.PROPERTY_USER_PASSWORD , pref.get("export.pdf.USER_PASSWORD", ""));
+            context.setValue( PdfExporterConfiguration.PROPERTY_USER_PASSWORD , pref.get("export.pdf.USER_PASSWORD", ""));
         }
-        if (pref.get("export.pdf.TAG_LANGUAGE", jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_TAG_LANGUAGE)) != null)
+        if (pref.get("export.pdf.TAG_LANGUAGE", jrPropUtils.getProperty(PdfExporterConfiguration.PROPERTY_TAG_LANGUAGE)) != null)
         {
-            context.setValue( JRPdfExporterParameter.PROPERTY_TAG_LANGUAGE ,pref.get("export.pdf.TAG_LANGUAGE", jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_TAG_LANGUAGE)));
+            context.setValue( PdfExporterConfiguration.PROPERTY_TAG_LANGUAGE ,pref.get("export.pdf.TAG_LANGUAGE", jrPropUtils.getProperty(PdfExporterConfiguration.PROPERTY_TAG_LANGUAGE)));
         }
-        if (pref.get("export.pdf.PDF_JAVASCRIPT", jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_PDF_JAVASCRIPT)) != null)
+        if (pref.get("export.pdf.PDF_JAVASCRIPT", jrPropUtils.getProperty(PdfExporterConfiguration.PROPERTY_PDF_JAVASCRIPT)) != null)
         {
-            context.setValue( JRPdfExporterParameter.PROPERTY_PDF_JAVASCRIPT ,pref.get("export.pdf.PDF_JAVASCRIPT", jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_PDF_JAVASCRIPT)));
+            context.setValue( PdfExporterConfiguration.PROPERTY_PDF_JAVASCRIPT ,pref.get("export.pdf.PDF_JAVASCRIPT", jrPropUtils.getProperty(PdfExporterConfiguration.PROPERTY_PDF_JAVASCRIPT)));
         }
         if (pref.getInt("export.pdf.PERMISSIONS",0) != 0)
         {
-            exporter.setParameter(JRPdfExporterParameter.PERMISSIONS ,pref.getInt("export.pdf.PERMISSIONS",0));
+            exporter.setParameter(PdfExporterConfiguration.PERMISSIONS ,pref.getInt("export.pdf.PERMISSIONS",0));
         }
 
 
-        String pdfa = pref.get(JRPdfExporterParameter.PROPERTY_PDFA_CONFORMANCE,jrPropUtils.getProperty(JRPdfExporterParameter.PDFA_CONFORMANCE_NONE));
+        String pdfa = pref.get(PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE,jrPropUtils.getProperty(PdfExporterConfiguration.PDFA_CONFORMANCE_NONE));
         if (pdfa != null)
         {
-            context.setValue( JRPdfExporterParameter.PROPERTY_PDFA_CONFORMANCE ,pdfa);
+            context.setValue( PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE ,pdfa);
         }
 
-        String pdfaICC = pref.get(JRPdfExporterParameter.PROPERTY_PDFA_ICC_PROFILE_PATH,jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_PDFA_ICC_PROFILE_PATH));
+        String pdfaICC = pref.get(PdfExporterConfiguration.PROPERTY_PDFA_ICC_PROFILE_PATH,jrPropUtils.getProperty(PdfExporterConfiguration.PROPERTY_PDFA_ICC_PROFILE_PATH));
         if (pdfaICC != null && !pdfaICC.equals(""))
         {
-            context.setValue( JRPdfExporterParameter.PROPERTY_PDFA_ICC_PROFILE_PATH ,pdfaICC);
+            context.setValue( PdfExporterConfiguration.PROPERTY_PDFA_ICC_PROFILE_PATH ,pdfaICC);
         }
     }
 

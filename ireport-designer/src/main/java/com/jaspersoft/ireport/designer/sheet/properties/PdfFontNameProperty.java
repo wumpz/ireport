@@ -37,11 +37,12 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRFont;
 import net.sf.jasperreports.engine.JRTextElement;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
 import net.sf.jasperreports.engine.fonts.FontInfo;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.fonts.FontUtil;
 import org.openide.nodes.PropertySupport;
 
 /**
@@ -89,16 +90,15 @@ public class PdfFontNameProperty extends PropertySupport.ReadWrite
 
         // If the font name comes from a font extension, this
         // property should be disables...
-        JRFontUtil.getFontFamilyNames();
 
-        Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+        Collection extensionFonts = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
         if (extensionFonts.contains(fontName))
         {
-            FontInfo fontInfo = JRFontUtil.getFontInfo(fontName, null);
+            FontInfo fontInfo = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontInfo(fontName, null);
             if (fontInfo.getFontFamily() != null &&
-                fontInfo.getFontFamily().getNormalPdfFont() != null)
+                fontInfo.getFontFamily().getNormalFace().getPdf() != null)
             {
-                System.out.println(fontInfo.getFontFamily().getNormalPdfFont());
+                System.out.println(fontInfo.getFontFamily().getNormalFace().getPdf());
                 return false;
             }
         }

@@ -43,7 +43,6 @@ import net.sf.jasperreports.engine.design.JRDesignTextElement;
 import net.sf.jasperreports.engine.fill.JRMeasuredText;
 import net.sf.jasperreports.engine.fill.JRTextMeasurer;
 import net.sf.jasperreports.engine.fonts.FontUtil;
-import net.sf.jasperreports.engine.util.JRFontUtil;
 import net.sf.jasperreports.engine.util.JRStyledText;
 import net.sf.jasperreports.engine.util.JRStyledTextParser;
 import net.sf.jasperreports.engine.util.JRTextMeasurerUtil;
@@ -168,7 +167,7 @@ public class DefaultCellElementsLayout {
                                 String text = "test";
                                 
                                 // Convert the element in a print element...
-                                Map<Attribute, Object> attributes = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getAttributes(new HashMap(), dte, Locale.getDefault());
+                                Map<Attribute, Object> attributes = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getAttributesWithoutAwtFont(new HashMap(), dte);
                                 
                                 JRStyledText styledText = 
                                     styledTextParser.getStyledText(
@@ -182,13 +181,13 @@ public class DefaultCellElementsLayout {
                                 
                                 JRTextMeasurerUtil measurerUtil = JRTextMeasurerUtil.getInstance(context);
                                 JRTextMeasurer measurer = measurerUtil.createTextMeasurer(dte);
-                                JRMeasuredText measuredText = measurer.measure(  styledText, 0, dte.getHeight(), true);
+                                JRMeasuredText measuredText = measurer.measure(  styledText, 0, dte.getHeight(), true, false);
                                 
                                 if  (measuredText.getTextHeight() > dte.getHeight())
                                 {
                                     if (i>1)
                                     {
-                                        dte.setFontSize(i);
+                                        dte.setFontSize((float)i);
                                     }
                                     else
                                     {
