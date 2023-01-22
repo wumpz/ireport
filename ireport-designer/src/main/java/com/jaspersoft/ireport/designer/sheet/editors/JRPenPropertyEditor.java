@@ -37,6 +37,7 @@ import java.beans.PropertyEditorSupport;
 import org.openide.explorer.propertysheet.ExPropertyEditor;
 import org.openide.explorer.propertysheet.PropertyEnv;
 import java.beans.FeatureDescriptor;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRPen;
 import net.sf.jasperreports.engine.JRPrintLine;
 import net.sf.jasperreports.engine.base.JRBasePrintLine;
@@ -44,15 +45,15 @@ import net.sf.jasperreports.engine.export.draw.LineDrawer;
 import net.sf.jasperreports.engine.util.JRPenUtil;
 import org.openide.nodes.Node;
 
-
 /**
  * A property editor for String class.
- * @author   Ian Formanek
- * @version  1.00, 18 Sep, 1998
+ *
+ * @author Ian Formanek
+ * @version 1.00, 18 Sep, 1998
  */
-public class JRPenPropertyEditor extends PropertyEditorSupport implements ExPropertyEditor
-{
-    public boolean isEditable(){
+public class JRPenPropertyEditor extends PropertyEditorSupport implements ExPropertyEditor {
+
+    public boolean isEditable() {
         return false;
     }
 
@@ -62,15 +63,11 @@ public class JRPenPropertyEditor extends PropertyEditorSupport implements ExProp
     }
 
     @Override
-    public void paintValue(Graphics grx, Rectangle box) 
-    {
-        JRPen pen = getValue() instanceof JRPen ? (JRPen)getValue() : null;
-        if (pen == null)
-        {
+    public void paintValue(Graphics grx, Rectangle box) {
+        JRPen pen = getValue() instanceof JRPen ? (JRPen) getValue() : null;
+        if (pen == null) {
             super.paintValue(grx, box);
-        }
-        else
-        {
+        } else {
 //            //grx.clearRect(box.x, box.y, box.width, box.height);
 //            grx.setColor(pen.getLineColor() == null ? Color.BLACK : pen.getLineColor());
 //            //Stroke s = BoxBorderSelectionPanel.createStroke(pen);
@@ -88,56 +85,56 @@ public class JRPenPropertyEditor extends PropertyEditorSupport implements ExProp
             line.getLinePen().setLineColor(pen.getLineColor());
             line.getLinePen().setLineStyle(pen.getLineStyleValue());
             line.getLinePen().setLineWidth(pen.getLineWidth());
-            new LineDrawer().draw((Graphics2D)grx, line, 0, 0);
+            new LineDrawer(DefaultJasperReportsContext.getInstance()).draw((Graphics2D) grx, line, 0, 0);
         }
-        
+
     }
-    
-    /** sets new value */
+
+    /**
+     * sets new value
+     */
     @Override
     public String getAsText() {
         return "";
     }
-    
-    /** sets new value */
+
+    /**
+     * sets new value
+     */
     @Override
     public void setAsText(String s) {
         return;
     }
 
     @Override
-    public boolean supportsCustomEditor () {
+    public boolean supportsCustomEditor() {
         return customEd;
     }
 
     @Override
-    public java.awt.Component getCustomEditor () 
-    {
-        JRPen pen = getValue() instanceof JRPen ? (JRPen)getValue() : null;
+    public java.awt.Component getCustomEditor() {
+        JRPen pen = getValue() instanceof JRPen ? (JRPen) getValue() : null;
         return new JRPenPropertyCustomEditor(pen, false, null, this, env); // NOI18N
     }
 
     //private String instructions=null;
     //private boolean oneline=false;
-    private boolean customEd=true;
+    private boolean customEd = true;
     private PropertyEnv env;
 
     // bugfix# 9219 added attachEnv() method checking if the user canWrite in text box 
     public void attachEnv(PropertyEnv env) {
 
         FeatureDescriptor desc = env.getFeatureDescriptor();
-        if (desc instanceof Node.Property){
-            Node.Property prop = (Node.Property)desc;
+        if (desc instanceof Node.Property) {
+            Node.Property prop = (Node.Property) desc;
             //enh 29294 - support one-line editor & suppression of custom
             //editor
             //instructions = (String) prop.getValue ("instructions"); //NOI18N
             //oneline = Boolean.TRUE.equals (prop.getValue ("oneline")); //NOI18N
-            customEd = !Boolean.TRUE.equals (prop.getValue ("suppressCustomEditor")); //NOI18N
+            customEd = !Boolean.TRUE.equals(prop.getValue("suppressCustomEditor")); //NOI18N
         }
         this.env = env;
-        
-        
 
     }
 }
-

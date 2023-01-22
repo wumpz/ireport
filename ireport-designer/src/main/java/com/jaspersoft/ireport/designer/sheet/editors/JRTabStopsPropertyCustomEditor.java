@@ -64,9 +64,9 @@ public class JRTabStopsPropertyCustomEditor extends javax.swing.JPanel implement
         initComponents();
 
         Tag[] tags = new Tag[] {
-                    new Tag( TabStopAlignEnum.LEFT.getValueByte(), I18n.getString("AbstractStyleNode.Property.Left")  ),
-                    new Tag( TabStopAlignEnum.CENTER.getValueByte(), I18n.getString("AbstractStyleNode.Property.Center")  ),
-                    new Tag( TabStopAlignEnum.RIGHT.getValueByte(), I18n.getString("AbstractStyleNode.Property.Right")  )
+                    new Tag( TabStopAlignEnum.LEFT, I18n.getString("AbstractStyleNode.Property.Left")  ),
+                    new Tag( TabStopAlignEnum.CENTER, I18n.getString("AbstractStyleNode.Property.Center")  ),
+                    new Tag( TabStopAlignEnum.RIGHT, I18n.getString("AbstractStyleNode.Property.Right")  )
                     };
 
         jTableProperties.getColumnModel().getColumn(1).setCellEditor(new ComboBoxEditor(tags));
@@ -220,7 +220,7 @@ public class JRTabStopsPropertyCustomEditor extends javax.swing.JPanel implement
         
         Vector row = new Vector();
         row.addElement(0);
-        row.addElement( TabStopAlignEnum.LEFT.getValue() );
+        row.addElement( TabStopAlignEnum.LEFT );
         dtm.addRow(row);
         
 
@@ -256,7 +256,7 @@ public class JRTabStopsPropertyCustomEditor extends javax.swing.JPanel implement
          {
             Vector row = new Vector();
             row.addElement( tabStop.getPosition());
-            row.addElement( tabStop.getAlignment().getValueByte() );
+            row.addElement( tabStop.getAlignment() );
             dtm.addRow(row);  
          }
          
@@ -272,7 +272,7 @@ public class JRTabStopsPropertyCustomEditor extends javax.swing.JPanel implement
         {
             if (dtm.getValueAt(i, 0) != null)
             {
-                tabStops.add( new TabStop( (Integer)dtm.getValueAt(i, 0)  , TabStopAlignEnum.getByValue( (Byte)dtm.getValueAt(i, 1)  )));
+                tabStops.add( new TabStop( (Integer)dtm.getValueAt(i, 0)  , TabStopAlignEnum.valueOf( (String)dtm.getValueAt(i, 1)  )));
             }
         }
         

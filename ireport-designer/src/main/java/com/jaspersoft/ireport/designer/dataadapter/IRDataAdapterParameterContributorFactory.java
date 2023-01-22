@@ -58,7 +58,7 @@ public class IRDataAdapterParameterContributorFactory implements ParameterContri
                                 
                                 if (dataAdapterResource != null && dataAdapterResource.getValue() != null)
                                 {
-                                    ParameterContributor dataAdapterService = DataAdapterServiceUtil.getInstance(context.getJasperReportsContext()).getService(dataAdapterResource.getValue());
+                                    ParameterContributor dataAdapterService = DataAdapterServiceUtil.getInstance(context).getService(dataAdapterResource.getValue());
                                    return Collections.singletonList(dataAdapterService);
                                 }
                             } catch (Throwable ex)
