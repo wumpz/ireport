@@ -54,7 +54,7 @@ final public class FontSizeProperty extends PropertySupport.ReadWrite {
     }
 
     public Object getValue() throws IllegalAccessException, InvocationTargetException {
-        return style.getFontSize();
+        return style.getFontsize();
     }
 
     public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
@@ -67,9 +67,9 @@ final public class FontSizeProperty extends PropertySupport.ReadWrite {
             }
         }
         if (val == null || val instanceof Integer) {
-            Integer oldValue = style.getOwnFontSize();
+            Integer oldValue = style.getOwnFontsize().intValue();
             Integer newValue = (Integer) val;
-            style.setFontSize(newValue);
+            style.setFontSize(newValue.floatValue());
             ObjectPropertyUndoableEdit urob = new ObjectPropertyUndoableEdit(style, "FontSize", Integer.class, oldValue, newValue);
             IReportManager.getInstance().addUndoableEdit(urob);
         }
@@ -77,7 +77,7 @@ final public class FontSizeProperty extends PropertySupport.ReadWrite {
 
     @Override
     public boolean isDefaultValue() {
-        return style.getOwnFontSize() == null;
+        return style.getOwnFontsize() == null;
     }
 
     @Override

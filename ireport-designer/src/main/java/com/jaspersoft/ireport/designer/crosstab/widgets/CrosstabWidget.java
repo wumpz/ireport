@@ -48,7 +48,6 @@ import java.beans.PropertyChangeListener;
 import java.util.List;
 import javax.swing.SwingUtilities;
 import net.sf.jasperreports.crosstabs.JRCellContents;
-import net.sf.jasperreports.crosstabs.JRCrosstab;
 import net.sf.jasperreports.crosstabs.JRCrosstabCell;
 import net.sf.jasperreports.crosstabs.JRCrosstabColumnGroup;
 import net.sf.jasperreports.crosstabs.JRCrosstabGroup;
@@ -56,7 +55,7 @@ import net.sf.jasperreports.crosstabs.JRCrosstabRowGroup;
 import net.sf.jasperreports.crosstabs.design.JRDesignCellContents;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstab;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabGroup;
-import net.sf.jasperreports.crosstabs.fill.calculation.BucketDefinition;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRFrame;
 import net.sf.jasperreports.engine.JRLineBox;
 import net.sf.jasperreports.engine.base.JRBaseLineBox;
@@ -279,7 +278,7 @@ public class CrosstabWidget extends Widget implements PropertyChangeListener {
         g.setTransform(new_af);
         
         
-        JRFrame frame = getCrosstabCellFrame(new ReportConverter(getJasperDesign(), report,true),
+        JRFrame frame = getCrosstabCellFrame(new ReportConverter(DefaultJasperReportsContext.getInstance(), getJasperDesign(), true),
                         contents,
                         x,y,
                         x==0 && crosstab.getRunDirectionValue() == RunDirectionEnum.LTR,

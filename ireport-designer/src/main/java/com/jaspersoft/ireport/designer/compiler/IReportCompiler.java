@@ -1986,7 +1986,7 @@ public class IReportCompiler implements Runnable, JRExportProgressMonitor
             SourceTraceDigester digester = new SourceTraceDigester();
             try
             {
-                    JRXmlDigesterFactory.configureDigester(digester);
+                    JRXmlDigesterFactory.configureDigester(DefaultJasperReportsContext.getInstance(), digester);
             }
             catch (SAXException e)
             {
