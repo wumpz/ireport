@@ -46,6 +46,7 @@ import net.sf.jasperreports.crosstabs.JRCrosstabMeasure;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstab;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabMeasure;
 import net.sf.jasperreports.crosstabs.type.CrosstabPercentageEnum;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRExpressionChunk;
 import net.sf.jasperreports.engine.JRExpressionCollector;
@@ -334,7 +335,7 @@ public class CrosstabMeasureNode extends IRAbstractNode implements PropertyChang
             
             ModelUtils.fixElementsExpressions(crosstab, oldName, newName, JRExpressionChunk.TYPE_VARIABLE, getMeasure().getValueClassName());
             
-            List expressions = JRExpressionCollector.collectExpressions(jd, crosstab);
+            List expressions = JRExpressionCollector.collectExpressions(DefaultJasperReportsContext.getInstance(), jd, crosstab);
             for (int i=0; i<expressions.size(); ++i)
             {
                 JRDesignExpression exp = (JRDesignExpression)expressions.get(i);

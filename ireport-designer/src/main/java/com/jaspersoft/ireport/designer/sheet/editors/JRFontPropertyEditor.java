@@ -74,7 +74,7 @@ public class JRFontPropertyEditor extends PropertyEditorSupport implements ExPro
         JRFont font = (JRFont)getValue();
         if (font != null)
         {
-            return font.getFontName() + " " + font.getFontSize();
+            return font.getFontName() + " " + font.getFontsize();
         }
         else
         {

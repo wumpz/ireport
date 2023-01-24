@@ -63,13 +63,13 @@ public final class ImageUsingCacheProperty extends BooleanProperty
     @Override
     public Boolean getBoolean()
     {
-        return image.isUsingCache();
+        return image.getUsingCache();
     }
 
     @Override
     public Boolean getOwnBoolean()
     {
-        return image.isOwnUsingCache();
+        return image.getUsingCache();
     }
 
     @Override

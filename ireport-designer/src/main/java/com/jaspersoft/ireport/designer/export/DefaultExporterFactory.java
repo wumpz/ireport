@@ -35,8 +35,12 @@ import net.sf.jasperreports.engine.export.JRCsvExporterParameter;
 import net.sf.jasperreports.engine.export.JRHtmlExporterParameter;
 import net.sf.jasperreports.engine.export.JRTextExporterParameter;
 import net.sf.jasperreports.engine.export.JRXlsAbstractExporterParameter;
+import net.sf.jasperreports.export.CsvExporterConfiguration;
+import net.sf.jasperreports.export.DocxReportConfiguration;
+import net.sf.jasperreports.export.HtmlReportConfiguration;
 import net.sf.jasperreports.export.PdfExporterConfiguration;
 import net.sf.jasperreports.export.PdfReportConfiguration;
+import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
 import net.sf.jasperreports.export.TextReportConfiguration;
 import net.sf.jasperreports.export.XlsExporterConfiguration;
 import net.sf.jasperreports.export.XlsReportConfiguration;
@@ -355,25 +359,27 @@ public class DefaultExporterFactory implements ExporterFactory {
         context.setValue( PdfExporterConfiguration.PROPERTY_ENCRYPTED , new Boolean(pref.getBoolean(PdfExporterConfiguration.PROPERTY_ENCRYPTED, jrPropUtils.getBooleanProperty(PdfExporterConfiguration.PROPERTY_ENCRYPTED))));
         context.setValue( PdfExporterConfiguration.PROPERTY_128_BIT_KEY , new Boolean(pref.getBoolean(PdfExporterConfiguration.PROPERTY_128_BIT_KEY, jrPropUtils.getBooleanProperty(PdfExporterConfiguration.PROPERTY_128_BIT_KEY))));
 
+        SimplePdfExporterConfiguration config = new SimplePdfExporterConfiguration();
+        exporter.setConfiguration(config);
         if (pref.get("export.pdf.METADATA_AUTHOR", "").length() > 0)
         {
-            exporter.setParameter( PdfExporterConfiguration.PROPERTY_METADATA_AUTHOR , pref.get("export.pdf.METADATA_AUTHOR", ""));
+            config.setMetadataAuthor(pref.get("export.pdf.METADATA_AUTHOR", ""));
         }
         if (pref.get("export.pdf.METADATA_CREATOR", "").length() > 0)
         {
-            exporter.setParameter( PdfExporterConfiguration.METADATA_CREATOR , pref.get("export.pdf.METADATA_CREATOR", ""));
+            config.setMetadataCreator(pref.get("export.pdf.METADATA_CREATOR", ""));
         }
         if (pref.get("export.pdf.METADATA_KEYWORDS", "").length() > 0)
         {
-            exporter.setParameter( PdfExporterConfiguration.METADATA_KEYWORDS , pref.get("export.pdf.METADATA_KEYWORDS", ""));
+            config.setMetadataKeywords( pref.get("export.pdf.METADATA_KEYWORDS", ""));
         }
         if (pref.get("export.pdf.METADATA_SUBJECT", "").length() > 0)
         {
-            exporter.setParameter( PdfExporterConfiguration.METADATA_SUBJECT , pref.get("export.pdf.METADATA_SUBJECT", ""));
+            config.setMetadataSubject( pref.get("export.pdf.METADATA_SUBJECT", ""));
         }
         if (pref.get("export.pdf.METADATA_TITLE", "").length() > 0)
         {
-            exporter.setParameter( PdfExporterConfiguration.METADATA_TITLE , pref.get("export.pdf.METADATA_TITLE", ""));
+            config.setMetadataTitle( pref.get("export.pdf.METADATA_TITLE", ""));
         }
         if (pref.get("export.pdf.OWNER_PASSWORD", "").length() > 0)
         {
@@ -393,11 +399,11 @@ public class DefaultExporterFactory implements ExporterFactory {
         }
         if (pref.getInt("export.pdf.PERMISSIONS",0) != 0)
         {
-            exporter.setParameter(PdfExporterConfiguration.PERMISSIONS ,pref.getInt("export.pdf.PERMISSIONS",0));
+            config.setPermissions(pref.getInt("export.pdf.PERMISSIONS",0));
         }
 
-
-        String pdfa = pref.get(PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE,jrPropUtils.getProperty(PdfExporterConfiguration.PDFA_CONFORMANCE_NONE));
+          
+        String pdfa = pref.get(PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE,jrPropUtils.getProperty(PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE));
         if (pdfa != null)
         {
             context.setValue( PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE ,pdfa);
@@ -417,8 +423,8 @@ public class DefaultExporterFactory implements ExporterFactory {
         JRPropertiesUtil jrPropUtils = JRPropertiesUtil.getInstance(context);
 
         exporter.setParameter( JRHtmlExporterParameter.IS_OUTPUT_IMAGES_TO_DIR, pref.getBoolean(JRPropertiesUtil.PROPERTY_PREFIX + "export.html.saveImages", true));
-        exporter.setParameter( JRHtmlExporterParameter.IS_WHITE_PAGE_BACKGROUND, pref.getBoolean(JRHtmlExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND, jrPropUtils.getBooleanProperty(JRHtmlExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND)));
-        exporter.setParameter( JRHtmlExporterParameter.IS_WRAP_BREAK_WORD, pref.getBoolean(JRHtmlExporterParameter.PROPERTY_WRAP_BREAK_WORD, jrPropUtils.getBooleanProperty(JRHtmlExporterParameter.PROPERTY_WRAP_BREAK_WORD)));
+        exporter.setParameter( JRHtmlExporterParameter.IS_WHITE_PAGE_BACKGROUND, pref.getBoolean(HtmlReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND, jrPropUtils.getBooleanProperty(HtmlReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND)));
+        exporter.setParameter( JRHtmlExporterParameter.IS_WRAP_BREAK_WORD, pref.getBoolean(HtmlReportConfiguration.PROPERTY_WRAP_BREAK_WORD, jrPropUtils.getBooleanProperty(HtmlReportConfiguration.PROPERTY_WRAP_BREAK_WORD)));
 
         if (pref.get(JRPropertiesUtil.PROPERTY_PREFIX + "export.html.imagesDirectory","").length() > 0)
         {
@@ -440,25 +446,25 @@ public class DefaultExporterFactory implements ExporterFactory {
         {
             context.setValue( JRPropertiesUtil.PROPERTY_PREFIX + "export.html.htmlFooter" , pref.get(JRPropertiesUtil.PROPERTY_PREFIX + "export.html.htmlFooter",""));
         }
-        if (pref.get(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT)).length() > 0)
+        if (pref.get(HtmlReportConfiguration.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(HtmlReportConfiguration.PROPERTY_SIZE_UNIT)).length() > 0)
         {
-            context.setValue( JRHtmlExporterParameter.PROPERTY_SIZE_UNIT , pref.get(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT)));
+            context.setValue( HtmlReportConfiguration.PROPERTY_SIZE_UNIT , pref.get(HtmlReportConfiguration.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(HtmlReportConfiguration.PROPERTY_SIZE_UNIT)));
         }
 
     }
 
 
     private void configureHtmlExporter(JRExporter exporter, SimpleJasperReportsContext context) {
-
+        final JRHtmlExporterParameter IS_USING_IMAGES_TO_ALIGN = new JRHtmlExporterParameter("Is Using Images To Align");
         Preferences pref = IReportManager.getPreferences();
         JRPropertiesUtil jrPropUtils = JRPropertiesUtil.getInstance(context);
-
-        context.setValue( JRHtmlExporterParameter.PROPERTY_FRAMES_AS_NESTED_TABLES, pref.getBoolean(JRHtmlExporterParameter.PROPERTY_FRAMES_AS_NESTED_TABLES, jrPropUtils.getBooleanProperty(JRHtmlExporterParameter.PROPERTY_FRAMES_AS_NESTED_TABLES)));
-        context.setValue( JRHtmlExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, pref.getBoolean(JRHtmlExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, jrPropUtils.getBooleanProperty(JRHtmlExporterParameter.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS)));
+        
+        context.setValue( DocxReportConfiguration.PROPERTY_FRAMES_AS_NESTED_TABLES, pref.getBoolean(DocxReportConfiguration.PROPERTY_FRAMES_AS_NESTED_TABLES, jrPropUtils.getBooleanProperty(DocxReportConfiguration.PROPERTY_FRAMES_AS_NESTED_TABLES)));
+        context.setValue( HtmlReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, pref.getBoolean(HtmlReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS, jrPropUtils.getBooleanProperty(HtmlReportConfiguration.PROPERTY_REMOVE_EMPTY_SPACE_BETWEEN_ROWS)));
         exporter.setParameter( JRHtmlExporterParameter.IS_OUTPUT_IMAGES_TO_DIR, pref.getBoolean(JRPropertiesUtil.PROPERTY_PREFIX + "export.html.saveImages", true));
-        context.setValue( JRHtmlExporterParameter.PROPERTY_USING_IMAGES_TO_ALIGN, pref.getBoolean(JRHtmlExporterParameter.PROPERTY_USING_IMAGES_TO_ALIGN, jrPropUtils.getBooleanProperty(JRHtmlExporterParameter.PROPERTY_USING_IMAGES_TO_ALIGN)));
-        context.setValue( JRHtmlExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND, pref.getBoolean(JRHtmlExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND, jrPropUtils.getBooleanProperty(JRHtmlExporterParameter.PROPERTY_WHITE_PAGE_BACKGROUND)));
-        context.setValue( JRHtmlExporterParameter.PROPERTY_WRAP_BREAK_WORD, pref.getBoolean(JRHtmlExporterParameter.PROPERTY_WRAP_BREAK_WORD, jrPropUtils.getBooleanProperty(JRHtmlExporterParameter.PROPERTY_WRAP_BREAK_WORD)));
+        context.setValue( IS_USING_IMAGES_TO_ALIGN.toString(), pref.getBoolean(IS_USING_IMAGES_TO_ALIGN.toString(), jrPropUtils.getBooleanProperty(IS_USING_IMAGES_TO_ALIGN.toString())));
+        context.setValue( HtmlReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND, pref.getBoolean(HtmlReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND, jrPropUtils.getBooleanProperty(HtmlReportConfiguration.PROPERTY_WHITE_PAGE_BACKGROUND)));
+        context.setValue( HtmlReportConfiguration.PROPERTY_WRAP_BREAK_WORD, pref.getBoolean(HtmlReportConfiguration.PROPERTY_WRAP_BREAK_WORD, jrPropUtils.getBooleanProperty(HtmlReportConfiguration.PROPERTY_WRAP_BREAK_WORD)));
 
         //FIXME these properties do not actually exist!!!!!!!..... check all properties
 
@@ -482,9 +488,9 @@ public class DefaultExporterFactory implements ExporterFactory {
         {
             context.setValue( JRPropertiesUtil.PROPERTY_PREFIX + "export.html.htmlFooter", pref.get(JRPropertiesUtil.PROPERTY_PREFIX + "export.html.htmlFooter",""));
         }
-        if (pref.get(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT)).length() > 0)
+        if (pref.get(HtmlReportConfiguration.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(HtmlReportConfiguration.PROPERTY_SIZE_UNIT)).length() > 0)
         {
-            context.setValue( JRHtmlExporterParameter.PROPERTY_SIZE_UNIT , pref.get(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(JRHtmlExporterParameter.PROPERTY_SIZE_UNIT)));
+            context.setValue( HtmlReportConfiguration.PROPERTY_SIZE_UNIT , pref.get(HtmlReportConfiguration.PROPERTY_SIZE_UNIT, jrPropUtils.getProperty(HtmlReportConfiguration.PROPERTY_SIZE_UNIT)));
         }
 
     }
@@ -495,8 +501,8 @@ public class DefaultExporterFactory implements ExporterFactory {
         Preferences pref = IReportManager.getPreferences();
         JRPropertiesUtil jrPropUtils = JRPropertiesUtil.getInstance(context);
 
-        context.setValue( JRCsvExporterParameter.PROPERTY_FIELD_DELIMITER, pref.get(JRCsvExporterParameter.PROPERTY_FIELD_DELIMITER, jrPropUtils.getProperty(JRCsvExporterParameter.PROPERTY_FIELD_DELIMITER)));
-        context.setValue( JRCsvExporterParameter.PROPERTY_RECORD_DELIMITER, pref.get(JRCsvExporterParameter.PROPERTY_RECORD_DELIMITER, jrPropUtils.getProperty(JRCsvExporterParameter.PROPERTY_RECORD_DELIMITER)));
+        context.setValue( CsvExporterConfiguration.PROPERTY_FIELD_DELIMITER, pref.get(CsvExporterConfiguration.PROPERTY_FIELD_DELIMITER, jrPropUtils.getProperty(CsvExporterConfiguration.PROPERTY_FIELD_DELIMITER)));
+        context.setValue( CsvExporterConfiguration.PROPERTY_RECORD_DELIMITER, pref.get(CsvExporterConfiguration.PROPERTY_RECORD_DELIMITER, jrPropUtils.getProperty(CsvExporterConfiguration.PROPERTY_RECORD_DELIMITER)));
     }
 
     private void configureXmlExporter(JRExporter exporter, SimpleJasperReportsContext context) {
