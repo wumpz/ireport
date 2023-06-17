@@ -147,7 +147,7 @@ public class JRDesignImageWidget extends JRDesignElementWidget implements Runnab
             }
             finally
             {
-                JRResourcesUtil.resetThreadFileResolver();
+                JRResourcesUtil.resetClassLoader();
             }
         }
         getGraphics().drawImage(offScreenImage, getBounds().x,getBounds().y, getBounds().width, getBounds().height, null);

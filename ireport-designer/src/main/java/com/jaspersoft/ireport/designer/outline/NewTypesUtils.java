@@ -60,8 +60,8 @@ import net.sf.jasperreports.engine.design.JRDesignStyle;
 import net.sf.jasperreports.engine.design.JRDesignTextField;
 import net.sf.jasperreports.engine.design.JRDesignVariable;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
-import net.sf.jasperreports.engine.type.VerticalAlignEnum;
+import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
+import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 import net.sf.jasperreports.engine.util.Pair;
 import org.openide.filesystems.FileObject;
 import org.openide.filesystems.FileUtil;
@@ -668,8 +668,8 @@ class NewObjectType extends NewType {
         element.setWidth(w);
         element.setHeight(h);
         element.setText(text);
-        element.setHorizontalAlignment( HorizontalAlignEnum.CENTER );
-        element.setVerticalAlignment( VerticalAlignEnum.MIDDLE);
+        element.setHorizontalTextAlign( HorizontalTextAlignEnum.CENTER );
+        element.setVerticalTextAlign( VerticalTextAlignEnum.MIDDLE);
         
         if (styleName != null && jd.getStylesMap().containsKey(styleName))
         {
