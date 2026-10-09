@@ -336,16 +336,16 @@ public class TextExportParametersPanel extends AbstractExportParametersPanel {
         Preferences pref = IReportManager.getPreferences();
         
         SpinnerNumberModel model = (SpinnerNumberModel)jSpinnerCharacterHeight.getModel();
-        model.setValue( pref.getFloat(JRTextExporterParameter.PROPERTY_CHARACTER_HEIGHT, 0));
+        model.setValue( pref.getFloat(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_CHARACTER_HEIGHT, 0));
 
         model = (SpinnerNumberModel)jSpinnerCharacterWidth.getModel();
-        model.setValue( pref.getFloat(JRTextExporterParameter.PROPERTY_CHARACTER_WIDTH, 0));
+        model.setValue( pref.getFloat(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_CHARACTER_WIDTH, 0));
 
         model = (SpinnerNumberModel)jSpinnerPageHeight.getModel();
-        model.setValue( pref.getInt(JRTextExporterParameter.PROPERTY_PAGE_HEIGHT, 0));
+        model.setValue( pref.getInt(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_PAGE_HEIGHT, 0));
 
         model = (SpinnerNumberModel)jSpinnerPageWidth.getModel();
-        model.setValue( pref.getInt(JRTextExporterParameter.PROPERTY_PAGE_WIDTH, 0));
+        model.setValue( pref.getInt(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_PAGE_WIDTH, 0));
 
         jTextAreaBetweenPagesText.setText(Misc.addSlashesString(pref.get(JRPropertiesUtil.PROPERTY_PREFIX + "export.txt.betweenPagesText", "")));
         jCheckBoxNothingBetweenPages.setSelected(pref.getBoolean(JRPropertiesUtil.PROPERTY_PREFIX + "export.txt.nothingBetweenPages", false)); // This is an iReport specific option!
@@ -359,16 +359,16 @@ public class TextExportParametersPanel extends AbstractExportParametersPanel {
         Preferences pref = IReportManager.getPreferences();
 
         SpinnerNumberModel model = (SpinnerNumberModel)jSpinnerCharacterHeight.getModel();
-        pref.putFloat(JRTextExporterParameter.PROPERTY_CHARACTER_HEIGHT, model.getNumber().floatValue());
+        pref.putFloat(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_CHARACTER_HEIGHT, model.getNumber().floatValue());
 
         model = (SpinnerNumberModel)jSpinnerCharacterWidth.getModel();
-        pref.putFloat(JRTextExporterParameter.PROPERTY_CHARACTER_WIDTH, model.getNumber().floatValue());
+        pref.putFloat(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_CHARACTER_WIDTH, model.getNumber().floatValue());
 
         model = (SpinnerNumberModel)jSpinnerPageHeight.getModel();
-        pref.putInt(JRTextExporterParameter.PROPERTY_PAGE_HEIGHT, model.getNumber().intValue());
+        pref.putInt(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_PAGE_HEIGHT, model.getNumber().intValue());
 
         model = (SpinnerNumberModel)jSpinnerPageWidth.getModel();
-        pref.putInt(JRTextExporterParameter.PROPERTY_PAGE_WIDTH, model.getNumber().intValue());
+        pref.putInt(net.sf.jasperreports.export.TextReportConfiguration.PROPERTY_PAGE_WIDTH, model.getNumber().intValue());
 
         
         pref.put(JRPropertiesUtil.PROPERTY_PREFIX + "export.txt.betweenPagesText", Misc.removeSlashesString(jTextAreaBetweenPagesText.getText()));

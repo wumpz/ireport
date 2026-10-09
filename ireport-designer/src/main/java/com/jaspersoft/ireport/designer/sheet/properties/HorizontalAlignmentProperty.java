@@ -26,9 +26,11 @@ package com.jaspersoft.ireport.designer.sheet.properties;
 import com.jaspersoft.ireport.designer.sheet.Tag;
 import com.jaspersoft.ireport.locale.I18n;
 import java.util.List;
-import net.sf.jasperreports.engine.JRAlignment;
+import net.sf.jasperreports.engine.JRTextAlignment;
+import net.sf.jasperreports.engine.JRImageAlignment;
+import net.sf.jasperreports.engine.type.HorizontalImageAlignEnum;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
-import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
+import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 
     
 /**
@@ -36,19 +38,19 @@ import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
  */
 public final class HorizontalAlignmentProperty extends EnumProperty
 {
-    private final JRAlignment element;
+    private final Object element;
 
     @SuppressWarnings("unchecked")
-    public HorizontalAlignmentProperty(JRAlignment element)
+    public HorizontalAlignmentProperty(Object element)
     {
-        super(HorizontalAlignEnum.class,  element);
+        super(element instanceof JRImageAlignment ? HorizontalImageAlignEnum.class : HorizontalTextAlignEnum.class,  element);
         this.element = element;
     }
 
     @Override
     public String getName()
     {
-        return JRBaseStyle.PROPERTY_HORIZONTAL_ALIGNMENT;
+        return (element instanceof JRImageAlignment ? JRBaseStyle.PROPERTY_HORIZONTAL_IMAGE_ALIGNMENT : JRBaseStyle.PROPERTY_HORIZONTAL_TEXT_ALIGNMENT);
     }
 
     @Override
@@ -67,23 +69,23 @@ public final class HorizontalAlignmentProperty extends EnumProperty
     public List getTagList() 
     {
         List tags = new java.util.ArrayList();
-        tags.add(new Tag(HorizontalAlignEnum.LEFT, I18n.getString("Global.Property.Left")));
-        tags.add(new Tag(HorizontalAlignEnum.CENTER, I18n.getString("Global.Property.Center")));
-        tags.add(new Tag(HorizontalAlignEnum.RIGHT, I18n.getString("Global.Property.Right")));
-        tags.add(new Tag(HorizontalAlignEnum.JUSTIFIED, I18n.getString("Global.Property.Justified")));
+        tags.add(new Tag(element instanceof JRImageAlignment ? HorizontalImageAlignEnum.LEFT : HorizontalTextAlignEnum.LEFT, I18n.getString("Global.Property.Left")));
+        tags.add(new Tag(element instanceof JRImageAlignment ? HorizontalImageAlignEnum.CENTER : HorizontalTextAlignEnum.CENTER, I18n.getString("Global.Property.Center")));
+        tags.add(new Tag(element instanceof JRImageAlignment ? HorizontalImageAlignEnum.RIGHT : HorizontalTextAlignEnum.RIGHT, I18n.getString("Global.Property.Right")));
+        if (!(element instanceof JRImageAlignment)) tags.add(new Tag(HorizontalTextAlignEnum.JUSTIFIED, I18n.getString("Global.Property.Justified")));
         return tags;
     }
 
     @Override
     public Object getPropertyValue()
     {
-        return element.getHorizontalAlignmentValue();
+        return element instanceof JRImageAlignment ? ((JRImageAlignment)element).getHorizontalImageAlign() : ((JRTextAlignment)element).getHorizontalTextAlign();
     }
 
     @Override
     public Object getOwnPropertyValue()
     {
-        return element.getOwnHorizontalAlignmentValue();
+        return element instanceof JRImageAlignment ? ((JRImageAlignment)element).getOwnHorizontalImageAlign() : ((JRTextAlignment)element).getOwnHorizontalTextAlign();
     }
 
     @Override
@@ -95,7 +97,11 @@ public final class HorizontalAlignmentProperty extends EnumProperty
     @Override
     public void setPropertyValue(Object alignment)
     {
-        element.setHorizontalAlignment((HorizontalAlignEnum)alignment);
+        if (element instanceof JRImageAlignment) {
+            ((JRImageAlignment)element).setHorizontalImageAlign((HorizontalImageAlignEnum)alignment);
+        } else {
+            ((JRTextAlignment)element).setHorizontalTextAlign((HorizontalTextAlignEnum)alignment);
+        }
     }
 
 }

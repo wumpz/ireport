@@ -45,9 +45,10 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JToggleButton;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
 import net.sf.jasperreports.engine.design.JRDesignTextElement;
-import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
-import net.sf.jasperreports.engine.type.VerticalAlignEnum;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
+import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
+import net.sf.jasperreports.engine.fonts.FontUtil;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import org.openide.util.Lookup;
 import org.openide.util.LookupEvent;
 import org.openide.util.LookupListener;
@@ -137,7 +138,7 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         ClassLoader oldCL = Thread.currentThread().getContextClassLoader();
         Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader()));
 
-        Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+        Collection extensionFonts = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
         for(Iterator it = extensionFonts.iterator(); it.hasNext();)
         {
             String fname = (String)it.next();
@@ -233,6 +234,7 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         });
         jToolBar1.add(jComboBoxFontName);
 
+        jComboBoxFontSize.setToolTipText("<html>Font size in points; fractional values such as 10.5 are supported.</html>");
         jComboBoxFontSize.setEditable(true);
         jComboBoxFontSize.setMaximumSize(new java.awt.Dimension(50, 22));
         jComboBoxFontSize.setMinimumSize(new java.awt.Dimension(51, 22));
@@ -542,10 +544,10 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
             for (JRDesignTextElement element : getSelectedTextElements())
             {
                 // TODO: add undo operation...
-                int newFontSize = element.getFontSize() + 2;
-                Integer oldFontSize = element.getOwnFontSize();
+                float newFontSize = element.getFontsize() + 2;
+                Float oldFontSize = element.getOwnFontsize();
                 element.setFontSize(newFontSize);
-                ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "FontSize",Integer.class, oldFontSize , new Integer(newFontSize));
+                ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "FontSize",Float.class, oldFontSize , Float.valueOf(newFontSize));
                 IReportManager.getInstance().addUndoableEdit(opUndo, !isFirstUndo);
                 isFirstUndo = false;
             }
@@ -559,12 +561,12 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
             for (JRDesignTextElement element : getSelectedTextElements())
             {
                 // TODO: add undo operation...
-                int newFontSize = element.getFontSize() -2;
+                float newFontSize = element.getFontsize() -2;
                 if (newFontSize >= 3)
                 {
-                    Integer oldFontSize = element.getOwnFontSize();
+                    Float oldFontSize = element.getOwnFontsize();
                     element.setFontSize(newFontSize);
-                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "FontSize",Integer.class, oldFontSize , new Integer(newFontSize));
+                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "FontSize",Float.class, oldFontSize , Float.valueOf(newFontSize));
                     IReportManager.getInstance().addUndoableEdit(opUndo, !isFirstUndo);
                     isFirstUndo = false;
                 }
@@ -716,15 +718,15 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         if (getSelectedTextElements().size() > 0)
         {
             boolean isFirstUndo = true;
-            HorizontalAlignEnum newValue = getSelectedHorizontalAlignment();
+            HorizontalTextAlignEnum newValue = getSelectedHorizontalAlignment();
             for (JRDesignTextElement element : getSelectedTextElements())
             {
                 // TODO: add undo operation...
-                if ((newValue == null && element.getOwnHorizontalAlignmentValue() != null) || (newValue != null && newValue != element.getHorizontalAlignmentValue()))
+                if ((newValue == null && element.getOwnHorizontalTextAlign() != null) || (newValue != null && newValue != element.getHorizontalTextAlign()))
                 {
-                    HorizontalAlignEnum oldValue = element.getOwnHorizontalAlignmentValue();
-                    element.setHorizontalAlignment(newValue);
-                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "HorizontalAlignment",HorizontalAlignEnum.class, oldValue , newValue);
+                    HorizontalTextAlignEnum oldValue = element.getOwnHorizontalTextAlign();
+                    element.setHorizontalTextAlign(newValue);
+                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "HorizontalTextAlign",HorizontalTextAlignEnum.class, oldValue , newValue);
                     IReportManager.getInstance().addUndoableEdit(opUndo, !isFirstUndo);
                     isFirstUndo = false;
                 }
@@ -743,17 +745,17 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         if (getSelectedTextElements().size() > 0)
         {
             boolean isFirstUndo = true;
-            VerticalAlignEnum newValue = getSelectedVerticalAlignment();
+            VerticalTextAlignEnum newValue = getSelectedVerticalAlignment();
             for (JRDesignTextElement element : getSelectedTextElements())
             {
                 // if newValue is null does not do anything 
                 // since the vertical alignment could be justified for which we do not
                 // provide an icon...
-                if (newValue != null && newValue != element.getVerticalAlignmentValue())
+                if (newValue != null && newValue != element.getVerticalTextAlign())
                 {
-                    VerticalAlignEnum oldValue = element.getOwnVerticalAlignmentValue();
-                    element.setVerticalAlignment(newValue);
-                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "VerticalAlignment",VerticalAlignEnum.class, oldValue , newValue);
+                    VerticalTextAlignEnum oldValue = element.getOwnVerticalTextAlign();
+                    element.setVerticalTextAlign(newValue);
+                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "VerticalTextAlign",VerticalTextAlignEnum.class, oldValue , newValue);
                     IReportManager.getInstance().addUndoableEdit(opUndo, !isFirstUndo);
                     isFirstUndo = false;
                 }
@@ -773,16 +775,16 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         boolean isFirstUndo = true;
         if (getSelectedTextElements().size() > 0)
         {
-            int newFontSize = (int)((JNumberComboBox)jComboBoxFontSize).getValue();
+            float newFontSize = (float)((JNumberComboBox)jComboBoxFontSize).getValue();
             
             for (JRDesignTextElement element : getSelectedTextElements())
             {
                 // TODO: add undo operation...
-                if (element.getFontSize() != newFontSize)
+                if (element.getFontsize() != newFontSize)
                 {
-                    Integer oldFontSize = element.getOwnFontSize();
+                    Float oldFontSize = element.getOwnFontsize();
                     element.setFontSize(newFontSize);
-                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "FontSize",Integer.class, oldFontSize , new Integer(newFontSize));
+                    ObjectPropertyUndoableEdit opUndo = new ObjectPropertyUndoableEdit(element, "FontSize",Float.class, oldFontSize , Float.valueOf(newFontSize));
                     IReportManager.getInstance().addUndoableEdit(opUndo, !isFirstUndo);
                     isFirstUndo = false;
                 }
@@ -893,15 +895,15 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
                 for (JRDesignTextElement element : getSelectedTextElements())
                 {
                     if (sameFontName) sameFontName = Misc.setComboBoxTag(isFirstElement, element.getFontName(), jComboBoxFontName);
-                    if (sameFontSize) sameFontSize = Misc.setElementComboNumber(isFirstElement, element.getFontSize(), (JNumberComboBox)jComboBoxFontSize);
+                    if (sameFontSize) sameFontSize = Misc.setElementComboNumber(isFirstElement, element.getFontsize(), (JNumberComboBox)jComboBoxFontSize);
                     
                     if (sameBold) sameBold = setToggleButton(isFirstElement, element.isBold(), jToggleButtonBold);
                     if (sameItalic) sameItalic = setToggleButton(isFirstElement, element.isItalic(), jToggleButtonItalic);
                     if (sameUnderline) sameUnderline = setToggleButton(isFirstElement, element.isUnderline(), jToggleButtonUnderline);
                     if (sameStriketrough) sameStriketrough = setToggleButton(isFirstElement, element.isStrikeThrough(), jToggleButtonStriketrought);
 
-                    if (sameHorizontalAlignment) sameHorizontalAlignment = setHorizontalAlignment(isFirstElement, element.getHorizontalAlignmentValue());
-                    if (sameVerticalAlignment) sameVerticalAlignment = setVerticalAlignment(isFirstElement, element.getVerticalAlignmentValue());
+                    if (sameHorizontalAlignment) sameHorizontalAlignment = setHorizontalAlignment(isFirstElement, element.getHorizontalTextAlign());
+                    if (sameVerticalAlignment) sameVerticalAlignment = setVerticalAlignment(isFirstElement, element.getVerticalTextAlign());
                     
                     
                     isFirstElement = false;
@@ -937,46 +939,46 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         }
     }
 
-    private HorizontalAlignEnum getSelectedHorizontalAlignment()
+    private HorizontalTextAlignEnum getSelectedHorizontalAlignment()
     {
-        if (jToggleButtonAlignLeft.isSelected()) return HorizontalAlignEnum.LEFT;
-        if (jToggleButtonAlignRight.isSelected()) return HorizontalAlignEnum.RIGHT;
-        if (jToggleButtonAlignJustify.isSelected()) return HorizontalAlignEnum.JUSTIFIED;
-        if (jToggleButtonAlignCenter.isSelected()) return HorizontalAlignEnum.CENTER;
+        if (jToggleButtonAlignLeft.isSelected()) return HorizontalTextAlignEnum.LEFT;
+        if (jToggleButtonAlignRight.isSelected()) return HorizontalTextAlignEnum.RIGHT;
+        if (jToggleButtonAlignJustify.isSelected()) return HorizontalTextAlignEnum.JUSTIFIED;
+        if (jToggleButtonAlignCenter.isSelected()) return HorizontalTextAlignEnum.CENTER;
         return null;
     }
 
     
     
-    private void setSelectedHorizontalAlignment(HorizontalAlignEnum b)
+    private void setSelectedHorizontalAlignment(HorizontalTextAlignEnum b)
     {
-        jToggleButtonAlignLeft.setSelected(b != null && b == HorizontalAlignEnum.LEFT);
-        jToggleButtonAlignRight.setSelected(b != null && b == HorizontalAlignEnum.RIGHT);
-        jToggleButtonAlignJustify.setSelected(b != null && b == HorizontalAlignEnum.JUSTIFIED);
-        jToggleButtonAlignCenter.setSelected(b != null && b == HorizontalAlignEnum.CENTER);
+        jToggleButtonAlignLeft.setSelected(b != null && b == HorizontalTextAlignEnum.LEFT);
+        jToggleButtonAlignRight.setSelected(b != null && b == HorizontalTextAlignEnum.RIGHT);
+        jToggleButtonAlignJustify.setSelected(b != null && b == HorizontalTextAlignEnum.JUSTIFIED);
+        jToggleButtonAlignCenter.setSelected(b != null && b == HorizontalTextAlignEnum.CENTER);
     }
     
     
-    private VerticalAlignEnum getSelectedVerticalAlignment()
+    private VerticalTextAlignEnum getSelectedVerticalAlignment()
     {
-        if (jToggleButtonAlignTop.isSelected()) return VerticalAlignEnum.TOP;
-        if (jToggleButtonAlignMiddle.isSelected()) return VerticalAlignEnum.MIDDLE;
-        if (jToggleButtonAlignBottom.isSelected()) return VerticalAlignEnum.BOTTOM;
+        if (jToggleButtonAlignTop.isSelected()) return VerticalTextAlignEnum.TOP;
+        if (jToggleButtonAlignMiddle.isSelected()) return VerticalTextAlignEnum.MIDDLE;
+        if (jToggleButtonAlignBottom.isSelected()) return VerticalTextAlignEnum.BOTTOM;
         return null;
     }
     
-    private void setSelectedVerticalAlignment(VerticalAlignEnum b)
+    private void setSelectedVerticalAlignment(VerticalTextAlignEnum b)
     {
-        jToggleButtonAlignTop.setSelected(b != null && b == VerticalAlignEnum.TOP);
-        jToggleButtonAlignMiddle.setSelected(b != null && b == VerticalAlignEnum.MIDDLE);
-        jToggleButtonAlignBottom.setSelected(b != null && b == VerticalAlignEnum.BOTTOM);
+        jToggleButtonAlignTop.setSelected(b != null && b == VerticalTextAlignEnum.TOP);
+        jToggleButtonAlignMiddle.setSelected(b != null && b == VerticalTextAlignEnum.MIDDLE);
+        jToggleButtonAlignBottom.setSelected(b != null && b == VerticalTextAlignEnum.BOTTOM);
     }
     
-    private boolean setHorizontalAlignment(boolean firstElement, HorizontalAlignEnum horizontalAlignment) {
+    private boolean setHorizontalAlignment(boolean firstElement, HorizontalTextAlignEnum horizontalAlignment) {
         
         if (!firstElement)
         {
-            HorizontalAlignEnum selectedValue = getSelectedHorizontalAlignment();
+            HorizontalTextAlignEnum selectedValue = getSelectedHorizontalAlignment();
             if (selectedValue != null && selectedValue != horizontalAlignment)
             {
                 setSelectedHorizontalAlignment(null);
@@ -986,11 +988,11 @@ public class TextElementsToolbar extends javax.swing.JPanel implements LookupLis
         return true;
     }
     
-    private boolean setVerticalAlignment(boolean firstElement, VerticalAlignEnum verticalAlignment) {
+    private boolean setVerticalAlignment(boolean firstElement, VerticalTextAlignEnum verticalAlignment) {
         
         if (!firstElement)
         {
-            VerticalAlignEnum selectedValue = getSelectedVerticalAlignment();
+            VerticalTextAlignEnum selectedValue = getSelectedVerticalAlignment();
             if (selectedValue != null && selectedValue != verticalAlignment)
             {
                 setSelectedVerticalAlignment(null);

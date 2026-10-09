@@ -36,7 +36,7 @@ import java.awt.Frame;
 import java.awt.Window;
 
 import java.util.*;
-import org.apache.xerces.parsers.DOMParser;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 
 import org.w3c.dom.*;
@@ -662,19 +662,16 @@ public class ConnectionsDialog extends javax.swing.JDialog {
          Vector v = new Vector();
          try {
              
-             ClassLoader oldClassLoader = Thread.currentThread().getContextClassLoader();
-             Thread.currentThread().setContextClassLoader(DOMParser.class.getClassLoader());
-             
-             DOMParser parser = new DOMParser();
+             javax.xml.parsers.DocumentBuilder parser = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder();
              java.io.FileInputStream fis = new java.io.FileInputStream(xmlfile);
              org.xml.sax.InputSource input_sss  = new org.xml.sax.InputSource(fis);
              //input_sss.setSystemId(filename);
-             parser.parse( input_sss );
+             Document document = parser.parse(input_sss);
 
-             Thread.currentThread().setContextClassLoader(oldClassLoader);
+
 
                           
-             Document document = parser.getDocument();
+
              Node node = document.getDocumentElement();
 
 

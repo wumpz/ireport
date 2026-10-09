@@ -62,12 +62,12 @@ public class StyleListCellRenderer extends DefaultListCellRenderer {
 
             String fontName = style.getFontName();
             if (fontName == null) fontName = "SansSerif";
-            int size = style.getFontSize() == null ? 10 : style.getFontSize();
+            float size = style.getFontsize() == null ? 10 : style.getFontsize();
             int font_style = 0;
             if (style.isBold() != null && style.isBold().booleanValue()) font_style |= Font.BOLD;
             if (style.isItalic() != null && style.isItalic().booleanValue()) font_style |= Font.ITALIC;
 
-            label.setFont(new Font(fontName,font_style, size));
+            label.setFont(new Font(fontName, font_style, 10).deriveFont(size));
 
             String text = style.getName();
             if (style.isStrikeThrough() != null && style.isStrikeThrough().booleanValue()) text = "<s>" + text + "</s>";

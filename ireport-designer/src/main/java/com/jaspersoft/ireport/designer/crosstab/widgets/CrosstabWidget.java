@@ -279,7 +279,7 @@ public class CrosstabWidget extends Widget implements PropertyChangeListener {
         g.setTransform(new_af);
         
         
-        JRFrame frame = getCrosstabCellFrame(new ReportConverter(getJasperDesign(),true),
+        JRFrame frame = getCrosstabCellFrame(new ReportConverter(net.sf.jasperreports.engine.DefaultJasperReportsContext.getInstance(), getJasperDesign(),true),
                         contents,
                         x,y,
                         x==0 && crosstab.getRunDirectionValue() == RunDirectionEnum.LTR,

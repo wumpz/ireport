@@ -82,7 +82,7 @@ public interface ExporterFactory {
      * JRExporterParameter.PAGE_INDEX
      * JRExporterParameter.START_PAGE_INDEX
      * JRExporterParameter.END_PAGE_INDEX
-     * JRExporterParameter.PROPERTY_CHARACTER_ENCODING
+     * net.sf.jasperreports.export.WriterExporterOutput.PROPERTY_CHARACTER_ENCODING
      * JRExporterParameter.CHARACTER_ENCODING
      * JRExporterParameter.OFFSET_X
      * JRExporterParameter.OFFSET_Y

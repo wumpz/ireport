@@ -62,13 +62,13 @@ public final class SubreportUsingCacheProperty extends BooleanProperty
     @Override
     public Boolean getBoolean()
     {
-        return subreport.isUsingCache();
+        return subreport.getUsingCache();
     }
 
     @Override
     public Boolean getOwnBoolean()
     {
-        return subreport.isOwnUsingCache();
+        return subreport.getUsingCache();
     }
 
     @Override

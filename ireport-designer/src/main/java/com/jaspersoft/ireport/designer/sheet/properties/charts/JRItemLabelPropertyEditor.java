@@ -80,7 +80,7 @@ public class JRItemLabelPropertyEditor extends PropertyEditorSupport implements 
 
         if (itemLabel.getFont() != null)
         {
-            return itemLabel.getFont().getFontName() + " " + itemLabel.getFont().getFontSize();
+            return itemLabel.getFont().getFontName() + " " + itemLabel.getFont().getFontsize();
         }
         else
         {

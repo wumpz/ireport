@@ -88,7 +88,7 @@ public class JRPenPropertyEditor extends PropertyEditorSupport implements ExProp
             line.getLinePen().setLineColor(pen.getLineColor());
             line.getLinePen().setLineStyle(pen.getLineStyleValue());
             line.getLinePen().setLineWidth(pen.getLineWidth());
-            new LineDrawer().draw((Graphics2D)grx, line, 0, 0);
+            new LineDrawer(net.sf.jasperreports.engine.DefaultJasperReportsContext.getInstance()).draw((Graphics2D)grx, line, 0, 0);
         }
         
     }

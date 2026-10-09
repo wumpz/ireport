@@ -45,7 +45,7 @@ final public class FontSizeProperty extends PropertySupport.ReadWrite {
 
     @SuppressWarnings(value = "unchecked")
     public FontSizeProperty(JRBaseStyle style) {
-        super(JRBaseStyle.PROPERTY_FONT_SIZE, Integer.class, I18n.getString("AbstractStyleNode.Property.Size"), I18n.getString("AbstractStyleNode.Property.Size"));
+        super(JRBaseStyle.PROPERTY_FONT_SIZE, Float.class, I18n.getString("AbstractStyleNode.Property.Size"), I18n.getString("AbstractStyleNode.Property.Size"));
         this.style = style;
 
         setValue("canEditAsText", true);
@@ -54,30 +54,30 @@ final public class FontSizeProperty extends PropertySupport.ReadWrite {
     }
 
     public Object getValue() throws IllegalAccessException, InvocationTargetException {
-        return style.getFontSize();
+        return style.getFontsize();
     }
 
     public void setValue(Object val) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        if (val != null && !(val instanceof Integer)) {
+        if (val != null && !(val instanceof Float)) {
             try {
-                val = new Integer(val + "");
+                val = new Float(val + "");
             } catch (Exception ex) {
                 // no way...
                 return;
             }
         }
-        if (val == null || val instanceof Integer) {
-            Integer oldValue = style.getOwnFontSize();
-            Integer newValue = (Integer) val;
+        if (val == null || val instanceof Float) {
+            Float oldValue = style.getOwnFontsize();
+            Float newValue = (Float) val;
             style.setFontSize(newValue);
-            ObjectPropertyUndoableEdit urob = new ObjectPropertyUndoableEdit(style, "FontSize", Integer.class, oldValue, newValue);
+            ObjectPropertyUndoableEdit urob = new ObjectPropertyUndoableEdit(style, "FontSize", Float.class, oldValue, newValue);
             IReportManager.getInstance().addUndoableEdit(urob);
         }
     }
 
     @Override
     public boolean isDefaultValue() {
-        return style.getOwnFontSize() == null;
+        return style.getOwnFontsize() == null;
     }
 
     @Override
@@ -96,7 +96,7 @@ final public class FontSizeProperty extends PropertySupport.ReadWrite {
         if (editor == null) {
             List classes = new ArrayList();
             for (int i = 6; i < 100;) {
-                classes.add(new Tag(new Integer(i), "" + i));
+                classes.add(new Tag(Float.valueOf(i), "" + i));
 
                 if (i < 16) {
                     i++;

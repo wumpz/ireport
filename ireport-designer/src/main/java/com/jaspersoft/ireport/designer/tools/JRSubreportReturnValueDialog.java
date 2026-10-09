@@ -347,7 +347,7 @@ public class JRSubreportReturnValueDialog
      */
     public void setSubreportReturnValue(JRDesignSubreportReturnValue tmpSubreportReturnValue)
     {
-        this.jComboBoxSubreportVariable.setSelectedItem(new String(tmpSubreportReturnValue.getSubreportVariable() ));
+        this.jComboBoxSubreportVariable.setSelectedItem(new String(tmpSubreportReturnValue.getFromVariable() ));
         for (int i=0; i<jComboBoxVariable.getItemCount(); ++i)
         {
 
@@ -359,7 +359,7 @@ public class JRSubreportReturnValueDialog
             }
         }
         
-        Misc.setComboboxSelectedTagValue( jComboBoxCalculationType, tmpSubreportReturnValue.getCalculationValue() );
+        Misc.setComboboxSelectedTagValue( jComboBoxCalculationType, tmpSubreportReturnValue.getCalculation() );
         this.jTextFieldNameIncrementerFactoryClass.setText(tmpSubreportReturnValue.getIncrementerFactoryClassName());
     }
 

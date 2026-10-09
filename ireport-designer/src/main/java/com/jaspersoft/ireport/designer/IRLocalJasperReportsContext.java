@@ -62,6 +62,7 @@ public class IRLocalJasperReportsContext extends LocalJasperReportsContext {
     protected IRLocalJasperReportsContext()
     {
         super( DefaultJasperReportsContext.getInstance());
+        setProperty("net.sf.jasperreports.compiler.groovy", "com.jaspersoft.ireport.designer.compiler.PortableGroovyCompiler");
     }
 
     

@@ -525,7 +525,7 @@ public class IReportCompiler implements Runnable, JRExportProgressMonitor
                 }
                 else
                 {
-                     JasperCompileManager.compileReportToFile(jd, fileName);
+                     JasperCompileManager.getInstance(context).compileToFile(jd, fileName);
                      if (IReportManager.getPreferences().getBoolean("compile_subreports",true))
                      {
                         compileSubreports(jd, reportDirectory, true);
@@ -1047,7 +1047,7 @@ public class IReportCompiler implements Runnable, JRExportProgressMonitor
 
                 }
              }
-             net.sf.jasperreports.view.JRViewer jrv = null;
+             net.sf.jasperreports.swing.JRViewer jrv = null;
              net.sf.jasperreports.engine.JRExporter exporter=null;
 
              getLogTextArea().logOnConsole(outputBuffer.toString());
@@ -1471,7 +1471,7 @@ public class IReportCompiler implements Runnable, JRExportProgressMonitor
                 else
                 {
                     try {
-                        JasperCompileManager.compileReportToFile(f.getPath(), jasper);
+                        JasperCompileManager.getInstance(context).compileToFile(f.getPath(), jasper);
                         URL img_url_info = this.getClass().getResource("/com/jaspersoft/ireport/designer/resources/errorhandler/information.png");
                          getLogTextArea().logOnConsole("<font face=\"SansSerif\"  size=\"3\" color=\"#000000\"><img align=\"right\" src=\""+  img_url_info  +"\"> &nbsp;" +
                             "Subreport " + f.getPath() + " compiled.</font>",true);
@@ -1581,7 +1581,7 @@ public class IReportCompiler implements Runnable, JRExportProgressMonitor
         
         JRPropertiesUtil jrPropUtils = JRPropertiesUtil.getInstance(context);
 
-        exporter.setParameter(JRExporterParameter.IGNORE_PAGE_MARGINS, pref.getBoolean(JRExporterParameter.PROPERTY_IGNORE_PAGE_MARGINS, jrPropUtils.getBooleanProperty(JRExporterParameter.PROPERTY_IGNORE_PAGE_MARGINS)));
+        exporter.setParameter(JRExporterParameter.IGNORE_PAGE_MARGINS, pref.getBoolean(net.sf.jasperreports.export.ReportExportConfiguration.PROPERTY_IGNORE_PAGE_MARGINS, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.ReportExportConfiguration.PROPERTY_IGNORE_PAGE_MARGINS)));
         int pageMode = pref.getInt(JRPropertiesUtil.PROPERTY_PREFIX + "export.printrange", 0);
 
         if (pageMode == 1)
@@ -1594,7 +1594,7 @@ public class IReportCompiler implements Runnable, JRExportProgressMonitor
             exporter.setParameter(JRExporterParameter.END_PAGE_INDEX,  pref.getInt(JRPropertiesUtil.PROPERTY_PREFIX + "export.printrange.to", 1));
         }
 
-        String encoding = pref.get(JRExporterParameter.PROPERTY_CHARACTER_ENCODING, jrPropUtils.getProperty(JRExporterParameter.PROPERTY_CHARACTER_ENCODING));
+        String encoding = pref.get(net.sf.jasperreports.export.WriterExporterOutput.PROPERTY_CHARACTER_ENCODING, jrPropUtils.getProperty(net.sf.jasperreports.export.WriterExporterOutput.PROPERTY_CHARACTER_ENCODING));
         if (encoding != null)
         {
             exporter.setParameter(JRExporterParameter.CHARACTER_ENCODING, encoding);
@@ -1984,7 +1984,7 @@ public class IReportCompiler implements Runnable, JRExportProgressMonitor
             SourceTraceDigester digester = new SourceTraceDigester();
             try
             {
-                    JRXmlDigesterFactory.configureDigester(digester);
+                    JRXmlDigesterFactory.configureDigester(IRLocalJasperReportsContext.getInstance(), digester);
             }
             catch (SAXException e)
             {

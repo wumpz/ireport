@@ -6,3 +6,6 @@
 /ireport-addons/target/
 /ireport-samples/target/
 /MongoDb/target/
+**/target/
+.lab/
+__pycache__/

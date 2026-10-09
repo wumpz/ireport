@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+ name="legacy_basic" pageWidth="300" pageHeight="200" columnWidth="280"
+ leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10">
+ <title><band height="40"><staticText><reportElement x="0" y="0" width="280" height="30"/>
+ <textElement><font size="12"/></textElement><text><![CDATA[Teste isolado iReport / NetBeans]]></text></staticText></band></title>
+ <detail><band height="20"><textField><reportElement x="0" y="0" width="280" height="20"/>
+ <textFieldExpression><![CDATA["Registro " + $V{REPORT_COUNT}]]></textFieldExpression></textField></band></detail>
+</jasperReport>

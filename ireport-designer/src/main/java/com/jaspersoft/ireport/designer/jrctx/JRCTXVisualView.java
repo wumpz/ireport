@@ -199,7 +199,7 @@ final class JRCTXVisualView extends TopComponent
                     try
                     {
                         viewerContext.loadReport(
-                            new ReportConverter(
+                            new ReportConverter(net.sf.jasperreports.engine.DefaultJasperReportsContext.getInstance(),
                                 chartTypeReports[reportIndex], 
                                 false).getJasperPrint()
                             );

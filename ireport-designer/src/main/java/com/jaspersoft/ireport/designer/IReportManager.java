@@ -72,7 +72,7 @@ import net.sf.jasperreports.engine.design.JRDesignComponentElement;
 import net.sf.jasperreports.engine.design.JRDesignElement;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.util.FileResolver;
-import org.apache.xerces.parsers.DOMParser;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.netbeans.api.db.explorer.JDBCDriver;
 import org.netbeans.api.db.explorer.JDBCDriverManager;
 import org.openide.awt.StatusDisplayer;
@@ -714,17 +714,14 @@ public class IReportManager {
     public IReportConnection loadConnection(String xml)
     {
         try {
-            
-             ClassLoader oldClassLoader = Thread.currentThread().getContextClassLoader();
-             Thread.currentThread().setContextClassLoader(DOMParser.class.getClassLoader());
-             DOMParser parser = new DOMParser();
+             javax.xml.parsers.DocumentBuilder parser = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder();
              org.xml.sax.InputSource input_sss  = new org.xml.sax.InputSource(new java.io.StringReader(xml));
              //input_sss.setSystemId(filename);
-             parser.parse( input_sss );
+             Document document = parser.parse(input_sss);
 
-             Thread.currentThread().setContextClassLoader(oldClassLoader);
              
-             Document document = parser.getDocument();
+
+
              Node node = document.getDocumentElement();
 
 

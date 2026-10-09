@@ -424,7 +424,7 @@
                     <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignBottomAction.instance"/>
                     <attr name="position" intvalue="40"/>
                 </file>
-                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-1.instance">
                     <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                     <attr name="position" intvalue="50"/>
                 </file>
@@ -436,7 +436,7 @@
                     <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-AlignHAxisAction.instance"/>
                     <attr name="position" intvalue="70"/>
                 </file>
-                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-2.instance">
                     <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                     <attr name="position" intvalue="80"/>
                 </file>
@@ -472,7 +472,7 @@
                     <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameWidthMinAction.instance"/>
                     <attr name="position" intvalue="30"/>
                 </file>
-                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-3.instance">
                     <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                     <attr name="position" intvalue="40"/>
                 </file>
@@ -488,11 +488,11 @@
                     <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameHeightMinAction.instance"/>
                     <attr name="position" intvalue="70"/>
                 </file>
-                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-4.instance">
                     <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                     <attr name="position" intvalue="80"/>
                 </file>
-                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-5.instance">
                     <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                     <attr name="position" intvalue="90"/>
                 </file>
@@ -500,7 +500,7 @@
                     <attr name="originalFile" stringvalue="Actions/Designer/Format/com-jaspersoft-ireport-designer-formatting-actions-SameSizeAction.instance"/>
                     <attr name="position" intvalue="100"/>
                 </file>
-                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+                <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-6.instance">
                     <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                     <attr name="position" intvalue="110"/>
                 </file>
@@ -550,7 +550,7 @@
                     <attr name="position" intvalue="100"/>
                 </file>
             </folder>
-            <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+            <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-7.instance">
                 <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                 <attr name="position" intvalue="40"/>
             </file>
@@ -593,7 +593,7 @@
                 <attr name="position" intvalue="70"/>
             </file>
 
-            <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter.instance">
+            <file name="com-jaspersoft-ireport-designer-standalone-actions-separatorAfter-8.instance">
                     <attr name="instanceClass" stringvalue="javax.swing.JSeparator"/>
                     <attr name="position" intvalue="80"/>
             </file>
@@ -771,7 +771,7 @@
             </folder>
         </folder>
         <folder name="Tools">
-            <file name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow" url="com-jaspersoft-ireport-designer-menu-DatasourcesAction_1.shadow">
+            <file name="com-jaspersoft-ireport-designer-menu-DatasourcesAction.shadow">
                 <attr name="originalFile" stringvalue="Actions/Data/com-jaspersoft-ireport-designer-menu-DatasourcesAction.instance"/>
                 <attr name="position" intvalue="150"/>
             </file>
@@ -794,14 +794,14 @@
                     <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-errorhandler-ErrorHandlerAction.instance"/>
                 </file>
                 <attr name="position" intvalue="1500"/>
-                <file name="FormattingToolsAction.shadow" url="FormattingToolsAction.shadow">
+                <file name="FormattingToolsAction.shadow">
                     <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-formatting-FormattingToolsAction.instance"/>
                     <attr name="position" intvalue="200"/>
                 </file>
-                <file name="IRConsoleAction.shadow" url="IRConsoleAction_1.shadow">
+                <file name="IRConsoleAction.shadow">
                     <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-logpane-IRConsoleAction.instance"/>
                 </file>
-                <file name="OutlineAction.shadow" url="OutlineAction_1.shadow">
+                <file name="OutlineAction.shadow">
                     <attr name="originalFile" stringvalue="Actions/Window/com-jaspersoft-ireport-designer-outline-OutlineAction.instance"/>
                     <attr name="position" intvalue="100"/>
                 </file>
@@ -835,31 +835,7 @@
         <file name="com-jaspersoft-ireport-designer-options-IReportOptionsCategory.instance"/>
     </folder>
     <folder name="Services">
-        <folder name="MIMEResolver">
-            <file name="JRCTXResolver.xml" url="JRCTXResolver.xml">
-                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
-                <attr name="position" intvalue="1"/>
-            </file>
-            <file name="JRTXResolver.xml" url="JRTXResolver.xml">
-                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
-                <attr name="position" intvalue="2"/>
-            </file>
-            <file name="JasperResolver.xml" url="JasperResolver.xml">
-                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
-                <attr name="position" intvalue="3"/>
-            </file>
-            <file name="JrxmlResolver.xml" url="JrxmlResolver.xml">
-                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
-                <attr name="position" intvalue="-100"/>
-            </file>
-            <file name="PaletteItemResolver.xml" url="PaletteItemResolver.xml">
-                <attr name="SystemFileSystem.localizingBundle" stringvalue="com.jaspersoft.ireport.Bundle"/>
-                <attr name="position" intvalue="-200"/>
-            </file>
-            <file name="jrxml-expression.xml" url="designer/editor/jrxml-expression.xml">
-                <attr name="position" intvalue="-250"/>
-            </file>
-        </folder>
+
     </folder>
     <folder name="Templates">
         <!-- <file name="JrxmlTemplate.jrxml" url="JrxmlTemplate.jrxml">

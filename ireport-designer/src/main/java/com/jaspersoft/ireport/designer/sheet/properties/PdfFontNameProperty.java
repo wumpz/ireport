@@ -41,7 +41,8 @@ import net.sf.jasperreports.engine.JRFont;
 import net.sf.jasperreports.engine.JRTextElement;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
 import net.sf.jasperreports.engine.fonts.FontInfo;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.fonts.FontUtil;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import org.openide.nodes.PropertySupport;
 
 /**
@@ -89,16 +90,16 @@ public class PdfFontNameProperty extends PropertySupport.ReadWrite
 
         // If the font name comes from a font extension, this
         // property should be disables...
-        JRFontUtil.getFontFamilyNames();
+        FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
 
-        Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+        Collection extensionFonts = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
         if (extensionFonts.contains(fontName))
         {
-            FontInfo fontInfo = JRFontUtil.getFontInfo(fontName, null);
-            if (fontInfo.getFontFamily() != null &&
-                fontInfo.getFontFamily().getNormalPdfFont() != null)
+            FontInfo fontInfo = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontInfo(fontName, null);
+            if (fontInfo != null && fontInfo.getFontFamily() != null &&
+                fontInfo.getFontFamily().getNormalFace() != null &&
+                fontInfo.getFontFamily().getNormalFace().getPdf() != null)
             {
-                System.out.println(fontInfo.getFontFamily().getNormalPdfFont());
                 return false;
             }
         }
@@ -179,7 +180,7 @@ public class PdfFontNameProperty extends PropertySupport.ReadWrite
 //            ClassLoader oldCL = Thread.currentThread().getContextClassLoader();
 //            Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader()));
 //
-//            Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+//            Collection extensionFonts = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
 //
 //
 //            for(Iterator it = extensionFonts.iterator(); it.hasNext();)

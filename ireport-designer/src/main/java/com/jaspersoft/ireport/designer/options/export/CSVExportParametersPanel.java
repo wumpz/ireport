@@ -164,8 +164,8 @@ public class CSVExportParametersPanel extends AbstractExportParametersPanel {
         JRPropertiesUtil jrPropUtils = IRLocalJasperReportsContext.getUtilities();
         JasperReportsContext context = IRLocalJasperReportsContext.getInstance();
         
-        jTextField1.setText( Misc.addSlashesString(jrPropUtils.getProperty(JRCsvExporterParameter.PROPERTY_FIELD_DELIMITER)) );
-        jTextField2.setText( Misc.addSlashesString(jrPropUtils.getProperty(JRCsvExporterParameter.PROPERTY_RECORD_DELIMITER)) );
+        jTextField1.setText( Misc.addSlashesString(jrPropUtils.getProperty(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_FIELD_DELIMITER)) );
+        jTextField2.setText( Misc.addSlashesString(jrPropUtils.getProperty(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_RECORD_DELIMITER)) );
         notifyChange();
     }//GEN-LAST:event_jButtonResetActionPerformed
 
@@ -188,8 +188,8 @@ public class CSVExportParametersPanel extends AbstractExportParametersPanel {
         
         JRPropertiesUtil jrPropUtils = IRLocalJasperReportsContext.getUtilities();
         
-        jTextField1.setText( Misc.addSlashesString(pref.get(JRCsvExporterParameter.PROPERTY_FIELD_DELIMITER, jrPropUtils.getProperty(JRCsvExporterParameter.PROPERTY_FIELD_DELIMITER))));
-        jTextField2.setText( Misc.addSlashesString(pref.get(JRCsvExporterParameter.PROPERTY_RECORD_DELIMITER, jrPropUtils.getProperty(JRCsvExporterParameter.PROPERTY_RECORD_DELIMITER))));
+        jTextField1.setText( Misc.addSlashesString(pref.get(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_FIELD_DELIMITER, jrPropUtils.getProperty(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_FIELD_DELIMITER))));
+        jTextField2.setText( Misc.addSlashesString(pref.get(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_RECORD_DELIMITER, jrPropUtils.getProperty(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_RECORD_DELIMITER))));
         
         setInit(false);
     }
@@ -197,8 +197,8 @@ public class CSVExportParametersPanel extends AbstractExportParametersPanel {
     public void store() {
         Preferences pref = IReportManager.getPreferences();
 
-        pref.put(JRCsvExporterParameter.PROPERTY_FIELD_DELIMITER, Misc.removeSlashesString( jTextField1.getText()) );
-        pref.put(JRCsvExporterParameter.PROPERTY_RECORD_DELIMITER, Misc.removeSlashesString( jTextField2.getText()) );
+        pref.put(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_FIELD_DELIMITER, Misc.removeSlashesString( jTextField1.getText()) );
+        pref.put(net.sf.jasperreports.export.CsvExporterConfiguration.PROPERTY_RECORD_DELIMITER, Misc.removeSlashesString( jTextField2.getText()) );
 
     }
 

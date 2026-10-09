@@ -30,7 +30,6 @@ import javax.swing.JLabel;
 import net.sf.jasperreports.engine.design.JRDesignSortField;
 import net.sf.jasperreports.engine.type.SortFieldTypeEnum;
 import net.sf.jasperreports.engine.type.SortOrderEnum;
-import org.springframework.ui.jasperreports.JasperReportsUtils;
 
 /**
  *

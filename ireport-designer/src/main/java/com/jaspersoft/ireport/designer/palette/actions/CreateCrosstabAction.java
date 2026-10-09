@@ -52,7 +52,6 @@ import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabMeasure;
 import net.sf.jasperreports.crosstabs.design.JRDesignCrosstabRowGroup;
 import net.sf.jasperreports.crosstabs.fill.calculation.BucketDefinition;
 import net.sf.jasperreports.crosstabs.type.CrosstabTotalPositionEnum;
-import net.sf.jasperreports.engine.JRAlignment;
 import net.sf.jasperreports.engine.JRBand;
 import net.sf.jasperreports.engine.JRElement;
 import net.sf.jasperreports.engine.JRException;
@@ -67,11 +66,11 @@ import net.sf.jasperreports.engine.design.JRDesignStyle;
 import net.sf.jasperreports.engine.design.JRDesignTextElement;
 import net.sf.jasperreports.engine.design.JRDesignTextField;
 import net.sf.jasperreports.engine.design.JasperDesign;
-import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
+import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 import net.sf.jasperreports.engine.type.LineStyleEnum;
 import net.sf.jasperreports.engine.type.ModeEnum;
 import net.sf.jasperreports.engine.type.PenEnum;
-import net.sf.jasperreports.engine.type.VerticalAlignEnum;
+import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 import org.netbeans.api.visual.animator.SceneAnimator;
 import org.netbeans.api.visual.widget.Scene;
 import org.netbeans.api.visual.widget.Widget;
@@ -431,8 +430,8 @@ public class CreateCrosstabAction extends CreateReportElementAction
         element.setWidth(w);
         element.setHeight(h);
         element.setText(text);
-        element.setHorizontalAlignment( HorizontalAlignEnum.CENTER );
-        element.setVerticalAlignment( VerticalAlignEnum.MIDDLE);
+        element.setHorizontalTextAlign( HorizontalTextAlignEnum.CENTER );
+        element.setVerticalTextAlign( VerticalTextAlignEnum.MIDDLE);
         return element;
     }
     
@@ -446,7 +445,7 @@ public class CreateCrosstabAction extends CreateReportElementAction
             try {
                 dataTextfieldStyle = new JRDesignStyle();
                 dataTextfieldStyle.setName(styleName);
-                dataTextfieldStyle.setHorizontalAlignment(HorizontalAlignEnum.CENTER);
+                dataTextfieldStyle.setHorizontalTextAlign(HorizontalTextAlignEnum.CENTER);
                 getJasperDesign().addStyle(dataTextfieldStyle);
             } catch (JRException ex) {
                 Exceptions.printStackTrace(ex);
@@ -462,8 +461,8 @@ public class CreateCrosstabAction extends CreateReportElementAction
         element.setY(0);
         element.setWidth(w);
         element.setHeight(h);
-        //element.setHorizontalAlignment( JRAlignment.HORIZONTAL_ALIGN_CENTER );
-        //element.setVerticalAlignment( JRAlignment.VERTICAL_ALIGN_MIDDLE);
+        //element.setHorizontalTextAlign( JRAlignment.HORIZONTAL_ALIGN_CENTER );
+        //element.setVerticalTextAlign( JRAlignment.VERTICAL_ALIGN_MIDDLE);
         if (dataTextfieldStyle != null)
         {
             element.setStyle(dataTextfieldStyle);

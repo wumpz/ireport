@@ -357,10 +357,10 @@ public final class TransformElementAction extends NodeAction {
       newElement.setHyperlinkWhenExpression( cloneExpression( element.getHyperlinkWhenExpression()));
       newElement.setHyperlinkPageExpression( cloneExpression(element.getHyperlinkPageExpression()));
       newElement.setHyperlinkReferenceExpression( cloneExpression(element.getHyperlinkReferenceExpression()));
-      newElement.setHyperlinkTarget( element.getHyperlinkTarget());
+      newElement.setHyperlinkTarget( element.getHyperlinkTargetValue());
       newElement.setLinkTarget(element.getLinkTarget());
       newElement.setHyperlinkTooltipExpression( cloneExpression(element.getHyperlinkTooltipExpression()));
-      newElement.setHyperlinkType( element.getHyperlinkType());
+      newElement.setHyperlinkType( element.getHyperlinkTypeValue());
       newElement.setLegendBackgroundColor( element.getOwnLegendBackgroundColor());
       newElement.setLegendColor( element.getOwnLegendColor());
       newElement.setLegendFont( element.getLegendFont());
@@ -382,7 +382,7 @@ public final class TransformElementAction extends NodeAction {
       newElement.getPlot().setBackgroundAlpha( element.getPlot().getBackgroundAlphaFloat() );
       newElement.getPlot().setForegroundAlpha( element.getPlot().getForegroundAlphaFloat()  );
       newElement.getPlot().setLabelRotation( element.getPlot().getLabelRotationDouble() );
-      newElement.getPlot().setOrientation( element.getPlot().getOrientation() );
+      newElement.getPlot().setOrientation( element.getPlot().getOrientationValue() );
       newElement.getPlot().setSeriesColors( element.getPlot().getSeriesColors() );
     }
 
@@ -413,16 +413,16 @@ public final class TransformElementAction extends NodeAction {
         newElement.setBold( element.isOwnBold() );
         newElement.setItalic( element.isOwnItalic());
         newElement.setFontName( element.getOwnFontName());
-        newElement.setFontSize( element.getOwnFontSize());
-        newElement.setHorizontalAlignment( element.getOwnHorizontalAlignmentValue());
-        newElement.setLineSpacing( element.getOwnLineSpacingValue());
+        newElement.setFontSize( element.getOwnFontsize());
+        newElement.setHorizontalTextAlign( element.getOwnHorizontalTextAlign());
+        newElement.getParagraph().setLineSpacing(element.getParagraph().getOwnLineSpacing());
         newElement.setMarkup(element.getMarkup());
         newElement.setPdfEmbedded( element.isOwnPdfEmbedded());
         newElement.setPdfEncoding( element.getOwnPdfEncoding());
         newElement.setPdfFontName( element.getOwnPdfFontName());
         newElement.setRotation( element.getOwnRotationValue());
         newElement.setStrikeThrough( element.isOwnStrikeThrough());
-        newElement.setVerticalAlignment( element.getOwnVerticalAlignmentValue());
+        newElement.setVerticalTextAlign( element.getOwnVerticalTextAlign());
         newElement.setUnderline(element.isOwnUnderline());
     }
 

@@ -82,6 +82,7 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBoxFontSize">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;Font size in points; fractional values such as 10.5 are supported.&lt;/html&gt;"/>
             <Property name="editable" type="boolean" value="true"/>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>

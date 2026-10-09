@@ -414,6 +414,7 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="jCheckBoxUseImagesToAlign">
                   <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="Use images to align"/>
                   </Properties>
                   <Events>
@@ -422,6 +423,7 @@
                 </Component>
                 <Component class="javax.swing.JCheckBox" name="jCheckBoxFrameAsNestedTables">
                   <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="Frames as nested tables"/>
                   </Properties>
                   <Events>

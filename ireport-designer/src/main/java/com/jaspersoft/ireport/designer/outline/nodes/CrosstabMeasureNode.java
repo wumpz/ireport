@@ -334,7 +334,7 @@ public class CrosstabMeasureNode extends IRAbstractNode implements PropertyChang
             
             ModelUtils.fixElementsExpressions(crosstab, oldName, newName, JRExpressionChunk.TYPE_VARIABLE, getMeasure().getValueClassName());
             
-            List expressions = JRExpressionCollector.collectExpressions(jd, crosstab);
+            List expressions = JRExpressionCollector.collectExpressions(com.jaspersoft.ireport.designer.IRLocalJasperReportsContext.getInstance(), jd, crosstab);
             for (int i=0; i<expressions.size(); ++i)
             {
                 JRDesignExpression exp = (JRDesignExpression)expressions.get(i);

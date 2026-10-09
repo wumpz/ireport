@@ -28,7 +28,7 @@ import com.jaspersoft.ireport.designer.IReportManager;
 import com.jaspersoft.ireport.designer.ReportClassLoader;
 import com.jaspersoft.ireport.designer.utils.Misc;
 import com.jaspersoft.ireport.locale.I18n;
-import org.apache.xerces.parsers.DOMParser;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -45,7 +45,8 @@ import java.util.zip.ZipOutputStream;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.fonts.FontUtil;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import org.openide.filesystems.FileUtil;
 import org.w3c.dom.*;
 
@@ -71,11 +72,7 @@ public class IRFontUtils {
 
             File xmlFile = new File(fontsDir,"irfonts.xml");
 
-
-             ClassLoader oldClassLoader = Thread.currentThread().getContextClassLoader();
-             Thread.currentThread().setContextClassLoader(DOMParser.class.getClassLoader());
-
-             DOMParser parser = new DOMParser();
+             javax.xml.parsers.DocumentBuilder parser = DocumentBuilderFactory.newDefaultInstance().newDocumentBuilder();
              
              
              
@@ -92,12 +89,12 @@ public class IRFontUtils {
              java.io.FileInputStream fis = new FileInputStream(xmlFile);
              org.xml.sax.InputSource input_sss  = new org.xml.sax.InputSource(fis);
              //input_sss.setSystemId(filename);
-             parser.parse( input_sss );
-
-             Thread.currentThread().setContextClassLoader(oldClassLoader);
+             Document document = parser.parse(input_sss);
 
 
-             Document document = parser.getDocument();
+
+
+
              Node node = document.getDocumentElement();
 
 
@@ -275,8 +272,8 @@ public class IRFontUtils {
 
                      Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader(true)));
 
-                     JRFontUtil.getFontFamilyNames();
-                     //System.out.println("Reloading fonts: " + JRFontUtil.getFontFamilyNames());
+                     FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
+                     //System.out.println("Reloading fonts: " + FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames());
 
                      Thread.currentThread().setContextClassLoader(oldCL);
 

@@ -29,7 +29,7 @@ import com.jaspersoft.ireport.designer.sheet.properties.EnumProperty;
 import com.jaspersoft.ireport.locale.I18n;
 import java.util.List;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
-import net.sf.jasperreports.engine.type.HorizontalAlignEnum;
+import net.sf.jasperreports.engine.type.HorizontalTextAlignEnum;
 
 /**
  * Class to manage the JRDesignElement.PROPERTY_POSITION_TYPE property
@@ -41,7 +41,7 @@ public final class HorizontalAlignmentProperty extends EnumProperty {
     @SuppressWarnings(value = "unchecked")
     public HorizontalAlignmentProperty(JRBaseStyle style) {
 
-        super(HorizontalAlignEnum.class, style);
+        super(HorizontalTextAlignEnum.class, style);
         this.style = style;
         setValue("suppressCustomEditor", Boolean.TRUE);
     }
@@ -51,7 +51,7 @@ public final class HorizontalAlignmentProperty extends EnumProperty {
     @Override
     public String getName()
     {
-        return JRBaseStyle.PROPERTY_HORIZONTAL_ALIGNMENT;
+        return JRBaseStyle.PROPERTY_HORIZONTAL_TEXT_ALIGNMENT;
     }
 
     @Override
@@ -69,13 +69,13 @@ public final class HorizontalAlignmentProperty extends EnumProperty {
     @Override
     public Object getPropertyValue()
     {
-        return style.getHorizontalAlignmentValue();
+        return style.getHorizontalTextAlign();
     }
 
     @Override
     public Object getOwnPropertyValue()
     {
-        return getPropertyValue();
+        return style.getOwnHorizontalTextAlign();
     }
 
     @Override
@@ -87,17 +87,17 @@ public final class HorizontalAlignmentProperty extends EnumProperty {
     @Override
     public void setPropertyValue(Object newValue)
     {
-        style.setHorizontalAlignment((HorizontalAlignEnum)newValue);
+        style.setHorizontalTextAlign((HorizontalTextAlignEnum)newValue);
     }
 
     @Override
     public List getTagList()
     {
         List tags = new java.util.ArrayList();
-        tags.add(new Tag(HorizontalAlignEnum.LEFT, I18n.getString("AbstractStyleNode.Property.Left")));
-        tags.add(new Tag(HorizontalAlignEnum.CENTER, I18n.getString("AbstractStyleNode.Property.Center")));
-        tags.add(new Tag(HorizontalAlignEnum.RIGHT, I18n.getString("AbstractStyleNode.Property.Right")));
-        tags.add(new Tag(HorizontalAlignEnum.JUSTIFIED, I18n.getString("AbstractStyleNode.Property.Justified")));
+        tags.add(new Tag(HorizontalTextAlignEnum.LEFT, I18n.getString("AbstractStyleNode.Property.Left")));
+        tags.add(new Tag(HorizontalTextAlignEnum.CENTER, I18n.getString("AbstractStyleNode.Property.Center")));
+        tags.add(new Tag(HorizontalTextAlignEnum.RIGHT, I18n.getString("AbstractStyleNode.Property.Right")));
+        tags.add(new Tag(HorizontalTextAlignEnum.JUSTIFIED, I18n.getString("AbstractStyleNode.Property.Justified")));
         return tags;
     }
 }

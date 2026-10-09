@@ -90,7 +90,7 @@ public class JRTXPreviewPanel extends javax.swing.JPanel
 
     public void paintGraphicsElements(JComponent component, Graphics2D gr) {
 
-            drawVisitor = new DrawVisitor(STYLE_REPORT, null);
+            drawVisitor = new DrawVisitor(new net.sf.jasperreports.engine.convert.ReportConverter(net.sf.jasperreports.engine.DefaultJasperReportsContext.getInstance(), STYLE_REPORT, true), null);
             drawVisitor.setGraphics2D(gr);
 
             Paint p = gr.getPaint();
@@ -142,7 +142,7 @@ public class JRTXPreviewPanel extends javax.swing.JPanel
 
     public void paintTextElements(JComponent component, Graphics2D gr) {
 
-            drawVisitor = new DrawVisitor(STYLE_REPORT, null);
+            drawVisitor = new DrawVisitor(new net.sf.jasperreports.engine.convert.ReportConverter(net.sf.jasperreports.engine.DefaultJasperReportsContext.getInstance(), STYLE_REPORT, true), null);
             drawVisitor.setGraphics2D(gr);
 
             Paint p = gr.getPaint();

@@ -43,22 +43,25 @@ public class Installer extends ModuleInstall {
     public void restored() {
 
         
-        if (System.getProperty("javax.xml.parsers.SAXParserFactory") == null)
-        {
-            System.setProperty("javax.xml.parsers.SAXParserFactory","com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl");
+        // JAXP uses the platform provider; do not change the IDE-wide XML factories.
+        // Explicit opt-in diagnostics for an isolated development profile.
+        final String diagnosticFile = System.getProperty("ireport.diagnostics.file");
+        if (diagnosticFile != null) {
+            WindowManager.getDefault().invokeWhenUIReady(() -> {
+                try {
+                    FileObject file = FileUtil.toFileObject(FileUtil.normalizeFile(new java.io.File(diagnosticFile)));
+                    org.openide.loaders.DataObject object = org.openide.loaders.DataObject.find(file);
+                    org.openide.cookies.OpenCookie cookie = object.getLookup().lookup(org.openide.cookies.OpenCookie.class);
+                    java.util.logging.Logger.getLogger(Installer.class.getName()).info(
+                        "iReport diagnostic: mime=" + file.getMIMEType() + ", object=" + object.getClass().getName() + ", open=" + cookie);
+                    if (cookie != null) cookie.open();
+                    javax.swing.SwingUtilities.invokeLater(() -> java.util.logging.Logger.getLogger(Installer.class.getName()).info(
+                        "iReport diagnostic opened components: " + WindowManager.getDefault().getRegistry().getOpened()));
+                } catch (Exception ex) {
+                    Exceptions.printStackTrace(ex);
+                }
+            });
         }
-
-        if (System.getProperty("javax.xml.parsers.DocumentBuilderFactory") == null)
-        {
-            System.setProperty("javax.xml.parsers.DocumentBuilderFactory","com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl");
-        }
-
-        if (System.getProperty("javax.xml.datatype.DatatypeFactory") == null)
-        {
-            System.setProperty("javax.xml.datatype.DatatypeFactory","com.sun.org.apache.xerces.internal.jaxp.datatype.DatatypeFactoryImpl");
-        }
-        
-        
 
         /*
         WindowManager.getDefault().invokeWhenUIReady(new Runnable() {

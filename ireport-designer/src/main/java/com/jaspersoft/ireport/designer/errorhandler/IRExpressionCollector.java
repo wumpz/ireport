@@ -53,7 +53,7 @@ public class IRExpressionCollector extends JRExpressionCollector {
     
     public IRExpressionCollector(JasperDesign jd)
     {
-        super(null, jd);
+        super(net.sf.jasperreports.engine.DefaultJasperReportsContext.getInstance(), null, jd);
         jasperDesign = jd;
     }
 

@@ -118,6 +118,7 @@ public class JrxmlEditorSupport extends DataEditorSupport implements OpenCookie,
 
 
     protected CloneableEditorSupport.Pane createPane() {
+        if (System.getProperty("ireport.diagnostics.file") != null) java.util.logging.Logger.getLogger(JrxmlEditorSupport.class.getName()).info("iReport diagnostic createPane");
         return (CloneableEditorSupport.Pane)MultiViewFactory.
                 createCloneableMultiView(getDescriptions(), getDescriptions()[0], new GenericCloseOperationHandler(this));
     }
@@ -155,6 +156,7 @@ public class JrxmlEditorSupport extends DataEditorSupport implements OpenCookie,
 
     @Override
     public void saveAs(FileObject folder, String fileName) throws IOException {
+        final javax.swing.text.StyledDocument document = openDocument();
 
         if (getCurrentModel() != null)
         {
@@ -185,12 +187,7 @@ public class JrxmlEditorSupport extends DataEditorSupport implements OpenCookie,
 
             if (content != null)
             {
-                try {
-                    getDocument().remove(0, getDocument().getLength());
-                    getDocument().insertString(0, content, null);
-                } catch (BadLocationException ex) {
-
-                }
+                replaceDocumentContent(document, content);
             }
         }
 
@@ -207,6 +204,9 @@ public class JrxmlEditorSupport extends DataEditorSupport implements OpenCookie,
     }
     
     public void saveDocument() throws IOException {
+            // Current NetBeans can release a document while only the visual view is open.
+            // Keep it loaded and strongly referenced throughout serialization and saving.
+            final javax.swing.text.StyledDocument document = openDocument();
             
             if (getCurrentModel() != null)
             {
@@ -259,19 +259,7 @@ public class JrxmlEditorSupport extends DataEditorSupport implements OpenCookie,
 
                 if (content != null)
                 {
-                    final String theContent = content;
-                    Mutex.EVENT.writeAccess(new Runnable() {
-
-                        public void run() {
-                            try {
-                                getDocument().remove(0, getDocument().getLength());
-                                getDocument().insertString(0, theContent, null);
-                                ((JrxmlVisualView) getDescriptions()[0]).setNeedModelRefresh(false);
-                            } catch (BadLocationException ex) {
-                                Exceptions.printStackTrace(ex);
-                            }
-                        }
-                    });
+                    replaceDocumentContent(document, content);
                     
                     
                     
@@ -312,6 +300,34 @@ public class JrxmlEditorSupport extends DataEditorSupport implements OpenCookie,
 
     public Lookup getSpecialNodeLookup() {
         return specialNodeLookup;
+    }
+
+    private void replaceDocumentContent(final javax.swing.text.StyledDocument document, final String content) throws IOException {
+        final BadLocationException[] failure = new BadLocationException[1];
+        Runnable replace = () -> {
+            try {
+                document.remove(0, document.getLength());
+                document.insertString(0, content, null);
+                ((JrxmlVisualView) getDescriptions()[0]).setNeedModelRefresh(false);
+            } catch (BadLocationException ex) {
+                failure[0] = ex;
+            }
+        };
+        // Mutex.EVENT.writeAccess(Runnable) can defer an upgrade from read access;
+        // the content must be updated before super.saveDocument writes the file.
+        if (javax.swing.SwingUtilities.isEventDispatchThread()) {
+            replace.run();
+        } else {
+            try {
+                javax.swing.SwingUtilities.invokeAndWait(replace);
+            } catch (InterruptedException ex) {
+                Thread.currentThread().interrupt();
+                throw new IOException("Interrupted while updating JRXML before saving", ex);
+            } catch (java.lang.reflect.InvocationTargetException ex) {
+                throw new IOException("Could not update JRXML before saving", ex.getCause());
+            }
+        }
+        if (failure[0] != null) throw new IOException("Could not replace JRXML document", failure[0]);
     }
 
     public void setSpecialNodeLookup(Lookup specialNodeLookup) {

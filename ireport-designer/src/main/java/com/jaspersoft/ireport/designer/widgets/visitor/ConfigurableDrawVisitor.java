@@ -80,7 +80,7 @@ public class ConfigurableDrawVisitor extends DrawVisitor {
 
             if (frameDrawer == null)
             {
-                frameDrawer = new FrameDrawer(null, new AwtTextRenderer(false, true));
+                frameDrawer = new net.sf.jasperreports.engine.export.draw.PrintDrawVisitor(IRLocalJasperReportsContext.getInstance(), new net.sf.jasperreports.renderers.RenderersCache(IRLocalJasperReportsContext.getInstance()), false, true, true, false).getFrameDrawer();
                 frameDrawer.setClip(true);
             }
             JRPrintFrame element = (JRPrintFrame)convertVisitor.getVisitPrintElement(frame);

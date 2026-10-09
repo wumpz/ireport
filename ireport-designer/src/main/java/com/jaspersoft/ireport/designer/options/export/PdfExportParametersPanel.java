@@ -78,15 +78,15 @@ public class PdfExportParametersPanel extends AbstractExportParametersPanel {
 
 
          jComboBoxPDFVersion.addItem(new Tag(null, I18n.getString("Global.Button.Default"))); //NOI18N
-         jComboBoxPDFVersion.addItem(new Tag(""+JRPdfExporterParameter.PDF_VERSION_1_2, "1.2")); //NOI18N
-         jComboBoxPDFVersion.addItem(new Tag(""+JRPdfExporterParameter.PDF_VERSION_1_3, "1.3")); //NOI18N
-         jComboBoxPDFVersion.addItem(new Tag(""+JRPdfExporterParameter.PDF_VERSION_1_4, "1.4")); //NOI18N
-         jComboBoxPDFVersion.addItem(new Tag(""+JRPdfExporterParameter.PDF_VERSION_1_5, "1.5")); //NOI18N
-         jComboBoxPDFVersion.addItem(new Tag(""+JRPdfExporterParameter.PDF_VERSION_1_6, "1.6")); //NOI18N
+         jComboBoxPDFVersion.addItem(new Tag(""+'2', "1.2")); //NOI18N
+         jComboBoxPDFVersion.addItem(new Tag(""+'3', "1.3")); //NOI18N
+         jComboBoxPDFVersion.addItem(new Tag(""+'4', "1.4")); //NOI18N
+         jComboBoxPDFVersion.addItem(new Tag(""+'5', "1.5")); //NOI18N
+         jComboBoxPDFVersion.addItem(new Tag(""+'6', "1.6")); //NOI18N
 
-         jComboBoxPdfA.addItem(new Tag(""+JRPdfExporterParameter.PDFA_CONFORMANCE_NONE, "None")); //NOI18N
-         jComboBoxPdfA.addItem(new Tag(""+JRPdfExporterParameter.PDFA_CONFORMANCE_1A, "PDF/A-1A")); //NOI18N
-         jComboBoxPdfA.addItem(new Tag(""+JRPdfExporterParameter.PDFA_CONFORMANCE_1B, "PDF/A-1B")); //NOI18N
+         jComboBoxPdfA.addItem(new Tag(""+net.sf.jasperreports.export.type.PdfaConformanceEnum.NONE.getName(), "None")); //NOI18N
+         jComboBoxPdfA.addItem(new Tag(""+net.sf.jasperreports.export.type.PdfaConformanceEnum.PDFA_1A.getName(), "PDF/A-1A")); //NOI18N
+         jComboBoxPdfA.addItem(new Tag(""+net.sf.jasperreports.export.type.PdfaConformanceEnum.PDFA_1B.getName(), "PDF/A-1B")); //NOI18N
          
     }
 
@@ -97,23 +97,23 @@ public class PdfExportParametersPanel extends AbstractExportParametersPanel {
 
         JRPropertiesUtil jrPropUtils = IRLocalJasperReportsContext.getUtilities();
         
-        Misc.setComboboxSelectedTagValue(jComboBoxPDFVersion, pref.get(JRPdfExporterParameter.PROPERTY_PDF_VERSION, jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_PDF_VERSION)));
-        Misc.setComboboxSelectedTagValue(jComboBoxPdfA, pref.get(JRPdfExporterParameter.PROPERTY_PDFA_CONFORMANCE, jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_PDFA_CONFORMANCE)));
+        Misc.setComboboxSelectedTagValue(jComboBoxPDFVersion, pref.get(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDF_VERSION, jrPropUtils.getProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDF_VERSION)));
+        Misc.setComboboxSelectedTagValue(jComboBoxPdfA, pref.get(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE, jrPropUtils.getProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE)));
 
-        jTextFieldICC.setText(pref.get(JRPdfExporterParameter.PROPERTY_PDFA_ICC_PROFILE_PATH, Misc.nvl(jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_PDFA_ICC_PROFILE_PATH),"")));
+        jTextFieldICC.setText(pref.get(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDFA_ICC_PROFILE_PATH, Misc.nvl(jrPropUtils.getProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDFA_ICC_PROFILE_PATH),"")));
 
-        jCheckBoxCreatingBatchModeBookmarks.setSelected( pref.getBoolean(JRPdfExporterParameter.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS)));
-        jCheckBoxCompressed.setSelected( pref.getBoolean(JRPdfExporterParameter.PROPERTY_COMPRESSED, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_COMPRESSED)));
-        jCheckBoxForceLinebreakPolicy.setSelected( pref.getBoolean(JRPdfExporterParameter.PROPERTY_FORCE_LINEBREAK_POLICY, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_FORCE_LINEBREAK_POLICY)));
-        jCheckBoxForceSVGShapes.setSelected( pref.getBoolean(JRPdfExporterParameter.PROPERTY_FORCE_SVG_SHAPES, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_FORCE_SVG_SHAPES)));
-        jCheckBoxIsTagged.setSelected( pref.getBoolean(JRPdfExporterParameter.PROPERTY_TAGGED, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_TAGGED)));
+        jCheckBoxCreatingBatchModeBookmarks.setSelected( pref.getBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS)));
+        jCheckBoxCompressed.setSelected( pref.getBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_COMPRESSED, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_COMPRESSED)));
+        jCheckBoxForceLinebreakPolicy.setSelected( pref.getBoolean(net.sf.jasperreports.export.PdfReportConfiguration.PROPERTY_FORCE_LINEBREAK_POLICY, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.PdfReportConfiguration.PROPERTY_FORCE_LINEBREAK_POLICY)));
+        jCheckBoxForceSVGShapes.setSelected( pref.getBoolean(net.sf.jasperreports.export.PdfReportConfiguration.PROPERTY_FORCE_SVG_SHAPES, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.PdfReportConfiguration.PROPERTY_FORCE_SVG_SHAPES)));
+        jCheckBoxIsTagged.setSelected( pref.getBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_TAGGED, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_TAGGED)));
 
         jComboBoxEncryption.setSelectedIndex(0);
-        if (pref.getBoolean(JRPdfExporterParameter.PROPERTY_ENCRYPTED, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_ENCRYPTED)))
+        if (pref.getBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_ENCRYPTED, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_ENCRYPTED)))
         {
             jComboBoxEncryption.setSelectedIndex(1);
         }
-        if (pref.getBoolean(JRPdfExporterParameter.PROPERTY_128_BIT_KEY, jrPropUtils.getBooleanProperty(JRPdfExporterParameter.PROPERTY_128_BIT_KEY)))
+        if (pref.getBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_128_BIT_KEY, jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_128_BIT_KEY)))
         {
             jComboBoxEncryption.setSelectedIndex(2);
         }
@@ -124,8 +124,8 @@ public class PdfExportParametersPanel extends AbstractExportParametersPanel {
         jTextFieldMetadataTitle.setText(pref.get("export.pdf.METADATA_TITLE", ""));
         jTextFieldOwnerPassword.setText(pref.get("export.pdf.OWNER_PASSWORD", ""));
         jTextFieldUserPassword.setText(pref.get("export.pdf.USER_PASSWORD", ""));
-        jTextFieldTagLanguage.setText(pref.get("export.pdf.TAG_LANGUAGE", jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_TAG_LANGUAGE)));
-        jTextAreaPDFJavascript.setText(pref.get("export.pdf.PDF_JAVASCRIPT", jrPropUtils.getProperty(JRPdfExporterParameter.PROPERTY_PDF_JAVASCRIPT)));
+        jTextFieldTagLanguage.setText(pref.get("export.pdf.TAG_LANGUAGE", jrPropUtils.getProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_TAG_LANGUAGE)));
+        jTextAreaPDFJavascript.setText(pref.get("export.pdf.PDF_JAVASCRIPT", jrPropUtils.getProperty(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDF_JAVASCRIPT)));
 
         int documentPermissions = pref.getInt("export.pdf.PERMISSIONS",0);
         jCheckBoxAllawDegradedPrinting.setSelected( (documentPermissions & PdfWriter.ALLOW_DEGRADED_PRINTING) > 0);
@@ -145,20 +145,20 @@ public class PdfExportParametersPanel extends AbstractExportParametersPanel {
 
         Tag t = (Tag) jComboBoxPDFVersion.getSelectedItem();
         if (t.getValue() == null) {
-            pref.remove(JRPdfExporterParameter.PROPERTY_PDF_VERSION);
+            pref.remove(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDF_VERSION);
         } else {
-            pref.put(JRPdfExporterParameter.PROPERTY_PDF_VERSION, ""+t.getValue());
+            pref.put(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDF_VERSION, ""+t.getValue());
         }
 
-        pref.putBoolean(JRPdfExporterParameter.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS , jCheckBoxCreatingBatchModeBookmarks.isSelected());
-        pref.putBoolean(JRPdfExporterParameter.PROPERTY_COMPRESSED , jCheckBoxCompressed.isSelected());
-        pref.putBoolean(JRPdfExporterParameter.PROPERTY_FORCE_LINEBREAK_POLICY , jCheckBoxForceLinebreakPolicy.isSelected());
-        pref.putBoolean(JRPdfExporterParameter.PROPERTY_FORCE_SVG_SHAPES , jCheckBoxForceSVGShapes.isSelected());
-        pref.putBoolean(JRPdfExporterParameter.PROPERTY_TAGGED , jCheckBoxIsTagged.isSelected());
+        pref.putBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_CREATE_BATCH_MODE_BOOKMARKS , jCheckBoxCreatingBatchModeBookmarks.isSelected());
+        pref.putBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_COMPRESSED , jCheckBoxCompressed.isSelected());
+        pref.putBoolean(net.sf.jasperreports.export.PdfReportConfiguration.PROPERTY_FORCE_LINEBREAK_POLICY , jCheckBoxForceLinebreakPolicy.isSelected());
+        pref.putBoolean(net.sf.jasperreports.export.PdfReportConfiguration.PROPERTY_FORCE_SVG_SHAPES , jCheckBoxForceSVGShapes.isSelected());
+        pref.putBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_TAGGED , jCheckBoxIsTagged.isSelected());
 
         int index = jComboBoxEncryption.getSelectedIndex();
-        pref.putBoolean(JRPdfExporterParameter.PROPERTY_ENCRYPTED , (index != 0));
-        pref.putBoolean(JRPdfExporterParameter.PROPERTY_128_BIT_KEY , (index == 2));
+        pref.putBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_ENCRYPTED , (index != 0));
+        pref.putBoolean(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_128_BIT_KEY , (index == 2));
 
         pref.put("export.pdf.METADATA_AUTHOR" , jTextFieldMetadataAuthor.getText());
         pref.put("export.pdf.METADATA_CREATOR" , jTextFieldMetadataCreator.getText());
@@ -173,12 +173,12 @@ public class PdfExportParametersPanel extends AbstractExportParametersPanel {
         
         t = (Tag) jComboBoxPdfA.getSelectedItem();
         if (t.getValue() == null) {
-            pref.remove(JRPdfExporterParameter.PROPERTY_PDFA_CONFORMANCE);
+            pref.remove(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE);
         } else {
-            pref.put(JRPdfExporterParameter.PROPERTY_PDFA_CONFORMANCE,""+t.getValue());
+            pref.put(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDFA_CONFORMANCE,""+t.getValue());
         }
 
-        pref.put(JRPdfExporterParameter.PROPERTY_PDFA_ICC_PROFILE_PATH , jTextFieldICC.getText());
+        pref.put(net.sf.jasperreports.export.PdfExporterConfiguration.PROPERTY_PDFA_ICC_PROFILE_PATH , jTextFieldICC.getText());
 
 
         int documentPermissions = 0;

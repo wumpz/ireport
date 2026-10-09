@@ -74,7 +74,7 @@ public class VersionJRContext extends IRLocalJasperReportsContext {
 
     @Override
     public Map<String, String> getProperties() {
-        Map map = super.getProperties();
+        Map map = new java.util.HashMap(super.getProperties());
     
         
         map.remove(JRXmlBaseWriter.PROPERTY_REPORT_VERSION);
@@ -91,7 +91,7 @@ public class VersionJRContext extends IRLocalJasperReportsContext {
     public String getProperty(String key) {
         
         
-        System.out.println("Getting the property: " + key);
+
         if (key.equals(JRXmlBaseWriter.PROPERTY_REPORT_VERSION))
         {
             

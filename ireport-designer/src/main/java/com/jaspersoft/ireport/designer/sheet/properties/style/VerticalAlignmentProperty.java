@@ -28,7 +28,7 @@ import com.jaspersoft.ireport.designer.sheet.properties.EnumProperty;
 import com.jaspersoft.ireport.locale.I18n;
 import java.util.List;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
-import net.sf.jasperreports.engine.type.VerticalAlignEnum;
+import net.sf.jasperreports.engine.type.VerticalTextAlignEnum;
 
 /**
  * Class to manage the JRDesignElement.PROPERTY_POSITION_TYPE property
@@ -40,7 +40,7 @@ public final class VerticalAlignmentProperty extends EnumProperty {
     @SuppressWarnings(value = "unchecked")
     public VerticalAlignmentProperty(JRBaseStyle style) {
 
-        super(VerticalAlignEnum.class, style);
+        super(VerticalTextAlignEnum.class, style);
         this.style = style;
         setValue("suppressCustomEditor", Boolean.TRUE);
     }
@@ -50,7 +50,7 @@ public final class VerticalAlignmentProperty extends EnumProperty {
     @Override
     public String getName()
     {
-        return JRBaseStyle.PROPERTY_VERTICAL_ALIGNMENT;
+        return JRBaseStyle.PROPERTY_VERTICAL_TEXT_ALIGNMENT;
     }
 
     @Override
@@ -68,13 +68,13 @@ public final class VerticalAlignmentProperty extends EnumProperty {
     @Override
     public Object getPropertyValue()
     {
-        return style.getVerticalAlignmentValue();
+        return style.getVerticalTextAlign();
     }
 
     @Override
     public Object getOwnPropertyValue()
     {
-        return getPropertyValue();
+        return style.getOwnVerticalTextAlign();
     }
 
     @Override
@@ -86,16 +86,16 @@ public final class VerticalAlignmentProperty extends EnumProperty {
     @Override
     public void setPropertyValue(Object newValue)
     {
-        style.setVerticalAlignment((VerticalAlignEnum)newValue);
+        style.setVerticalTextAlign((VerticalTextAlignEnum)newValue);
     }
 
     @Override
     public List getTagList()
     {
         List tags = new java.util.ArrayList();
-        tags.add(new Tag(VerticalAlignEnum.TOP, I18n.getString("Global.Property.Top")));
-        tags.add(new Tag(VerticalAlignEnum.MIDDLE, I18n.getString("Global.Property.Middle")));
-        tags.add(new Tag(VerticalAlignEnum.BOTTOM, I18n.getString("Global.Property.Bottom")));
+        tags.add(new Tag(VerticalTextAlignEnum.TOP, I18n.getString("Global.Property.Top")));
+        tags.add(new Tag(VerticalTextAlignEnum.MIDDLE, I18n.getString("Global.Property.Middle")));
+        tags.add(new Tag(VerticalTextAlignEnum.BOTTOM, I18n.getString("Global.Property.Bottom")));
         return tags;
     }
 }

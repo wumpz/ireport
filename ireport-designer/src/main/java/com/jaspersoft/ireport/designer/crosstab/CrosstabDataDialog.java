@@ -55,7 +55,7 @@ import net.sf.jasperreports.engine.JRVariable;
 import net.sf.jasperreports.engine.design.JRDesignDatasetParameter;
 import net.sf.jasperreports.engine.design.JRDesignExpression;
 import net.sf.jasperreports.engine.type.IncrementTypeEnum;
-import net.sf.jasperreports.engine.type.ResetTypeEnum;
+import net.sf.jasperreports.engine.type.DatasetResetTypeEnum;
 
 
 /**
@@ -104,9 +104,9 @@ public class CrosstabDataDialog extends javax.swing.JDialog {
                     jComboBoxIncrementGroup.setSelectedItem( currentSelectedCrosstabElement.getDataset().getIncrementGroup().getName() );
                 }
                 
-                Misc.setComboboxSelectedTagValue(jComboBoxResetType, currentSelectedCrosstabElement.getDataset().getResetTypeValue() );
-                jComboBoxResetGroup.setEnabled(currentSelectedCrosstabElement.getDataset().getResetTypeValue() == ResetTypeEnum.GROUP);
-                if (currentSelectedCrosstabElement.getDataset().getResetTypeValue() == ResetTypeEnum.GROUP)
+                Misc.setComboboxSelectedTagValue(jComboBoxResetType, currentSelectedCrosstabElement.getDataset().getDatasetResetType() );
+                jComboBoxResetGroup.setEnabled(currentSelectedCrosstabElement.getDataset().getDatasetResetType() == DatasetResetTypeEnum.GROUP);
+                if (currentSelectedCrosstabElement.getDataset().getDatasetResetType() == DatasetResetTypeEnum.GROUP)
                 {
                     jComboBoxResetGroup.setSelectedItem( currentSelectedCrosstabElement.getDataset().getResetGroup().getName() );
                 }
@@ -252,11 +252,11 @@ public class CrosstabDataDialog extends javax.swing.JDialog {
         
         //applyI18n();
         
-        this.jComboBoxResetType.addItem(new Tag(ResetTypeEnum.NONE,I18n.getString("CrosstabDataDialog.ComboBox.None")));
-        this.jComboBoxResetType.addItem(new Tag(ResetTypeEnum.REPORT,I18n.getString("CrosstabDataDialog.ComboBox.Report")));
-        this.jComboBoxResetType.addItem(new Tag(ResetTypeEnum.PAGE,I18n.getString("CrosstabDataDialog.ComboBox.Page")));
-        this.jComboBoxResetType.addItem(new Tag(ResetTypeEnum.COLUMN,I18n.getString("CrosstabDataDialog.ComboBox.Column")));
-        this.jComboBoxResetType.addItem(new Tag(ResetTypeEnum.GROUP,I18n.getString("CrosstabDataDialog.ComboBox.Group")));
+        this.jComboBoxResetType.addItem(new Tag(DatasetResetTypeEnum.NONE,I18n.getString("CrosstabDataDialog.ComboBox.None")));
+        this.jComboBoxResetType.addItem(new Tag(DatasetResetTypeEnum.REPORT,I18n.getString("CrosstabDataDialog.ComboBox.Report")));
+        this.jComboBoxResetType.addItem(new Tag(DatasetResetTypeEnum.PAGE,I18n.getString("CrosstabDataDialog.ComboBox.Page")));
+        this.jComboBoxResetType.addItem(new Tag(DatasetResetTypeEnum.COLUMN,I18n.getString("CrosstabDataDialog.ComboBox.Column")));
+        this.jComboBoxResetType.addItem(new Tag(DatasetResetTypeEnum.GROUP,I18n.getString("CrosstabDataDialog.ComboBox.Group")));
         
         this.jComboBoxIncrementType.addItem(new Tag(IncrementTypeEnum.NONE,I18n.getString("CrosstabDataDialog.ComboBox.None")));
         this.jComboBoxIncrementType.addItem(new Tag(IncrementTypeEnum.REPORT,I18n.getString("CrosstabDataDialog.ComboBox.Report")));
@@ -1070,13 +1070,13 @@ public class CrosstabDataDialog extends javax.swing.JDialog {
                     Misc.setComboboxSelectedTagValue(jComboBoxIncrementType, IncrementTypeEnum.NONE);
                     setInit(false);
                 }
-                ResetTypeEnum val2 = (ResetTypeEnum)((Tag)jComboBoxResetType.getSelectedItem()).getValue();
-                if (val2 == ResetTypeEnum.GROUP)
+                DatasetResetTypeEnum val2 = (DatasetResetTypeEnum)((Tag)jComboBoxResetType.getSelectedItem()).getValue();
+                if (val2 == DatasetResetTypeEnum.GROUP)
                 {
                     setInit(true);
                     //((JRDesignChartDataset)currentSelectedChartElement.getDataset()).setResetType(JRVariable.RESET_TYPE_REPORT);
                     //((JRDesignChartDataset)currentSelectedChartElement.getDataset()).setResetGroup(null);
-                    Misc.setComboboxSelectedTagValue(jComboBoxResetType, ResetTypeEnum.REPORT);
+                    Misc.setComboboxSelectedTagValue(jComboBoxResetType, DatasetResetTypeEnum.REPORT);
                     setInit(false);
                 }
             }
@@ -1206,14 +1206,14 @@ public class CrosstabDataDialog extends javax.swing.JDialog {
         
         if (isInit() || currentSelectedCrosstabElement == null) return;
         
-        ResetTypeEnum val = (ResetTypeEnum)((Tag)jComboBoxResetType.getSelectedItem()).getValue();
+        DatasetResetTypeEnum val = (DatasetResetTypeEnum)((Tag)jComboBoxResetType.getSelectedItem()).getValue();
         
-        if (val == ResetTypeEnum.GROUP)
+        if (val == DatasetResetTypeEnum.GROUP)
         {
             if (getCrosstabDataset().getGroupsList().size() == 0)
             {
                 setInit(true);
-                Misc.setComboboxSelectedTagValue(jComboBoxResetType, currentSelectedCrosstabElement.getDataset().getResetTypeValue());
+                Misc.setComboboxSelectedTagValue(jComboBoxResetType, currentSelectedCrosstabElement.getDataset().getDatasetResetType());
                 SwingUtilities.invokeLater(new Runnable(){
                     public void run()
                     {

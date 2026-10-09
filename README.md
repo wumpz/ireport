@@ -1,5 +1,9 @@
 # IReport
 
+## Updated designer binary
+
+[Download the NetBeans 31 / JasperReports 6.21.4 RC1](https://github.com/samuelpc7/ireport/releases/tag/ireport-jr6.21.4-netbeans31-rc1). The NBM embeds its 91 designer dependency JARs; installation does not require Maven. The release also supplies an offline bundle, corresponding source and SHA-256 checksums. See [installation and scope](docs/BINARY-DISTRIBUTION.md). This designer release does not replace an application's JasperReports runtime or certify legacy companion modules.
+
 This is a fork of my favourite jasperreports designer IReport. This fork started with the latest sources of IReport 5.6. Unfortunately since 2015 I think the work on it was stopped 
 in favourite of the now defacto standard JasperReports Studio. So it is a kind of taste which one you like. As I mentioned I prefer IReport. 
 

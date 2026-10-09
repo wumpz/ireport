@@ -41,7 +41,7 @@ public class SubreportReturnValueCellRenderer extends DefaultTableCellRenderer {
         JLabel label = (JLabel)super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         if (value instanceof JRDesignSubreportReturnValue)
         {
-            label.setText( ((JRDesignSubreportReturnValue)value).getSubreportVariable() );
+            label.setText( ((JRDesignSubreportReturnValue)value).getFromVariable() );
         }
         
         return label;

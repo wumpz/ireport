@@ -64,6 +64,7 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="jNumberComboBoxSize">
           <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;Font size in points; fractional values such as 10.5 are supported.&lt;/html&gt;"/>
             <Property name="editable" type="boolean" value="true"/>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[70, 22]"/>

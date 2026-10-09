@@ -29,7 +29,7 @@ import com.jaspersoft.ireport.locale.I18n;
 import java.util.ArrayList;
 import java.util.List;
 import net.sf.jasperreports.engine.base.JRBaseChartPlot;
-import org.jfree.chart.plot.PlotOrientation;
+import net.sf.jasperreports.charts.type.PlotOrientationEnum;
 
 
 /**
@@ -80,8 +80,8 @@ public final class OrientationProperty extends ByteProperty
     @Override
     public Byte getByte()
     {
-        if (plot.getOrientation() == null) return ORIENTATION_VERTICAL;
-        if (plot.getOrientation().equals(PlotOrientation.HORIZONTAL)) return ORIENTATION_HORIZONTAL;
+        if (plot.getOrientationValue() == null) return ORIENTATION_VERTICAL;
+        if (plot.getOrientationValue().equals(PlotOrientationEnum.HORIZONTAL)) return ORIENTATION_HORIZONTAL;
         return ORIENTATION_VERTICAL;
     }
 
@@ -102,11 +102,11 @@ public final class OrientationProperty extends ByteProperty
     {
         if (position.equals(ORIENTATION_VERTICAL))
         {
-            plot.setOrientation(PlotOrientation.VERTICAL);
+            plot.setOrientation(PlotOrientationEnum.VERTICAL);
         }
         else
         {
-            plot.setOrientation(PlotOrientation.HORIZONTAL);
+            plot.setOrientation(PlotOrientationEnum.HORIZONTAL);
         }
     }
 

@@ -38,7 +38,8 @@ import java.util.Iterator;
 import java.util.prefs.PreferenceChangeEvent;
 import java.util.prefs.PreferenceChangeListener;
 import net.sf.jasperreports.engine.base.JRBaseStyle;
-import net.sf.jasperreports.engine.util.JRFontUtil;
+import net.sf.jasperreports.engine.fonts.FontUtil;
+import net.sf.jasperreports.engine.DefaultJasperReportsContext;
 import org.openide.nodes.PropertySupport;
 
 /**
@@ -96,7 +97,7 @@ final public class FontNameProperty extends PropertySupport.ReadWrite  implement
         ClassLoader oldCL = Thread.currentThread().getContextClassLoader();
         Thread.currentThread().setContextClassLoader(new ReportClassLoader(IReportManager.getReportClassLoader()));
 
-        Collection extensionFonts = JRFontUtil.getFontFamilyNames();
+        Collection extensionFonts = FontUtil.getInstance(DefaultJasperReportsContext.getInstance()).getFontFamilyNames();
         for(Iterator it = extensionFonts.iterator(); it.hasNext();)
         {
             String fname = (String)it.next();

@@ -331,7 +331,7 @@ public class CommonExportParametersPanel extends AbstractExportParametersPanel {
         JRPropertiesUtil jrPropUtils = IRLocalJasperReportsContext.getUtilities();
         JasperReportsContext context = IRLocalJasperReportsContext.getInstance();
         
-        jCheckBoxIgnorePageMargins.setSelected( pref.getBoolean(JRExporterParameter.PROPERTY_IGNORE_PAGE_MARGINS,    jrPropUtils.getBooleanProperty(JRExporterParameter.PROPERTY_IGNORE_PAGE_MARGINS)));
+        jCheckBoxIgnorePageMargins.setSelected( pref.getBoolean(net.sf.jasperreports.export.ReportExportConfiguration.PROPERTY_IGNORE_PAGE_MARGINS,    jrPropUtils.getBooleanProperty(net.sf.jasperreports.export.ReportExportConfiguration.PROPERTY_IGNORE_PAGE_MARGINS)));
         int pageMode = pref.getInt(JRPropertiesUtil.PROPERTY_PREFIX + "export.printrange", 0);
 
         jRadioButtonExportAll.setSelected( pageMode == 0);
@@ -351,7 +351,7 @@ public class CommonExportParametersPanel extends AbstractExportParametersPanel {
             jTextFieldPageRangeTo.setText( pref.getInt(JRPropertiesUtil.PROPERTY_PREFIX + "export.printrange.to", 1) +"");
         }
 
-        String encoding = pref.get(JRExporterParameter.PROPERTY_CHARACTER_ENCODING, jrPropUtils.getProperty(JRExporterParameter.PROPERTY_CHARACTER_ENCODING));
+        String encoding = pref.get(net.sf.jasperreports.export.WriterExporterOutput.PROPERTY_CHARACTER_ENCODING, jrPropUtils.getProperty(net.sf.jasperreports.export.WriterExporterOutput.PROPERTY_CHARACTER_ENCODING));
         jTextFieldCharacterEncoding.setText( (encoding == null) ? "" : encoding );
 
         SpinnerNumberModel m = (SpinnerNumberModel)jSpinnerOffsetX.getModel();
@@ -382,11 +382,11 @@ public class CommonExportParametersPanel extends AbstractExportParametersPanel {
 
         if (jTextFieldCharacterEncoding.getText().trim().length() == 0)
         {
-            pref.remove(JRExporterParameter.PROPERTY_CHARACTER_ENCODING);
+            pref.remove(net.sf.jasperreports.export.WriterExporterOutput.PROPERTY_CHARACTER_ENCODING);
         }
         else
         {
-            pref.put(JRExporterParameter.PROPERTY_CHARACTER_ENCODING, jTextFieldCharacterEncoding.getText().trim());
+            pref.put(net.sf.jasperreports.export.WriterExporterOutput.PROPERTY_CHARACTER_ENCODING, jTextFieldCharacterEncoding.getText().trim());
         }
 
         SpinnerNumberModel m = (SpinnerNumberModel)jSpinnerOffsetX.getModel();
@@ -409,7 +409,7 @@ public class CommonExportParametersPanel extends AbstractExportParametersPanel {
             pref.putInt(JRPropertiesUtil.PROPERTY_PREFIX + "export.offset.y", m.getNumber().intValue());
         }
 
-        pref.putBoolean(JRExporterParameter.PROPERTY_IGNORE_PAGE_MARGINS, jCheckBoxIgnorePageMargins.isSelected());
+        pref.putBoolean(net.sf.jasperreports.export.ReportExportConfiguration.PROPERTY_IGNORE_PAGE_MARGINS, jCheckBoxIgnorePageMargins.isSelected());
 
     }
 
